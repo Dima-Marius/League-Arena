@@ -1,0 +1,22 @@
+.ul {
+    list-style-type: none;
+    display: flex;
+    gap:1rem;
+    color:white;
+}
+
+.ul > li:last-child {
+    background-color: rgba(240, 248, 255, 0.3);
+    border-radius: 5px;
+    width: 40px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;   
+}
+
+.ul >li:last-child > i {
+    font-size:14px;
+    margin-top:3px;
+}

@@ -1,0 +1,41 @@
+.login-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 65px 1fr 65px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    '. . .'
+    '. login-form-container .'
+    'legal-nav-container . .'
+}
+
+.login-form-container {
+    grid-area: login-form-container;
+    justify-self: center;
+    align-items: center;
+    margin-right:10px;
+}
+
+.legal-nav-container {
+    grid-area: legal-nav-container;
+    display:flex;
+    justify-self: flex-start;
+    margin-left:40px;
+    margin-bottom:10px;
+    cursor: pointer;
+}
+
+.bg-video {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}

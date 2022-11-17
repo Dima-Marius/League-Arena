@@ -1,0 +1,128 @@
+.container {
+    display:flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 35rem;
+    height: 46rem;
+    gap:90px;
+    border: solid 2px #62939a;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.61);
+    border-radius: 12px;
+
+}
+
+.logo {
+    position: absolute;
+    top:-14rem;
+}
+
+.login-inputs {
+    display: flex;
+    flex-direction: column;
+    gap:3rem;
+    margin-top:auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.register {
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.3em;
+    gap:20px;
+    font-weight: bold;
+}
+
+.register > p > span {
+    color:rgb(248, 69, 14);
+}
+
+
+.login-inputs > div > input {
+    background-color: transparent;
+    border:none;
+    border-bottom: solid 1px black;
+    text-align: center;
+    width: 300px;
+    color:black;
+    outline: none;
+    font-size: 1.5em;
+}
+
+.login-inputs > div > i {
+    position: relative;
+    right:21px;
+}
+
+.login-inputs > input::placeholder {
+    font-size: 20px;
+    color:initial;
+    font-weight: initial;
+}
+
+.login-btn {
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 20pt;
+    width: 200px;
+    height: 45px;
+    position: relative;
+    border: solid #777 2px;
+    color: #777;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+    background: transparent;
+    padding: 0;
+  }
+  
+.login-btn {
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.login-btn:active,
+.login-btn:hover {
+  outline: 0;
+}
+
+.login-btn span {
+  background-color: rgb(5, 6, 45);
+  padding: 10px 15px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.login-btn:hover span {
+  background: none;
+}
