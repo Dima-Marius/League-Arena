@@ -1,8 +1,15 @@
 import React from 'react';
 import style from './loginform.module.css';
 import logo from '../../assets/images/league-arena-login-logo-transformed.png'
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
+
+  const loginBtnHandler = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   return (
     <div className={style.container}>
 
@@ -19,8 +26,8 @@ const LoginForm = () => {
             <input placeholder='Password' type='password' />
             <i className="fa-solid fa-lock"></i>
           </div>
-          <button className={style['login-btn']}>
-          <span>Login</span>
+          <button onClick={loginBtnHandler} className={style['login-btn']}>
+          <span><Link to='/home'></Link>Login</span> {/* Putting text inside link tag screws up glow effect, don't change cause this works as intended. */}
         </button>
       </form>
 

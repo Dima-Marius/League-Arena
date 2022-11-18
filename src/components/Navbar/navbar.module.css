@@ -1,0 +1,20 @@
+.ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:120px;
+    /* background-color: rgb(0, 174, 255); */
+    background-color:rgb(105, 70, 230);
+    width: 1100px;
+    height: 60px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.ul li {
+    color:rgb(0, 0, 0);
+}
+
+.ul li i {
+    font-size: 36px;
+}
