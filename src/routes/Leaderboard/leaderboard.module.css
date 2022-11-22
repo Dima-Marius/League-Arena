@@ -1,0 +1,68 @@
+
+.container {
+    display: grid;
+    background-color: var(--alternative-dark-blue);
+    grid-template-columns: 1fr 700px 700px 1fr;
+    grid-template-rows: 200px 500px 500px 200px 620px;
+    grid-template-areas:
+      ". . . ."
+      ". leaderboard leaderboard ."
+      ". leaderboard leaderboard ."
+      ". . . ."
+      "footer footer footer footer"
+  }
+  
+ .nav {
+    width: 100%;
+    position: fixed;
+  }
+  
+ .footer {
+    grid-area:footer;
+    border: solid 3px red;
+  }
+
+  :root {
+    --darker-blue: #0b0c10;
+    --dark-blue: #101319;
+    --lighter-blue: #1F2833;
+    --smokey: #A3ABB6;
+    --light-aqua: #66FCF1;
+    --dark-aqua: #45A29E;
+    --alternative-dark-blue: #2e3047;
+    --alternative-purple: #6946e6;
+    --alternative-smokey: #c5c6c7;
+  }
+
+
+
+
+
+
+
+/*   
+.options {
+    grid-area: options;
+    background-color: solid 3px rgb(255, 153, 0);
+}
+  
+.search {
+    grid-area: search;
+    background-color: solid 3px rgb(245, 241, 6);
+}
+  
+.buttons {
+    grid-area: buttons;
+    background-color: solid 3px rgb(43, 255, 0);
+}
+  
+.display {
+    grid-area: display;
+    background-color: solid 3px rgb(0, 225, 255);
+}
+  
+.extra {
+    grid-area: extra;
+    background-color: solid 3px rgb(0, 4, 255);
+}
+   */
