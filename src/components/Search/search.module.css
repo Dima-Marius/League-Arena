@@ -1,0 +1,11 @@
+.label {
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+.h2 {
+    font-size: 40px;
+    color: var(--alternative-purple);
+    font-family: Rubik Glitch;
+    font-weight: 100;
+}

@@ -1,0 +1,31 @@
+.rank {
+    width: 20px;
+    text-align: center;
+    background-color: rgba(206, 204, 204, 0.13);
+}
+
+.lp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.region, .wins, .losses, .name {
+    text-align: center;
+}
+
+.li { 
+    color: whitesmoke;
+    margin:10px 10px 10px 25px;
+}
+
+.tr {
+    background-color: var(--dark-blue)
+}
+
+.tr td {
+    padding:10px;
+    border-top:solid 1px gray;
+}
+

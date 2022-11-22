@@ -1,15 +1,18 @@
-
 .container {
     display: grid;
     background-color: var(--alternative-dark-blue);
     grid-template-columns: 1fr 700px 700px 1fr;
-    grid-template-rows: 200px 500px 500px 200px 620px;
+    grid-template-rows: 200px auto auto 200px 620px;
     grid-template-areas:
       ". . . ."
       ". leaderboard leaderboard ."
       ". leaderboard leaderboard ."
       ". . . ."
       "footer footer footer footer"
+  }
+
+  .leaderboard {
+    grid-area: leaderboard;
   }
   
  .nav {
@@ -19,7 +22,6 @@
   
  .footer {
     grid-area:footer;
-    border: solid 3px red;
   }
 
   :root {

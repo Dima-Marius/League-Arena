@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    width:95%;
+    color:white;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.th-name {
+    text-align: center;
+}
+
+.table thead tr {
+    text-align: left;
+    color:var(--alternative-purple)
+}
+
+.th-lp, .th-wins, .th-losses, .th-region {
+    text-align: center;
+}
+
+.thead {
+    width: 300px;
+}

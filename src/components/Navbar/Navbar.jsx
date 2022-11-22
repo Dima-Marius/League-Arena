@@ -2,7 +2,6 @@ import React from 'react';
 import style from './navbar.module.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 import weblogo from '../../assets/logos/v2-no-bg.png';
-import { MdLeaderboard } from 'react-icons/md';
 
 const Navbar = () => {
 const navigate = useNavigate();

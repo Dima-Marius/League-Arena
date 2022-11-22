@@ -1,6 +1,5 @@
 .leaderboard {
     background-color: var(--lighter-blue);
-    border:solid 3px rgb(251, 255, 0);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 200px 1fr 100px;
@@ -8,21 +7,26 @@
       "search search search"
       "display display display"
       "options options options";
-    grid-area: leaderboard;
+
   }
+
+  
   
   .search {
-    border:solid 3px rgb(81, 255, 0);
     grid-area: search;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
   
   .display {
-    border:solid 3px rgb(0, 225, 255);
     grid-area: display;
 }
   
   .options {
-    border:solid 3px rgb(25, 0, 255);
     grid-area: options;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
   
