@@ -3,9 +3,16 @@
     font-size: 30px;
 }
 
+.wrapper {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
 .h2 {
+    color: #80374f;
     font-size: 40px;
-    color: var(--alternative-purple);
     font-family: Rubik Glitch;
     font-weight: 100;
 }

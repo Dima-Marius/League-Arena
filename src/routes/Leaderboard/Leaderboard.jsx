@@ -1,4 +1,4 @@
-import React, { } from 'react';
+import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import LeaderboardComponent from '../../components/LeaderboardComponent/LeaderboardComponent';
 import Navbar from '../../components/Navbar/Navbar';

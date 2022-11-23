@@ -1,6 +1,7 @@
 .container {
     display: flex;
     justify-content: center;
+    
 }
 
 .table {
@@ -8,15 +9,24 @@
     color:white;
     font-size: 30px;
     border-radius: 10px;
+    
+}
+
+.thead {
+    background-color: var(--smokey);
+    
 }
 
 .th-name {
     text-align: center;
+    color: #80374f;
 }
 
 .table thead tr {
     text-align: left;
-    color:var(--alternative-purple)
+    color:var(--alternative-purple);
+    color: #80374f;
+    
 }
 
 .th-lp, .th-wins, .th-losses, .th-region {

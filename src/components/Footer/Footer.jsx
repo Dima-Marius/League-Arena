@@ -27,13 +27,13 @@ function Footer() {
     <div className={style['social-area']}>
       <h2>FIND US ON</h2>
       <ul className={style['footer-social']}>
-        <li><i class="fa-brands fa-playstation"></i>
+        <li><i className="fa-brands fa-playstation"></i>
         Playstation Network</li>
-        <li><i class="fa-brands fa-discord"></i>
+        <li><i className="fa-brands fa-discord"></i>
         Discord</li>
-        <li><i class="fa-brands fa-instagram"></i>
+        <li><i className="fa-brands fa-instagram"></i>
         Instagram</li>
-        <li><i class="fa-brands fa-facebook"></i>
+        <li><i className="fa-brands fa-facebook"></i>
         Facebook</li>
       </ul>
       </div>
@@ -54,7 +54,7 @@ function Footer() {
       </div>
     </div>
     <div className={style.disclaimer}>
-    <div className={style.divider}><span></span><span style={{position:'relative',bottom:'7px'}}>Made with <i class="fa-regular fa-heart"></i></span><span></span></div>
+    <div className={style.divider}><span></span><span style={{position:'relative',bottom:'7px'}}>Made with <i className="fa-regular fa-heart"></i></span><span></span></div>
       <h2><span>Original creator:</span> <a href='https://github.com/Shady1kx'>https://github.com/Shady1kx</a></h2>
     </div>
   </footer>

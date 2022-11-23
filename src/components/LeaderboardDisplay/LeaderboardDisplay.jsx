@@ -3,14 +3,16 @@ import Player from '../Player/Player';
 import style from './leaderboardDisplay.module.css'
 
 const LeaderboardDisplay = (props) => {
-    const { searchRegion } = props;
+    const { searchRegion, searchRank, defaultRank, defaultRegion } = props;
     const [playerList, setPlayerList] = useState([]);
+
+    const defaultRankSearch = searchRank === defaultRank ? defaultRank : searchRank.target.value;
+    const defaultRegionSearch = searchRegion === defaultRegion ? defaultRegion : searchRegion.target.value;
     
-    const retrieveLimit = 15;
-    const challengerQueueUrl = `https://${searchRegion === 'EUN1' ? 'EUN1' : searchRegion.target.value}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=RGAPI-ec2d9b6e-6e37-480d-a378-9b85eddea957`
+    const retrieveLimit = 10;
+    const challengerQueueUrl = `https://${defaultRegionSearch}.api.riotgames.com/lol/league/v4/${defaultRankSearch}leagues/by-queue/RANKED_SOLO_5x5?api_key=RGAPI-490cfa7f-b18a-4d7d-8464-fe5841bc4ff1`
     
     useEffect(() => {
-        console.log(searchRegion)
         fetch(challengerQueueUrl)
         .then(response => response.json())
         .then(data => setPlayerList(data.entries));

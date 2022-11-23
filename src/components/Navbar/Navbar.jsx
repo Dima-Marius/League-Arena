@@ -17,7 +17,7 @@ const navigate = useNavigate();
     <nav className={style['nav-container']}>   
       <ul className={style.ul}>
       <div className={style['main-logo']}><img src={weblogo} width='180px' height='60px' alt='website logo'/></div>
-          <NavLink className={addActiveClass} to='/home'><li className={addActiveClass}><i className="fa-solid fa-house"></i></li></NavLink>
+          <NavLink className={addActiveClass} to='/home'><li><i className="fa-solid fa-house"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/battles'><li><i className="fa-solid fa-gamepad"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/leaderboard'><li><i className="fa-solid fa-globe"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/ranking'><li><i className="fa-solid fa-trophy"></i></li></NavLink>

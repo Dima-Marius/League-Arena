@@ -1,6 +1,10 @@
 .container {
+    background-image: url('../../assets/images/diana-bg.jpg');
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-position: center;
     display: grid;
-    background-color: var(--alternative-dark-blue);
+    max-width: 100%;
     grid-template-columns: 1fr 700px 700px 1fr;
     grid-template-rows: 200px auto auto 200px 620px;
     grid-template-areas:

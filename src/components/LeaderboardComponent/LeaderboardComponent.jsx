@@ -4,20 +4,29 @@ import Search from '../Search/Search';
 import style from './leaderboardcomponent.module.css'
 
 function LeaderboardComponent() {
-  const [searchRegion, setSearchRegion] = useState('EUN1')
+  const defaultRegion = 'eun1';
+  const defaultRank = 'challenger'
+
+  const [searchRegion, setSearchRegion] = useState(defaultRegion);
+  const [searchRank, setSearchRank] = useState(defaultRank)
+
 
   const onRegionChange = (region) => {
-    setSearchRegion(region)
+    setSearchRegion(region === defaultRegion ? defaultRegion : region)
+  }
+
+  const onRankChange = (rank) => {
+
+    setSearchRank(rank === defaultRank ? defaultRank : rank)
   }
 
   return (
     <div className={style.leaderboard}>
-      <div className={style.ribbon}><span>POPULAR</span></div>
           <div className={style.search}>
-            <Search onRegionChange={onRegionChange} />
+            <Search onRankChange={onRankChange} onRegionChange={onRegionChange} />
           </div>
           <div className={style.display}>
-            <LeaderboardDisplay searchRegion={searchRegion} />
+            <LeaderboardDisplay defaultRank={defaultRank} defaultRegion={defaultRegion} searchRegion={searchRegion} searchRank={searchRank}  />
           </div>
           <div className={style.options}>
             <button>previous</button>
