@@ -14,12 +14,6 @@ import Footer from '../../components/Footer/Footer';
 
 
 const Home = () => {
-/*   useEffect(() => {
-    fetch('https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Shady6kx?api_key=RGAPI-ed0d2db5-e600-4351-8379-e345111204e3')
-    .then(response => response.json())
-    .then(data => console.log(data.summonerLevel))
-  },[]) */
-
   return (
     <div className={style.container}>
      <div className={style['header']}>
