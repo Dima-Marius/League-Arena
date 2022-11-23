@@ -20,10 +20,6 @@
     margin:10px 10px 10px 25px;
 }
 
-.tr {
-    background-color: var(--dark-blue)
-}
-
 .tr td {
     padding:10px;
     border-top:solid 1px gray;
