@@ -1,75 +1,37 @@
 .container {
-    background-image: url('../../assets/images/diana-bg.jpg');
-    object-fit: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     display: grid;
-    max-width: 100%;
-    max-height: 140%;
     grid-template-columns: 1fr 700px 700px 1fr;
-    grid-template-rows: 200px auto auto 200px 620px;
+    grid-template-rows: 71px 650px 650px 200px 605px;
     grid-template-areas:
       ". . . ."
-      ". leaderboard leaderboard ."
-      ". leaderboard leaderboard ."
-      ". . . ."
+      "wrapper wrapper wrapper wrapper"
+      "wrapper wrapper wrapper wrapper"
+      "wrapper wrapper wrapper wrapper"
       "footer footer footer footer"
   }
 
+  .wrapper {
+    grid-area: wrapper;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/images/diana-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   .leaderboard {
+    width: 1500px;
     grid-area: leaderboard;
+
   }
   
  .nav {
     width: 100%;
     position: fixed;
+    z-index: 9999;
   }
   
  .footer {
     grid-area:footer;
   }
-
-  :root {
-    --darker-blue: #0b0c10;
-    --dark-blue: #101319;
-    --lighter-blue: #1F2833;
-    --smokey: #A3ABB6;
-    --light-aqua: #66FCF1;
-    --dark-aqua: #45A29E;
-    --alternative-dark-blue: #2e3047;
-    --alternative-purple: #6946e6;
-    --alternative-smokey: #c5c6c7;
-  }
-
-
-
-
-
-
-
-/*   
-.options {
-    grid-area: options;
-    background-color: solid 3px rgb(255, 153, 0);
-}
-  
-.search {
-    grid-area: search;
-    background-color: solid 3px rgb(245, 241, 6);
-}
-  
-.buttons {
-    grid-area: buttons;
-    background-color: solid 3px rgb(43, 255, 0);
-}
-  
-.display {
-    grid-area: display;
-    background-color: solid 3px rgb(0, 225, 255);
-}
-  
-.extra {
-    grid-area: extra;
-    background-color: solid 3px rgb(0, 4, 255);
-}
-   */

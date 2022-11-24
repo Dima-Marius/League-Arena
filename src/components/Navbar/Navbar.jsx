@@ -18,8 +18,8 @@ const navigate = useNavigate();
       <ul className={style.ul}>
       <div className={style['main-logo']}><img src={weblogo} width='180px' height='60px' alt='website logo'/></div>
           <NavLink className={addActiveClass} to='/home'><li><i className="fa-solid fa-house"></i></li></NavLink>
-          <NavLink className={addActiveClass} to='/battles'><li><i className="fa-solid fa-gamepad"></i></li></NavLink>
-          <NavLink className={addActiveClass} to='/leaderboard'><li><i className="fa-solid fa-globe"></i></li></NavLink>
+          <NavLink className={addActiveClass} to='/teams'><li><i className="fa-solid fa-gamepad"></i></li></NavLink>
+          <NavLink className={addActiveClass} to='/leaderboard'><li><i className="fa-solid fa-earth-americas"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/ranking'><li><i className="fa-solid fa-trophy"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/profile'><li><i className="fa-solid fa-user"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/settings'><li><i className="fa-solid fa-gear"></i></li></NavLink>

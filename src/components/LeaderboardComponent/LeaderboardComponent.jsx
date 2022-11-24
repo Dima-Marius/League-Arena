@@ -15,7 +15,6 @@ function LeaderboardComponent() {
     
     setSearchRegion(region === defaultRegion ? defaultRegion : region)
     console.log(searchRank);
-
   }
 
   const onRankChange = (rank) => {

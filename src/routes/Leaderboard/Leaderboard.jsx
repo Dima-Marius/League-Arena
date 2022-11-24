@@ -14,13 +14,14 @@ function Leaderboard() {
        <div className={style.nav}>
          <Navbar/>
        </div>
-       <div className={style.leaderboard}>
-         <LeaderboardComponent/>
+       <div className={style.wrapper}>
+         <div className={style.leaderboard}>
+           <LeaderboardComponent/>
+         </div>
        </div>
        <div className={style.footer}>
          <Footer/>
        </div>
-
     </div>
   )
 }

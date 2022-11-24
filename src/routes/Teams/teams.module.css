@@ -1,0 +1,334 @@
+.container {
+    display: grid;
+    background-color: var(--dark-blue);
+    grid-template-columns: 450px 1fr 1fr 450px;
+    grid-template-rows: 72px 760px 1fr 1fr 200px 605px;
+    grid-template-areas:
+      "nav nav nav nav"
+      "poster poster poster poster"
+      ". teams teams ."
+      ". teams teams ."
+      ". . . ."
+      "footer footer footer footer";
+  }
+
+  .teams {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows:
+    auto [header]
+    50px [filters-header team-players]
+    50px [filters team-players]
+    700px [filters team-list]
+    500px [empty team-list]
+    100px [empty team-list]
+    150px [empty navigation-buttons];
+
+    grid-template-areas:
+      "header header header"
+      "filters-header teams-players teams-players"
+      "filters teams-players teams-players"
+      "filters team-list team-list"
+      ". team-list team-list"
+      ". team-list team-list"
+      ". navigation-buttons navigation-buttons";
+    grid-area: teams;
+  }
+
+:root {
+    --darker-blue: #0b0c10;
+    --dark-blue: #101319;
+    --lighter-blue: #1F2833;
+    --smokey: #A3ABB6;
+    --light-aqua: #66FCF1;
+    --dark-aqua: #45A29E;
+    --alternative-dark-blue: #2e3047;
+    --alternative-purple: #6946e6;
+    --alternative-smokey: #c5c6c7;
+    --round-edges: 18px;
+    --footer-height: 605px;
+    --nav-height: 74px;
+  }
+
+.nav {
+    grid-area: nav;
+    position: fixed;
+    width: 100%;
+    z-index:9999;
+  }
+
+  .filters-header {
+    grid-area: filters-header;
+    color: whitesmoke;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .filters-header > h2 {
+    font-family: Anton;
+    letter-spacing: 3px;
+  }
+
+.poster {
+    grid-area:poster;
+    -webkit-mask-image: linear-gradient(to top, transparent 5%, black 100%);
+    mask-image: linear-gradient(to top, transparent 5%, black 100%);
+  }
+
+.yasuo-splash {
+    object-fit: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.footer {
+    grid-area: footer;
+  }
+  
+.header {
+    grid-area: header;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+}
+
+.header img {
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+}
+  
+.teams-players {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: teams-players;
+}
+
+.teams-players > div {
+    display: flex;
+    gap: 40px;
+}
+
+.teams-players > div button {
+    font-size:30px;
+    color: whitesmoke;
+    background-color: transparent;
+    border:none;
+    font-family: Oswald;
+    border-bottom: solid 3px var(--smokey);
+    letter-spacing: 2px;
+}
+
+.teams-players > div button:hover {
+    border-bottom: solid 3px var(--alternative-purple)
+}
+
+.filters {
+    grid-area: filters;
+    background-color: rgb(106, 112, 129);
+}
+
+.filters .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+}
+
+.filters .role {
+    margin-left:30px;
+}
+
+.filters p {
+    font-size: 29px;
+    color: white;
+}
+
+/* SELECT */
+
+  .select {
+    font-size: 20px;
+    outline: 0;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border-bottom: solid 2px var(--gray)
+  }
+
+  .select * {
+    background-color: var(--gray)
+}
+
+.search input {
+    margin-top: 10px;
+    background-color: transparent;
+    outline: none;
+    border:none;
+    border-bottom: solid 1px var(--gray);
+    color: whitesmoke;
+}
+
+.search .search-wrapper {
+    position: relative;
+}
+
+.search .search-wrapper span {
+    position: absolute;
+    right:6px;
+    bottom:3px;
+}
+
+.search input::placeholder {
+    color: var(--smokey);
+    font-size: 20px;
+}
+
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  
+
+  .select:hover::after {
+    color: #f39c12;
+  } 
+
+/* SELECT */
+.filters h2 {
+    text-align: center;
+    border-bottom: 1px solid white;
+    color: whitesmoke;
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-family: Oswald;
+}
+
+.filters > .rank-filters {
+    display: flex;
+    gap:16px;
+    flex-direction: column;
+}
+
+.rank-filters label {
+    color: whitesmoke;
+    font-size: 24px;
+    font-family: Oswald;
+}
+
+.rank-filters > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rank-filters > div:has(label) {
+    margin-left:20px;
+}
+
+
+.toggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+.toggle:focus {
+    outline: 0;
+    }
+  
+.toggle {
+    height: 32px;
+    width: 52px;
+    border-radius: 16px;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    border: 2px solid #474755;
+    background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%);
+    transition: all .2s ease;
+}
+
+.toggle:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
+    transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35); }
+
+.toggle:checked {
+    border-color: #654FEC;
+}
+
+.toggle:checked:after {
+    transform: translatex(20px);
+}
+
+.region-filters > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.region-filters label {
+    font-size: 29px;
+}
+
+.team-list {
+
+    grid-area: team-list;
+    background-color: rgb(106, 112, 129);
+}
+
+
+  
+.navigation-buttons {
+    border: solid 3px rgb(255, 0, 212);
+    grid-area: navigation-buttons;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(106, 112, 129);
+}
+
+
+.filters, .team-list, .navigation-buttons, .teams-players, .filters-header {
+background-color:var(--test)
+}
+
+.filters {
+    border: solid 3px var(--alternative-dark-blue);
+}
+
+.header {border: solid 3px var(--alternative-dark-blue);}
+
+.filters-header {border: solid 3px var(--alternative-dark-blue);}
+
+.team-list {border: solid 3px var(--alternative-dark-blue);}
+
+.navigation-buttons {border: solid 3px var(--alternative-dark-blue);}
+
+.teams-players {border: solid 3px var(--alternative-dark-blue);}
+
+:root {
+    --test: #282A3A;
+}

@@ -1,0 +1,30 @@
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nav nav nav"
+      "content content content"
+      "footer footer footer";
+  }
+
+.nav {
+    grid-area: nav;
+}
+
+.content {
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.footer {
+    grid-area: footer;
+}
+  
+
+  
