@@ -1,0 +1,9 @@
+.player {
+    border-bottom: solid 1px var(--light-aqua);
+    cursor: pointer;
+}
+
+.player:active {
+    position: relative;
+    top:1px;
+}

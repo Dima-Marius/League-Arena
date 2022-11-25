@@ -1,0 +1,255 @@
+:root {
+    --darker-blue: #0b0c10;
+    --dark-blue: #101319;
+    --lighter-blue: #1F2833;
+    --smokey: #A3ABB6;
+    --light-aqua: #66FCF1;
+    --dark-aqua: #45A29E;
+    --alternative-dark-blue: #2e3047;
+    --alternative-purple: #6946e6;
+    --alternative-smokey: #c5c6c7;
+    --gray: #34495e;
+    --darkgray: #2c3e50;
+    --navy: #001f3f;
+    --matte-gray: #393f4d;
+    --dark-title: rgb(24, 24, 24);
+}
+  
+
+.card {
+    width: 100%;
+    height: 350px;
+    background-color:var(--matte-gray);
+   /*  color: rgb(143, 157, 179); */
+   /*  color: rgb(207, 207, 190); */
+   color:rgba(255, 255, 255, 0.89);
+    font-size: 24px;
+    border: solid 2px var(--darker-blue);
+}
+
+.card { 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 400px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "logo name description description"
+    "available-roles rank description description"
+    "members members contact contact";
+  grid-area: card;
+}
+
+.logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+
+.logo .logo-wrapper {
+    gap: 18px;
+    display: flex;
+    align-items: center;
+    margin-left:30px;
+}
+
+.logo-wrapper img {
+    border-radius: 100px;
+}
+
+.logo-wrapper h3 {
+    color: rgb(24, 24, 24);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.name {
+    grid-area: name;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name h3 {
+    color: var(--dark-title);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.region {
+    grid-area: region;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.available-roles {
+    grid-area: available-roles;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.role-list {
+    display: flex;
+    gap:4px;
+    font-size: 20px;
+}
+
+.roles-wrapper {
+    margin-left: 30px;
+}
+
+.available-roles h3 {
+    display: flex;
+    align-items: center;
+    gap:6px;
+    color: var(--dark-title);
+}
+
+.rank {
+    grid-area: rank;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(207, 207, 190);
+}
+
+.rank-wrapper {
+    color:var(--dark-title);
+    display: flex;
+    margin-right:20px;
+    flex-direction: column;
+    color: rgb(207, 207, 190);
+}
+
+.rank-wrapper h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: var(--dark-title);
+}
+
+/* MEMBERS AREA */
+.members {
+    grid-area: members;
+    display: flex;
+    align-items: center;
+}
+
+.player-list {
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.members-wrapper {
+    margin-left: 30px;
+}
+
+.members h3 {
+    color:var(--dark-title);
+    display: flex;
+    align-items: center;
+    gap:6px;
+
+}
+
+/* MEMBERS AREA */
+
+/* DESCRIPTION */
+
+.description {
+    grid-area: description;
+    color: var(--smokey);
+}
+
+.description-wrapper {
+    padding:18px;
+}
+
+.description-wrapper h3 {
+    color: var(--dark-title);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* DESCRIPTION */
+
+/* CONTACT */
+.contact {
+    grid-area: contact;
+    display: flex;
+    align-items: center;
+}
+
+.contact-wrapper {
+    margin-left:30px;
+}
+
+.contact h3 {
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    gap:6px;
+    color: var(--dark-title);
+}
+
+.discord {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.btn-wrapper {
+    margin-left:auto;
+    margin-right: 200px;
+}
+
+.join-btn {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.join-btn:active {
+    position: relative;
+    top:1px;
+}
+
+.join-btn:hover,
+.join-btn:focus {
+  opacity: .75;
+}
+/* CONTACT */
+
+.contact, .description, .members,
+.rank, .available-roles,
+.region ,.name, .logo {
+border:solid 1px var(--alternative-dark-blue)
+}

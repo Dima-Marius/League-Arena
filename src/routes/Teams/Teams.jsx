@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import yasuosplash from '../../assets/images/yasuo-spirit-blossom.jpg';
 import championsqueue from '../../assets/images/champions-queue.jpg'
 import TeamOutput from '../../components/TeamOutput/TeamOutput';
+import leblanc from '../../assets/images/leblanc.png'
 
 const Teams = () => {
   return (
@@ -15,6 +16,13 @@ const Teams = () => {
         <div className={style.poster}>
          <img className={style['yasuo-splash']} width='100%' height='850px' alt='yasuo' src={yasuosplash}></img>
         </div>
+        <div className={style.divider}>
+          <h2>FIND YOUR TEAM.</h2>
+        <div className={style['news-divider']}>
+          <span></span><span style={{position:'relative',bottom:'7px'}}>-</span><span></span>
+          </div>
+        </div>
+        
     <div className={style.teams}>
       <div className={style.header}>
         <img className={style['champions-queue-img']} alt='header' src={championsqueue} width='100%' height='500px'></img>
@@ -36,7 +44,6 @@ const Teams = () => {
                   <span><i className="fa-solid fa-magnifying-glass"></i></span>
                 </div>
             </div>
-            
               <div className={style.role}>
                 <p>Roles</p>
               </div>
@@ -99,13 +106,20 @@ const Teams = () => {
          </div>
       </div>
       <div className={style['team-list']}>
-       
+        <TeamOutput/>
       </div>
       <div className={style['navigation-buttons']}>
-        <button>Next</button>
-        <button>previous</button>
+        <div>
+          <button className={style.prev}>Previous</button>
+        </div>
+        <div>
+          <button className={style.next}>Next</button>
+        </div>
       </div>
     </div>
+{/*     <div className={style.splash}>
+      <img src={leblanc} alt='lb' height='1200px' width='1000px'></img>
+    </div> */}
       <div className={style.footer}>
         <Footer/>
       </div>

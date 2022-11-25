@@ -38,10 +38,10 @@ const Home = () => {
           <p>NEXT PRO PLAYER?</p>
           <h2>FIND US ON</h2>
           <ul className={style.social}>
-            <li><i class="fa-brands fa-playstation"></i></li>
-            <li><i class="fa-brands fa-discord"></i></li>
-            <li><i class="fa-brands fa-instagram"></i></li>
-            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i className="fa-brands fa-playstation"></i></li>
+            <li><i className="fa-brands fa-discord"></i></li>
+            <li><i className="fa-brands fa-instagram"></i></li>
+            <li><i className="fa-brands fa-facebook"></i></li>
           </ul>
         </div>
       </div>

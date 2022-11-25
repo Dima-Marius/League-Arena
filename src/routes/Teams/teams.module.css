@@ -2,10 +2,11 @@
     display: grid;
     background-color: var(--dark-blue);
     grid-template-columns: 450px 1fr 1fr 450px;
-    grid-template-rows: 72px 760px 1fr 1fr 200px 605px;
+    grid-template-rows: 72px 760px 150px 1fr 1fr 200px 605px;
     grid-template-areas:
       "nav nav nav nav"
       "poster poster poster poster"
+      ". divider divider ."
       ". teams teams ."
       ". teams teams ."
       ". . . ."
@@ -23,7 +24,7 @@
     50px [filters team-players]
     700px [filters team-list]
     500px [empty team-list]
-    100px [empty team-list]
+    auto [empty team-list]
     150px [empty navigation-buttons];
 
     grid-template-areas:
@@ -36,6 +37,63 @@
       ". navigation-buttons navigation-buttons";
     grid-area: teams;
   }
+
+  .divider {
+    grid-area:divider;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .divider h2 {
+    position: absolute;
+    font-size: 70px;
+    bottom:110px;
+    background-image: url('../../assets/images/yasuo-spirit-blossom.jpg');
+    background-clip: text;
+    color:transparent;
+  }
+
+  .news-divider {								/* minor cosmetics */
+    display: table; 
+    font-size: 24px; 
+    text-align: center; 
+    width: 100%; 						/* divider width */
+    margin: 40px auto;					/* spacing above/below */
+  }
+  .news-divider span {
+    display: table-cell; position: relative;
+  }
+  .news-divider span:first-child, .news-divider span:last-child {
+    width: 50%;
+    top: 13px;							/* adjust vertical align */
+    -moz-background-size: 100% 3px; 	/* line width */
+    background-size: 100% 3px; 			/* line width */
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+  }
+  .news-divider span:first-child {				/* color changes in here */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(var(--alternative-purple)));
+    background-image: -webkit-linear-gradient(180deg, transparent, var(--alternative-purple));
+    background-image: -moz-linear-gradient(180deg, transparent, var(--alternative-purple));
+    background-image: -o-linear-gradient(180deg, transparent, var(--alternative-purple));
+    background-image: linear-gradient(90deg, transparent, var(--alternative-purple));
+  }
+  .news-divider span:nth-child(2) {
+    color: #000; padding: 0px 5px; width: auto; white-space: nowrap;
+  }
+  .news-divider span:last-child {				/* color changes in here */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(var(--alternative-purple)), to(transparent));
+    background-image: -webkit-linear-gradient(180deg, var(--alternative-purple), transparent);
+    background-image: -moz-linear-gradient(180deg, var(--alternative-purple), transparent);
+    background-image: -o-linear-gradient(180deg, var(--alternative-purple), transparent);
+    background-image: linear-gradient(90deg, var(--alternative-purple), transparent);
+  }
+
+
 
 :root {
     --darker-blue: #0b0c10;
@@ -305,10 +363,61 @@
     border: solid 3px rgb(255, 0, 212);
     grid-area: navigation-buttons;
     display: flex;
+    gap:18px;
     justify-content: center;
     align-items: center;
     background-color: rgb(106, 112, 129);
 }
+
+.navigation-buttons .prev {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.prev:active, .next:active {
+  position: relative;
+  top:1px;
+}
+
+.navigation-buttons .next {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 34px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
 
 
 .filters, .team-list, .navigation-buttons, .teams-players, .filters-header {
