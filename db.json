@@ -1,0 +1,128 @@
+{
+  "createdTeams": [
+    {
+      "teamName": "Hardstuck Stepbros",
+      "logo": "LOGO HERE",
+      "region": "EUNE",
+      "members": [
+        "Dog",
+        "Cat",
+        "Tyler1",
+        "Ilynagava"
+      ],
+      "availableRoles": [
+        "TOP",
+        "MID"
+      ],
+      "rank": "Diamond",
+      "description": "Hello we are a team playing on the EUNE region, our rank is Diamond, and we are currently looking for ambitious individuals willing to play together. Hello we are a team playing on the EUNE region, our rankis Diamond, and we are currently looking for ambitious individuals willing to play together.",
+      "id": 1
+    },
+    {
+      "teamName": "SKT T1",
+      "logo": "LOGO HERE",
+      "region": "KOREA",
+      "members": [
+        "FAKER",
+        "DEJI",
+        "BAKKA",
+        "REKLESS"
+      ],
+      "availableRoles": [
+        "TOP",
+        "MID",
+        "SUPPORT"
+      ],
+      "rank": "Bronze",
+      "description": "Hello we are a team playing on the EUNE region, our rank is MASTER, and we are currently looking for ambitious individuals willing to play together. Hello we are a team playing on the EUNE region, our rank is Diamond, and we are currently looking for ambitious individuals willing to play together.",
+      "id": 2
+    },
+    {
+      "teamName": "SKT T1",
+      "logo": "LOGO HERE",
+      "region": "KOREA",
+      "members": [
+        "Dog",
+        "Cat",
+        "Tyler1",
+        "Ilynagava"
+      ],
+      "availableRoles": [
+        "TOP",
+        "ADC",
+        "MID"
+      ],
+      "rank": "Challenger",
+      "description": "Hello we are a team playing on the EUNE region, our rankis MASTER, and we are currently looking for ambitious individuals willing to play together. Hello we are a team playing on the EUNE region, our rankis Diamond, and we are currently looking for ambitious individuals willing to play together.",
+      "id": 3
+    },
+    {
+      "teamName": "SKT T1",
+      "logo": "LOGO HERE",
+      "region": "KOREA",
+      "members": [
+        "FAKER",
+        "DEJI",
+        "BAKKA",
+        "REKLESS"
+      ],
+      "availableRoles": [
+        "TOP",
+        "MID"
+      ],
+      "rank": "Challenger",
+      "description": "Hello we are a team playing on the EUNE region, our rankis MASTER, and we are currently looking for ambitious individuals willing to play together. Hello we are a team playing on the EUNE region, our rankis Diamond, and we are currently looking for ambitious individuals willing to play together.",
+      "id": 4
+    },
+    {
+      "teamName": "SKT T1",
+      "logo": "LOGO HERE",
+      "region": "KOREA",
+      "members": [
+        "Dog",
+        "Cat",
+        "Tyler1",
+        "Ilynagava"
+      ],
+      "availableRoles": [
+        "TOP",
+        "MID",
+        "ADC",
+        "SUPPORT",
+        "JUNGLE"
+      ],
+      "rank": "Challenger",
+      "description": "Hello we are a team playing on the EUNE region, our rankis MASTER, and we are currently looking for ambitious individuals willing to play together. Hello we are a team playing on the EUNE region, our rankis Diamond, and we are currently looking for ambitious individuals willing to play together.",
+      "id": 5
+    },
+    {
+      "teamName": "SKT T1",
+      "logo": "LOGO HERE",
+      "region": "NA",
+      "members": [
+        "dog",
+        "cat",
+        "ilynagava"
+      ],
+      "availableRoles": [
+        "TOP",
+        "MID"
+      ],
+      "rank": "Master",
+      "description": "Hello we are looking for new players, join us.",
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "email": "user@admin.com",
+      "password": "$2a$10$IQoe0pd8iqMlVCk36BIhdurUR6YOhQ9CfMrKrfMx84snkPvYWkeiy",
+      "id": 1
+    },
+    {
+      "email": "shady1k@email.us",
+      "password": "$2a$10$aLImwZxqJ4fU7vo7YkpexeXdyw9RHduDgvv2KKaaUu7gfXwXB49PG",
+      "id": 2
+    }
+  ]
+}

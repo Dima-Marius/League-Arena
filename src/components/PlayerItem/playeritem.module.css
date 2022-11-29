@@ -1,5 +1,5 @@
 .player {
-    border-bottom: solid 1px var(--light-aqua);
+    color: beige;
     cursor: pointer;
 }
 

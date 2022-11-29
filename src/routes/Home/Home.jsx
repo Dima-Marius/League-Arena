@@ -1,19 +1,34 @@
-import React, { } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import style from './home.module.css'
-import mordesplash from '../../assets/images/morde.png'
-import jinxsplash from '../../assets/images/jinx.png'
+import style from './home.module.css';
+import mordesplash from '../../assets/images/morde.png';
+import jinxsplash from '../../assets/images/jinx.png';
 import logonobg from '../../assets/images/logo-no-background.png';
-import allstars from '../../assets/images/allstars.png'
-import worldsOpening from '../../assets/images/worlds-opening.jpg'
-import { AiOutlineCheckCircle } from 'react-icons/ai'
-import { SiEslgaming } from 'react-icons/si'
+import allstars from '../../assets/images/allstars.png';
+import worldsOpening from '../../assets/images/worlds-opening.jpg';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { SiEslgaming } from 'react-icons/si';
 import Footer from '../../components/Footer/Footer';
 
 
 
-
 const Home = () => {
+
+/*   useEffect(() => {
+    fetch('http://localhost:3500/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        'email':'user@admin.com',
+        'password':'123456',
+      }),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+  },[]) */
+
   return (
     <div className={style.container}>
      <div className={style['header']}>
@@ -22,7 +37,7 @@ const Home = () => {
       </div>
      </div>
      <div className={style.sliders}>
-      <video className={style['first-video']}playsInline loop autoPlay muted>
+      <video className={style['first-video']} playsInline loop autoPlay muted>
         <source src='https://challengermode-permanent-assets.azureedge.net/heroes/PUBG/PUBGNextPro_Hero_Low.mp4' type='video/mp4'/>
       </video>
       <div className={style['sliders-details']}>

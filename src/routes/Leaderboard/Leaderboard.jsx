@@ -4,9 +4,6 @@ import LeaderboardComponent from '../../components/LeaderboardComponent/Leaderbo
 import Navbar from '../../components/Navbar/Navbar';
 import style from './leaderboard.module.css';
 
-/* LIMITA LA PLAYERI CU FETCH O SA FIE FIXED SI JOS BUTON DE SHOW MORE
-   CAND DAI SHOW MORE DAI INCREASE LA LIMITA CU 10 DE EXEMPLU */
-
 function Leaderboard() {
 
   return (

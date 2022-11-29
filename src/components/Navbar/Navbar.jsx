@@ -7,6 +7,8 @@ const Navbar = () => {
 const navigate = useNavigate();
 
   const logoutHandler = () => {
+    window.localStorage.removeItem('accessToken')
+    window.localStorage.removeItem('auth')
     navigate('/');
   }
 

@@ -10,7 +10,7 @@ const LeaderboardDisplay = (props) => {
     const defaultRegionSearch = searchRegion === defaultRegion ? defaultRegion : searchRegion.target.value;
     
     const retrieveLimit = 10;
-    const challengerQueueUrl = `https://${defaultRegionSearch}.api.riotgames.com/lol/league/v4/${defaultRankSearch}leagues/by-queue/RANKED_SOLO_5x5?api_key=RGAPI-cd86c840-4165-4fab-9f33-f0cfb8b6628e`
+    const challengerQueueUrl = `https://${defaultRegionSearch}.api.riotgames.com/lol/league/v4/${defaultRankSearch}leagues/by-queue/RANKED_SOLO_5x5?api_key=RGAPI-d20174ec-c730-4265-b7ac-55699d9b09a8`
     
     useEffect(() => {
         fetch(challengerQueueUrl)
