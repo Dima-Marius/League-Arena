@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 35rem;
+    width: 75rem;
     height: 46rem;
     gap:30px;
     border: solid 2px #62939a;
@@ -16,7 +16,7 @@
 
 .logo {
     position: absolute;
-    top:-14rem;
+    top:-224px;
 }
 
 .login-inputs {
@@ -26,42 +26,6 @@
     margin-top:auto;
     justify-content: center;
     align-items: center;
-}
-
-.register {
-    margin-bottom: 6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.3em;
-    gap:25px;
-    font-weight: bold;
-}
-
-.register > p > span {
-    color:red;
-}
-
-.register > p:last-child {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-}
-
-.register > p:last-child > span {
-  font-weight: 100;
-  background-image: linear-gradient(120deg, rgb(90, 29, 44), rgb(255, 0, 0));
-  background-size: 0% 2px;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  cursor: pointer;
-  transition: background-size 500ms ease;
-}
-
-.register > p:last-child > span:hover {
-  background-size: 100% 2px;
 }
 
 .login-inputs > div > input {
@@ -141,7 +105,6 @@
   height: 100%;
   transition: 800ms;
   position: relative;
-  color:#00DDEB;
 }
 
 .login-btn span a {
@@ -151,6 +114,7 @@
 
 .login-btn:hover span {
   background:rgb(1, 1, 126);
+
 }
 
 .login-btn:active {

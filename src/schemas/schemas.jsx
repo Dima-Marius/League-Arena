@@ -4,5 +4,10 @@ import * as yup from 'yup';
 
 export const basicSchema = yup.object().shape({
     email:yup.string().email('Email format is not valid.').required('Please enter an email.'),
-    password:yup.string().min(5)/* .matches(passwordRegex, {message: 'Password is not strong enough.'}) */.required('Password cant be empty')
+    password:yup.string().min(5)/* .matches(passwordRegex, {message: 'Password is not strong enough.'}) */.required("Password can't be empty")
+});
+
+export const registerSchema = yup.object().shape({
+    email:yup.string().email('Email format is not valid.').required('Please enter an email.'),
+    password:yup.string().min(5)/* .matches(passwordRegex, {message: 'Password is not strong enough.'}) */.required("Password can't be empty")
 });

@@ -10,6 +10,7 @@ import About from '../src/routes/About/About'
 import Teams from './routes/Teams/Teams';
 import { AuthContextProvider } from './store/AuthContext';
 import PrivateRoutes from './routes/PrivateRoutes/PrivateRoutes';
+import Register from './routes/Register/Register';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         <Routes>
         <Route path='/' element={<Login/>} />
         <Route path='/login' element={<Login/>} />
-        <Route path='test' element={<Home/>} />
+        <Route path='/signin' element={<Login/>} />
+        <Route path='/register' element={<Login/>} />
           <Route element={<PrivateRoutes/>}>
             <Route path='/Home' element={<Home/>} />
             <Route path='/teams' element={<Teams/>} />

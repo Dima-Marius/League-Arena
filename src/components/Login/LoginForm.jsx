@@ -5,16 +5,21 @@ import { useFormik } from 'formik';
 import { basicSchema } from '../../schemas/schemas';
 import AuthContext from '../../store/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { TbFaceIdError } from 'react-icons/tb'
 import { BiMessageError } from 'react-icons/bi'
 import { FiEdit3 } from 'react-icons/fi'
 
-const LoginForm = () => {
+const LoginForm = ({ userClickedRegister }) => {
 
 const AuthCtx = useContext(AuthContext);
 const loginUrl = 'http://localhost:3500/login';
 const redirect = useNavigate()
 const [errorMsg, setErrorMsg] = useState('')
+let isUserRegistered = true;
+
+  const onRegisterClick = () => {
+    isUserRegistered ? isUserRegistered = false : isUserRegistered = true;
+    userClickedRegister(isUserRegistered);
+  }
 
   const login = (account) => {
       fetch(loginUrl, {
@@ -40,6 +45,8 @@ const [errorMsg, setErrorMsg] = useState('')
   const onSubmit = (values) => {
     login(values);
   }
+
+  
   
   const formik = useFormik({
     initialValues: {
@@ -90,7 +97,7 @@ const [errorMsg, setErrorMsg] = useState('')
       {errorMsg && <span><BiMessageError color='red'/></span>}
       </p>
         <p>Forgot Password?</p>
-        <p>Don't have an account? <span>Register now!</span><FiEdit3 color='red'/></p>
+        <p>Don't have an account? <span onClick={onRegisterClick}>Register now!</span><FiEdit3 color='red'/></p>
       </div>
     </div>
   )

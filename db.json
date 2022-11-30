@@ -123,6 +123,11 @@
       "email": "shady1k@email.us",
       "password": "$2a$10$aLImwZxqJ4fU7vo7YkpexeXdyw9RHduDgvv2KKaaUu7gfXwXB49PG",
       "id": 2
+    },
+    {
+      "email": "dog@adasd.com",
+      "password": "$2a$10$xz.g3j8IQObNyVE3vr.Z7O42TnUmkOB2kBpfKqDLwJ1fNluMXUVaO",
+      "id": 3
     }
   ]
 }
