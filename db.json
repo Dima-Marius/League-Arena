@@ -128,6 +128,34 @@
       "email": "dog@adasd.com",
       "password": "$2a$10$xz.g3j8IQObNyVE3vr.Z7O42TnUmkOB2kBpfKqDLwJ1fNluMXUVaO",
       "id": 3
+    },
+    {
+      "email": "fdsfdsdsdsads@gmail.com",
+      "password": "$2a$10$58ISxvpwBsMGeToy4KDz7ukdrfCqHnOQttR1U5BQIr5nK1M7k2Hoi",
+      "confirmPassword": "123123",
+      "firstName": "dsadsasassaads",
+      "lastName": "s",
+      "ign": "ddsadsadsa",
+      "region": "EUNE",
+      "role": "",
+      "rank": "",
+      "id": 4
+    },
+    {
+      "email": "dsasad@gmail.com",
+      "password": "$2a$10$WvxWsmenSUStMSjyj3mtIOqy0Rdqv/ZgTJHDgET8xH5JobT3LKYvm",
+      "confirmPassword": "123123",
+      "firstName": "adsdsadsa",
+      "lastName": "",
+      "ign": "dsadsad",
+      "region": "EUW",
+      "id": 5
+    },
+    {
+      "email": "shadyd1k@email.us",
+      "password": "$2a$10$7Yo31IerDMLnYQyeNOf1O..0FoRbaAIKEAHQ7GRePQrieORIdG7N.",
+      "dog": "false",
+      "id": 6
     }
   ]
 }

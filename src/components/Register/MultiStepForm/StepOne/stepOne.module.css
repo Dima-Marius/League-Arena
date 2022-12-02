@@ -1,0 +1,46 @@
+.error-msg {
+    position:absolute;
+  }
+
+.input-error {
+    border-bottom: solid 1px red !important;
+}
+
+.untouched {
+  opacity:0;
+}
+
+.next {
+  width: 100px;
+}
+
+.register-inputs {
+  display: flex;
+  flex-direction: column;
+  gap:3rem;
+  margin-top:auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-inputs > div > input {
+  background-color: transparent;
+  border:none;
+  border-bottom: solid 1px black;
+  text-align: center;
+  width: 300px;
+  color:black;
+  outline: none;
+  font-size: 1.5em;
+}
+
+.register-inputs > div > i {
+  position: relative;
+  right:21px;
+}
+
+.register-inputs > input::placeholder {
+  font-size: 20px;
+  color:initial;
+  font-weight: initial;
+}

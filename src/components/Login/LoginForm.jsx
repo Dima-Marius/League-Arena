@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import style from './loginform.module.css';
 import logo from '../../assets/images/league-arena-login-logo-transformed.png'
 import { useFormik } from 'formik';
@@ -10,7 +10,7 @@ import { FiEdit3 } from 'react-icons/fi'
 
 const LoginForm = ({ userClickedRegister }) => {
 
-const AuthCtx = useContext(AuthContext);
+const authCtx = useContext(AuthContext);
 const loginUrl = 'http://localhost:3500/login';
 const redirect = useNavigate()
 const [errorMsg, setErrorMsg] = useState('')
@@ -36,7 +36,7 @@ let isUserRegistered = true;
     })
     .then(response => response.json())
       .then(data => {
-      AuthCtx.setAuth(data);
+      authCtx.setAuth(data);
       window.localStorage.setItem('accessToken', data.accessToken);
     }).then( () => redirect('/home'))
     .catch(error => console.log(error))
@@ -104,3 +104,6 @@ let isUserRegistered = true;
 }
 
 export default LoginForm
+
+
+

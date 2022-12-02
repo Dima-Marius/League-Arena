@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import style from './registerForm.module.css';
 import logo from '../../assets/images/league-arena-login-logo-transformed.png'
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { registerSchema } from '../../schemas/schemas';
+import StepOne from './MultiStepForm/StepOne/StepOne';
+import RegisterContext from '../../store/RegisterContext';
+import StepTwo from './MultiStepForm/StepTwo/StepTwo';
+import StepThree from './MultiStepForm/StepThree/StepThree';
 
 const RegisterForm = ({ userClickedRegister }) => {
 
+const registerCtx = useContext(RegisterContext)
 const registerUrl = 'http://localhost:3500/register';
-const redirect = useNavigate()
-const [errorMsg, setErrorMsg] = useState('')
+/* const redirect = useNavigate()
+const [errorMsg, setErrorMsg] = useState('') */
+
 
   const onRegisterClick = () => {
     let isUserRegistered = false;
@@ -27,10 +33,11 @@ const [errorMsg, setErrorMsg] = useState('')
     }).catch(error => console.log(error))
   }
 
-  const onSubmit = (values) => {
+/*   const onSubmit = (values) => {
+    console.log(values)
     register(values);
-  }
-  
+  } */
+/*   
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -38,92 +45,56 @@ const [errorMsg, setErrorMsg] = useState('')
       confirmPassword: '',
       firstName: '',
       lastName: '',
-      IGN: '',
-      Region: '',
+      ign: '',
+      region: '',
+      role:'',
+      rank:''
     },
     validationSchema: registerSchema,
-    validateOnChange: false,
+    validateOnMount: false,
     validateOnBlur: false,
     onSubmit
   })
+ */
+/*   const onInvalidPassword = formik.errors.password && formik.touched.password ? `${style['password-error']}` : ''; */
 
-  const onInvalidEmail = (formik.errors.email && formik.touched.email) || errorMsg ? `${style['email-error']}` : '';
-  const onInvalidPassword = (formik.errors.password && formik.touched.password) || errorMsg  ? `${style['password-error']}` : '';
+
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const [registerData, setRegisterData] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    firstName: '',
+    lastName: '',
+    ign: '',
+    region: '',
+    role: '',
+    rank: '',
+})
+
+  const prevStepHandler = (currentData) => {
+    setRegisterData(prev => ({...prev, ...currentData}))
+    setCurrentStep(prev => prev -1)
+  }
+
+  const nextStepHandler = (currentData) => {
+    setRegisterData(prev => ({...prev, ...currentData}))
+    setCurrentStep(currentStep + 1)
+  }
+
+
+  const steps = [
+     <StepOne nextStepHandler={nextStepHandler} registerData={registerData}/>,
+     <StepTwo prevStepHandler={prevStepHandler} registerData={registerData} nextStepHandler={nextStepHandler}/>,
+     <StepThree prevStepHandler={prevStepHandler} registerData={registerData}/>
+    ]
 
   return (
     <div className={style.container}>
-
-      <form onSubmit={formik.handleSubmit} autoComplete='off' className={style['login-inputs']}>
-        <div className={style.left}>
-          <div>
-            <input id='email'
-            className={onInvalidEmail}
-            placeholder='Email'
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            type='text'/>
-            <i className="fa-solid fa-user"></i>
-            <p className={style['invalid-input']}>{formik.errors.email}</p>
-          </div>
-          <div>
-            <input className={onInvalidPassword}
-            id='password'
-            placeholder='Password'
-            value={formik.values.password}
-            onChange={formik.handleChange} 
-            type='password'/>
-            <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.password}</p>
-          </div>
-          <div>
-            <input className={onInvalidPassword}
-            id='password'
-            placeholder='Password'
-            value={formik.values.password}
-            onChange={formik.handleChange} 
-            type='password'/>
-            <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.password}</p>
-          </div>
-        </div>
-        <div className={style.right}>
-          <div>
-            <input className={onInvalidPassword}
-            id='password'
-            placeholder='Password'
-            value={formik.values.password}
-            onChange={formik.handleChange} 
-            type='password'/>
-            <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.password}</p>
-          </div>
-          <div>
-            <input className={onInvalidPassword}
-            id='password'
-            placeholder='Password'
-            value={formik.values.password}
-            onChange={formik.handleChange} 
-            type='password'/>
-            <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.password}</p>
-          </div>
-          
-          <div>
-            <input className={onInvalidPassword}
-            id='password'
-            placeholder='Password'
-            value={formik.values.password}
-            onChange={formik.handleChange} 
-            type='password'/>
-            <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.password}</p>
-          </div>
-        </div>
-          <button type='submit' className={style['login-btn']}>
-          <span>Register</span>
-        </button>
-        
-      </form>
+      <div className={style['login-inputs']}>
+          {steps[currentStep]}
+      </div>
       <button onClick={onRegisterClick}>back</button>
     </div>
   )
