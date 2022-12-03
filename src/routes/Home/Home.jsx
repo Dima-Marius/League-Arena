@@ -13,22 +13,6 @@ import Footer from '../../components/Footer/Footer';
 
 
 const Home = () => {
-
-/*   useEffect(() => {
-    fetch('http://localhost:3500/login', {
-      method: 'POST',
-      body: JSON.stringify({
-        'email':'user@admin.com',
-        'password':'123456',
-      }),
-      headers: {
-        'Content-type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-  },[]) */
-
   return (
     <div className={style.container}>
      <div className={style['header']}>

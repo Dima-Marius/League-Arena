@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import style from './loginform.module.css';
 import logo from '../../assets/images/league-arena-login-logo-transformed.png'
+import AuthContext from '../../store/AuthContext';
 import { useFormik } from 'formik';
 import { basicSchema } from '../../schemas/schemas';
-import AuthContext from '../../store/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { BiMessageError } from 'react-icons/bi'
 import { FiEdit3 } from 'react-icons/fi'
@@ -45,8 +45,6 @@ let isUserRegistered = true;
   const onSubmit = (values) => {
     login(values);
   }
-
-  
   
   const formik = useFormik({
     initialValues: {

@@ -1,13 +1,10 @@
 import { useFormik } from 'formik';
 import React from 'react';
-import { registerSchema } from '../../../../schemas/schemas';
+import { stepThreeSchema } from '../../../../schemas/StepThreeSchema';
 import style from './stepThree.module.css'
 
-const StepThree = () => {
-
-    const onSubmit = (values) => {
-        console.log(values);
-    }
+const StepThree = (props) => {
+  const { onSubmit, prevStepHandler } = props
 
     const formik = useFormik({
         initialValues: {
@@ -15,25 +12,38 @@ const StepThree = () => {
             role:'',
             rank:''
         },
-    validationSchema: registerSchema,
+    validationSchema: stepThreeSchema,
     validateOnMount: false,
     validateOnBlur: false,
     onSubmit
 })
 
+const onInvalidRegion = formik.errors.region && formik.touched.region ? `${style['input-error']}` : '';
+const regionErrorMsg = formik.errors.region && formik.touched.region ? `${style['error-msg']}` : `${style.untouched}`;
+const onInvalidRole = formik.errors.role && formik.touched.role ? `${style['input-error']}` : '';
+const roleErrorMsg = formik.errors.role && formik.touched.role ? `${style['error-msg']}` : `${style.untouched}`;
+const onInvalidRank = formik.errors.rank && formik.touched.rank ? `${style['input-error']}` : '';
+const rankErrorMsg = formik.errors.rank && formik.touched.rank ? `${style['error-msg']}` : `${style.untouched}`;
+
   return (
-    <form>
+    <form onSubmit={formik.handleSubmit} className={style['register-inputs']}>
           <div>
-            <select id='region' onChange={formik.handleChange}>
+            <select className={`${style.select} ${onInvalidRegion}`}
+            id='region'
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}>
             <option value='none'>Select your region.</option>
               <option value='EUNE'>EUNE</option>
               <option value='EUW'>EUW</option>
               <option value='none' disabled>More Regions coming soon.</option>
             </select>
-            <p className={style['invalid-input']}>{formik.errors.region}</p>
+            <p className={regionErrorMsg}>{formik.errors.region}</p>
           </div>
           <div>
-            <select id='role' onChange={formik.handleChange}>
+            <select className={`${style.select} ${onInvalidRole}`}
+            id='role'
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}>
             <option value='none'>Select your role.</option>
               <option value='TOP'>TOP</option>
               <option value='MID'>MID</option>
@@ -41,10 +51,13 @@ const StepThree = () => {
               <option value='SUPPORT'>SUPPORT</option>
               <option value='JUNGLE'>JUNGLE</option>
             </select>
-            <p className={style['invalid-input']}>{formik.errors.role}</p>
+            <p className={roleErrorMsg}>{formik.errors.role}</p>
           </div>
           <div>
-            <select id='rank' onChange={formik.handleChange}>
+            <select className={`${style.select} ${onInvalidRank}`}
+            id='rank'
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}>
             <option value='none'>Select your rank.</option>
               <option value='BRONZE'>BRONZE</option>
               <option value='SILVER'>SILVER</option>
@@ -55,7 +68,11 @@ const StepThree = () => {
               <option value='GRANDMASTER'>GRANDMASTER</option>
               <option value='CHALLENGER'>CHALLENGER</option>
             </select>
-            <p className={style['invalid-input']}>{formik.errors.rank}</p>
+            <p className={rankErrorMsg}>{formik.errors.rank}</p>
+          </div>
+          <div className={style.wrapper}>
+              <button type='button' className={style.back} onClick={prevStepHandler}>Back</button>
+              <button type='submit' disabled={formik.isSubmitting} className={style.submit}>Submit!</button>
           </div>
     </form>
   )

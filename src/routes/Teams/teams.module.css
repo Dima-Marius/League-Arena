@@ -93,23 +93,6 @@
     background-image: linear-gradient(90deg, var(--alternative-purple), transparent);
   }
 
-
-
-:root {
-    --darker-blue: #0b0c10;
-    --dark-blue: #101319;
-    --lighter-blue: #1F2833;
-    --smokey: #A3ABB6;
-    --light-aqua: #66FCF1;
-    --dark-aqua: #45A29E;
-    --alternative-dark-blue: #2e3047;
-    --alternative-purple: #6946e6;
-    --alternative-smokey: #c5c6c7;
-    --round-edges: 18px;
-    --footer-height: 605px;
-    --nav-height: 74px;
-  }
-
 .nav {
     grid-area: nav;
     position: fixed;

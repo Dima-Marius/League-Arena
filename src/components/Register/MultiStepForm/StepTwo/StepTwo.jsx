@@ -2,13 +2,11 @@ import { useFormik } from 'formik';
 import React, { useContext } from 'react'
 import style from './stepTwo.module.css'
 import { registerSchema } from '../../../../schemas/schemas';
-import RegisterContext from '../../../../store/RegisterContext';
 import { stepTwoSchema } from '../../../../schemas/StepTwoSchema';
 
 const StepTwo = (props) => {
 
     const { prevStepHandler, nextStepHandler, registerData } = props
-    const registerCtx = useContext(RegisterContext)
 
     const onSubmit = (values) => {
         nextStepHandler(values)
@@ -27,41 +25,51 @@ const StepTwo = (props) => {
     onSubmit,
 })
 
-const onInvalidPassword = formik.errors.password && formik.touched.password ? `${style['password-error']}` : '';
+const onInvalidFirstName = formik.errors.firstName && formik.touched.firstName ? `${style['input-error']}` : '';
+const firstNameErrorMsg = formik.errors.firstName && formik.touched.firstName ? `${style['error-msg']}` : `${style.untouched}`;
+const onInvalidLastName = formik.errors.lastName && formik.touched.lastName ? `${style['input-error']}` : '';
+const lastNameErrorMsg = formik.errors.lastName && formik.touched.lastName ? `${style['error-msg']}` : `${style.untouched}`;
+const onInvalidUsername = formik.errors.ign && formik.touched.ign ? `${style['input-error']}` : '';
+const usernameErrorMsg = formik.errors.ign && formik.touched.ign ? `${style['error-msg']}` : `${style.untouched}`;
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form className={style['register-inputs']} onSubmit={formik.handleSubmit}>
         <div>
-            <input className={onInvalidPassword}
+            <input className={onInvalidFirstName}
             id='firstName'
             placeholder='First Name'
+            onBlur={formik.handleBlur}
             value={formik.values.firstName}
             onChange={formik.handleChange} 
             type='text'/>
             <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.firstName}</p>
-          </div>
-          <div>
-            <input className={onInvalidPassword}
+            <p className={firstNameErrorMsg}>{formik.errors.firstName}</p>
+        </div>
+        <div>
+            <input className={onInvalidLastName}
             id='lastName'
             placeholder='Last Name'
+            onBlur={formik.handleBlur}
             value={formik.values.lastName}
             onChange={formik.handleChange} 
             type='text'/>
             <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.lastName}</p>
-          </div>
+            <p className={lastNameErrorMsg}>{formik.errors.lastName}</p>
+        </div>
           <div>
-            <input className={onInvalidPassword}
+            <input className={onInvalidUsername}
             id='ign'
-            placeholder='LOL Name'
+            placeholder='Username'
+            onBlur={formik.handleBlur}
             value={formik.values.ign}
             onChange={formik.handleChange} 
-            type='password'/>
+            type='text'/>
             <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.ign}</p>
-            <button className={style.next} type='submit'>Next</button>
-            <button type='button' onClick={prevStepHandler}>back</button>
+            <p className={usernameErrorMsg}>{formik.errors.ign}</p>
+            <div className={style.wrapper}>
+              <button type='button' className={style.back} onClick={prevStepHandler}>Back</button>
+              <button className={style.next} type='submit'>Next</button>
+            </div>
           </div>
     </form>
   )

@@ -2,16 +2,14 @@ import { useFormik } from 'formik';
 import React, { useContext } from 'react';
 import { registerSchema, StepOneSchema } from '../../../../schemas/schemas';
 import { stepOneSchema } from '../../../../schemas/StepOneSchema';
-import RegisterContext from '../../../../store/RegisterContext';
 import style from './stepOne.module.css'
 
 
-const StepOne = (props) => {
-
-  const { nextStepHandler, registerData } = props
+  const StepOne = (props) => {
+  const { nextStepHandlerCheckEmail, registerData } = props
 
   const onSubmit = (values) => {
-    nextStepHandler(values)
+    nextStepHandlerCheckEmail(values)
   }
 
   const formik = useFormik({
@@ -52,6 +50,7 @@ const passwordConfirmErrorMsg = formik.errors.confirmPassword && formik.touched.
             <input className={onInvalidPassword}
             id='password'
             placeholder='Password'
+            onBlur={formik.handleBlur}
             value={formik.values.password}
             onChange={formik.handleChange} 
             type='password'/>
@@ -62,6 +61,7 @@ const passwordConfirmErrorMsg = formik.errors.confirmPassword && formik.touched.
             <input className={onInvalidPasswordConfirm}
             id='confirmPassword'
             placeholder='Confirm Password'
+            onBlur={formik.handleBlur}
             value={formik.values.confirmPassword}
             onChange={formik.handleChange} 
             type='password'/>
