@@ -13,6 +13,7 @@ import Footer from '../../components/Footer/Footer';
 
 
 const Home = () => {
+
   return (
     <div className={style.container}>
      <div className={style['header']}>
