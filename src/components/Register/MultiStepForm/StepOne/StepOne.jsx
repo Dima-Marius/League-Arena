@@ -6,7 +6,7 @@ import style from './stepOne.module.css'
 
 
   const StepOne = (props) => {
-  const { nextStepHandlerCheckEmail, registerData } = props
+  const { nextStepHandlerCheckEmail, registerData, emailError } = props
 
   const onSubmit = (values) => {
     nextStepHandlerCheckEmail(values)
@@ -24,8 +24,8 @@ import style from './stepOne.module.css'
   onSubmit,
 })
 
-const onInvalidEmail = formik.errors.email && formik.touched.email ? `${style['input-error']}` : '';
-const emailErrorMsg = formik.errors.email && formik.touched.email ? `${style['error-msg']}` : `${style.untouched}`;
+const onInvalidEmail = (formik.errors.email || emailError) && formik.touched.email ? `${style['input-error']}` : '';
+const emailErrorMsg = (formik.errors.email || emailError) && formik.touched.email ? `${style['error-msg']}` : `${style.untouched}`;
 const onInvalidPassword = formik.errors.password && formik.touched.password ? `${style['input-error']}` : '';
 const passwordErrorMsg = formik.errors.password && formik.touched.password ? `${style['error-msg']}` : `${style.untouched}`;
 const onInvalidPasswordConfirm = formik.errors.confirmPassword && formik.touched.confirmPassword ? `${style['input-error']}` : '';
@@ -43,8 +43,8 @@ const passwordConfirmErrorMsg = formik.errors.confirmPassword && formik.touched.
             value={formik.values.email}
             onChange={formik.handleChange}
             type='text'/>
-            <i className="fa-solid fa-user"></i>
-            <p className={emailErrorMsg}>{formik.errors.email}</p>
+            <i className="fa-solid fa-envelope"></i>
+            <p className={emailErrorMsg}>{formik.errors.email || emailError}</p>
           </div>
           <div>
             <input className={onInvalidPassword}

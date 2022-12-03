@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import style from './loginform.module.css';
 import logo from '../../assets/images/league-arena-login-logo-transformed.png'
 import AuthContext from '../../store/AuthContext';
@@ -9,6 +9,19 @@ import { BiMessageError } from 'react-icons/bi'
 import { FiEdit3 } from 'react-icons/fi'
 
 const LoginForm = ({ userClickedRegister }) => {
+
+/*   useEffect(() => {
+    fetch('http://localhost:3500/register',{
+      method: 'POST',
+      body: JSON.stringify({
+        email: 'dog@emailll.com',
+        password: '123123123',
+      }),
+      headers : {
+        'Content-type' : 'application/json'
+      }
+    })
+  }) */
 
 const authCtx = useContext(AuthContext);
 const loginUrl = 'http://localhost:3500/login';
@@ -52,13 +65,15 @@ let isUserRegistered = true;
       password: '',
     },
     validationSchema: basicSchema,
-    validateOnChange: false,
     validateOnBlur: false,
     onSubmit
   })
 
-  const onInvalidEmail = (formik.errors.email && formik.touched.email) || errorMsg ? `${style['email-error']}` : '';
-  const onInvalidPassword = (formik.errors.password && formik.touched.password) || errorMsg  ? `${style['password-error']}` : '';
+  const onInvalidEmail = (formik.errors.email && formik.touched.email) || errorMsg ? `${style['input-error']}` : '';
+  const emailErrorMsg = (formik.errors.email && formik.touched.email) ? `${style['error-msg']}` : `${style.untouched}`;
+
+  const onInvalidPassword = (formik.errors.password && formik.touched.password) || errorMsg  ? `${style['input-error']}` : '';
+  const passwordErrorMsg = (formik.errors.password && formik.touched.password) ? `${style['error-msg']}` : `${style.untouched}`;
 
   return (
     <div className={style.container}>
@@ -69,22 +84,24 @@ let isUserRegistered = true;
         <div>
             <input id='email'
             className={onInvalidEmail}
+            onBlur={formik.handleBlur}
             placeholder='Email'
             value={formik.values.email}
             onChange={formik.handleChange}
             type='text'/>
             <i className="fa-solid fa-user"></i>
-            <p className={style['invalid-input']}>{formik.errors.email}</p>
+            <p className={emailErrorMsg}>{formik.errors.email}</p>
           </div>
           <div>
-            <input className={onInvalidPassword}
-            id='password'
+            <input id='password'
+            className={onInvalidPassword}
+            onBlur={formik.handleBlur}
             placeholder='Password'
             value={formik.values.password}
             onChange={formik.handleChange} 
             type='password'/>
             <i className="fa-solid fa-lock"></i>
-            <p className={style['invalid-input']}>{formik.errors.password}</p>
+            <p className={passwordErrorMsg}>{formik.errors.password}</p>
           </div>
           <button type='submit' className={style['login-btn']}>
           <span>Login</span>

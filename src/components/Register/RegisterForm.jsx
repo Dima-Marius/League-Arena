@@ -8,7 +8,8 @@ import StepOne from './MultiStepForm/StepOne/StepOne';
 import StepTwo from './MultiStepForm/StepTwo/StepTwo';
 import StepThree from './MultiStepForm/StepThree/StepThree';
 import { FaAcquisitionsIncorporated, FaUserLock } from 'react-icons/fa';
-import { BiExit } from 'react-icons/bi'
+import { BiExit } from 'react-icons/bi';
+import { AiFillCheckCircle } from 'react-icons/ai';
 
 const RegisterForm = ({ userClickedRegister }) => {
 
@@ -32,6 +33,7 @@ const registerUrl = 'http://localhost:3500/register';
 
   const [currentStep, setCurrentStep] = useState(0);
   const [users, setUsers] = useState([])
+  const [clickedSubmit, setClickedSubmit] = useState(false)
   const [emailError, setEmailError] = useState('')
   const [registerData, setRegisterData] = useState({
     email: '',
@@ -54,54 +56,86 @@ const registerUrl = 'http://localhost:3500/register';
     setRegisterData(prev => ({...prev, ...currentData}))
     setCurrentStep(prev => prev + 1)
   }
-
-  const checkExistingEmail = (email) => {
-    if (users.length === 0) {
-      fetch('http://localhost:3500/users')
-      .then(response => response.json())
-      .then(data => setUsers(data));
-    }
-    return (!users.find(item => item.email === email))
-}
-
-  const nextStepHandlerCheckEmail = (currentData) => {
+  
+/*   const nextStepHandlerCheckEmail = (currentData) => {
     if (checkExistingEmail(currentData.email)) {
       setRegisterData(prev => ({...prev, ...currentData}))
       setCurrentStep(currentStep + 1)
     } else {
-      console.log('already exists!!');
+      setEmailError('Email already exists.');
     }
   }
-  
-  const onSubmit = (currentData, actions) => {
+
+  const checkExistingEmail = (email) => {
+     if (users.length === 0) {
+      fetch('http://localhost:3500/users')
+      .then(response => response.json())
+      .then(data => setUsers(data))
+    }
+    return (!users.find(item => item.email === email))
+} */
+
+const checkExistingEmail = async (email) => {
+  let users_list = users; // just in case, 'cause not sure if users is a const or not
+  if (users_list.length === 0) {
+    // returning the promise
+    const response = await fetch('http://localhost:3500/users')
+    users_list = await response.json();
+    setUsers(users_list); // a side effect
+  }
+  return !users_list.find(item => item.email === email);  
+}
+
+const nextStepHandlerCheckEmail = async (currentData) => {
+  if (await checkExistingEmail(currentData.email)) {
     setRegisterData(prev => ({...prev, ...currentData}));
-    register(currentData);
-    setTimeout(() => {
+    setCurrentStep(currentStep + 1);
+  } else {
+    setEmailError('Email already exists.');
+  }
+}
+  
+  const onSubmit = (currentData) => {
+    register(registerData);
+    
+    /* setTimeout(() => {
       onRegisterClick();
-    },3000)
+    },20000) */
   }
 
+   const leftFillerCompleted = currentStep > 0 ? `${style['filler-left']}` : ''
+   const rightFillerCompleted = currentStep === 2 ? `${style['filler-right']}` : ''
 
-  /* onSubmit={(values, actions) => {
-     setTimeout(() => {
-       alert(JSON.stringify(values, null, 2));
-       actions.setSubmitting(false);
-     }, 1000);
-   }} */
 
+   /* StepThree appears 2 times for the last step to be completed when clicking submit. */
   const steps = [
-     <StepOne nextStepHandlerCheckEmail={nextStepHandlerCheckEmail} registerData={registerData}/>,
+     <StepOne emailError={emailError} nextStepHandlerCheckEmail={nextStepHandlerCheckEmail} registerData={registerData}/>,
      <StepTwo prevStepHandler={prevStepHandler} registerData={registerData} nextStepHandler={nextStepHandler}/>,
-     <StepThree prevStepHandler={prevStepHandler} onSubmit={onSubmit} registerData={registerData}/>
+     <StepThree prevStepHandler={prevStepHandler} onFormSubmit={onSubmit} onRegisterClick={onRegisterClick} register={register} setRegisterData={setRegisterData} registerData={registerData}/>,
+     <StepThree prevStepHandler={prevStepHandler} onFormSubmit={onSubmit} onRegisterClick={onRegisterClick} register={register} setRegisterData={setRegisterData} registerData={registerData}/>
     ]
 
   return (
     <div className={style.container}>
-{/*       <div className={style.logo}>
-        <img src={logo} width='500' height='400'alt='website-logo' />
-      </div> */}
       <div>
         <h2>REGISTER</h2>
+      </div>
+        <div className={style['progress-bar-container']}>
+          <span>
+            {currentStep === 0 ? <p className={style['progress-num']}>1</p> : <span className={style.check}><i className="fa-solid fa-circle-check"></i></span>}
+          </span>
+          <div className={style['progress-line']}>
+            <div className={leftFillerCompleted}></div>
+          </div>
+          <span>
+            {currentStep < 2 ? <p className={style['progress-num']}>2</p> : <span className={style.check}><i className="fa-solid fa-circle-check"></i></span>}
+          </span>
+          <div className={style['progress-line']}>
+          <div className={rightFillerCompleted}></div>
+          </div>
+          <span>
+            {clickedSubmit === false ? <p className={style['progress-num']}>3</p> : <span className={style.check}><i className="fa-solid fa-circle-check"></i></span>}
+          </span>
         </div>
       <div className={style['login-inputs']}>
           {steps[currentStep]}
@@ -115,3 +149,9 @@ const registerUrl = 'http://localhost:3500/register';
 
 export default RegisterForm
 
+
+
+
+/* <div className={style[`${['filler-right']} ${rightFillerCompleted}`]}></div>
+<div className={style[`${['filler-left']} ${leftFillerCompleted}`]}></div>
+*/

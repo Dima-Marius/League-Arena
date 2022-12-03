@@ -42,7 +42,7 @@ const usernameErrorMsg = formik.errors.ign && formik.touched.ign ? `${style['err
             value={formik.values.firstName}
             onChange={formik.handleChange} 
             type='text'/>
-            <i className="fa-solid fa-lock"></i>
+            <i className="fa-solid fa-file-signature"></i>
             <p className={firstNameErrorMsg}>{formik.errors.firstName}</p>
         </div>
         <div>
@@ -53,7 +53,7 @@ const usernameErrorMsg = formik.errors.ign && formik.touched.ign ? `${style['err
             value={formik.values.lastName}
             onChange={formik.handleChange} 
             type='text'/>
-            <i className="fa-solid fa-lock"></i>
+            <i className="fa-solid fa-file-signature"></i>
             <p className={lastNameErrorMsg}>{formik.errors.lastName}</p>
         </div>
           <div>
@@ -64,7 +64,7 @@ const usernameErrorMsg = formik.errors.ign && formik.touched.ign ? `${style['err
             value={formik.values.ign}
             onChange={formik.handleChange} 
             type='text'/>
-            <i className="fa-solid fa-lock"></i>
+            <i className="fa-solid fa-user"></i>
             <p className={usernameErrorMsg}>{formik.errors.ign}</p>
             <div className={style.wrapper}>
               <button type='button' className={style.back} onClick={prevStepHandler}>Back</button>

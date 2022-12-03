@@ -226,6 +226,125 @@
       "role": "",
       "rank": "",
       "id": 10
+    },
+    {
+      "email": "tstststtsshadyzzd1k@email.us",
+      "password": "$2a$10$Vs9Zgk6cS32Bjh19AqExkenZ1DfcqsZru/tLlcDmEUboPbw1jzUXG",
+      "dog": "false",
+      "id": 11
+    },
+    {
+      "email": "dog@emailll.com",
+      "password": "$2a$10$TEFIwHyXVxQd2kPkmtLDmeZajwV68i86rdssDpELpGUNloHC0cWaq",
+      "id": 12
+    },
+    {
+      "email": "shady1kxz@gmail.com",
+      "password": "$2a$10$iz3TtAClNG8BfqafkpnCM.ddS6KFwWWYsMpSSf1Er/BNtMPDL65JG",
+      "confirmPassword": "qweqwe",
+      "firstName": "asddsa",
+      "lastName": "dsasad",
+      "ign": "ffff",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 13
+    },
+    {
+      "email": "Melanizeleighp@gmail.com",
+      "password": "$2a$10$pQtQsKf/5FxxJp9mE5pFdu2EBPnwNvuesdp55RNYwbpZ6CrL4vR.m",
+      "confirmPassword": "asdasd",
+      "firstName": "dsadsa",
+      "lastName": "dsadsa",
+      "ign": "dsa",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 14
+    },
+    {
+      "email": "zzzzzewji@email.com",
+      "password": "$2a$10$VNTy5.VUlO1Q..3eAGnp9OrIILbZSt4Mv04XdeQK1qCQQjli.Cspm",
+      "confirmPassword": "123123",
+      "firstName": "drs",
+      "lastName": "fds",
+      "ign": "fds",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 15
+    },
+    {
+      "email": "zawe@gmail.com",
+      "password": "$2a$10$x5FVEnnsaqAT1ZmveR1lUO9enYisV07R5AMYChARGXlEwlUP8It1a",
+      "confirmPassword": "123123",
+      "firstName": "qweqew",
+      "lastName": "wqewqe",
+      "ign": "qweqwe",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 16
+    },
+    {
+      "email": "aaaaaafff@gmail.com",
+      "password": "$2a$10$yNAuJajK0D/98BkGt09xMuVpFy6p1ZzMGvIJVF6Fj4eEAeiND1e1G",
+      "confirmPassword": "123qwe",
+      "firstName": "sad",
+      "lastName": "dsa",
+      "ign": "addsa",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 17
+    },
+    {
+      "email": "shady1dffzkx@gmail.com",
+      "password": "$2a$10$ou4tAZQnN616n4fmmihMpObWgcvh0Q9jrMxULyHfq/GDnr8NYvqhC",
+      "confirmPassword": "123123",
+      "firstName": "qweqwe",
+      "lastName": "qwewqe",
+      "ign": "qwewqe",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 18
+    },
+    {
+      "email": "cumberdzxxzaleh2@gmail.com",
+      "password": "$2a$10$zWUDyA5YCnlaC7DWk.fJgOT6Ufnd5SLli0zSH6pyQVTBo2Dr2rjhO",
+      "confirmPassword": "qweqwe",
+      "firstName": "qew",
+      "lastName": "ewqeqwq",
+      "ign": "wewq",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 19
+    },
+    {
+      "email": "asdads@gmail.com",
+      "password": "$2a$10$OcG.kVl9gc8HxEhVGIHrtuSNLSdD/jxpv7bhaQJmCMR4g3Totqke6",
+      "confirmPassword": "123123",
+      "firstName": "wqe",
+      "lastName": "qewewq",
+      "ign": "ewqewq",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 20
+    },
+    {
+      "email": "cumwaeewberdzzzaaaleh2@gmail.com",
+      "password": "$2a$10$iThkjfBKJRcXPLZjWL238edEdaEHnjB18xVdJagt7bX3q50vbA6.O",
+      "confirmPassword": "qweqwe",
+      "firstName": "qew",
+      "lastName": "wqeqew",
+      "ign": "ewqqewewq",
+      "region": "",
+      "role": "",
+      "rank": "",
+      "id": 21
     }
   ]
 }

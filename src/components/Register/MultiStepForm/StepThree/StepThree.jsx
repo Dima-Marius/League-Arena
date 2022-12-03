@@ -4,18 +4,23 @@ import { stepThreeSchema } from '../../../../schemas/StepThreeSchema';
 import style from './stepThree.module.css'
 
 const StepThree = (props) => {
-  const { onSubmit, prevStepHandler } = props
+  const { setRegisterData, onRegisterClick, register, registerData, prevStepHandler } = props
+
+  const onSubmit = (values) => {
+    setRegisterData(prev => ({...prev, ...values}));
+    register(registerData);
+  }
 
     const formik = useFormik({
         initialValues: {
-            region: '',
-            role:'',
-            rank:''
+            region: registerData.region,
+            role: registerData.role,
+            rank: registerData.rank
         },
     validationSchema: stepThreeSchema,
     validateOnMount: false,
     validateOnBlur: false,
-    onSubmit
+    onSubmit,
 })
 
 const onInvalidRegion = formik.errors.region && formik.touched.region ? `${style['input-error']}` : '';
@@ -72,7 +77,7 @@ const rankErrorMsg = formik.errors.rank && formik.touched.rank ? `${style['error
           </div>
           <div className={style.wrapper}>
               <button type='button' className={style.back} onClick={prevStepHandler}>Back</button>
-              <button type='submit' disabled={formik.isSubmitting} className={style.submit}>Submit!</button>
+              <button type='submit' className={style.submit}>Submit!</button>
           </div>
     </form>
   )
