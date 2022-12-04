@@ -35,17 +35,6 @@ const registerUrl = 'http://localhost:3500/register';
   const [users, setUsers] = useState([])
   const [clickedSubmit, setClickedSubmit] = useState(false)
   const [emailError, setEmailError] = useState('')
-  const [testData, setTestData] = useState({
-    email: '',
-    password: '',
-    confirmPassword: '',
-    firstName: '',
-    lastName: '',
-    ign: '',
-    region: '',
-    role: '',
-    rank: '',
-  })
   const [registerData, setRegisterData] = useState({
     email: '',
     password: '',
@@ -58,7 +47,7 @@ const registerUrl = 'http://localhost:3500/register';
     rank: '',
 })
 
-  const prevStepHandler = () => {
+  const prevStepHandler = (currentData) => {
     setCurrentStep(prev => prev - 1)
   }
 
@@ -105,12 +94,23 @@ const nextStepHandlerCheckEmail = async (currentData) => {
   }
 }
 
-   const leftFillerCompleted = currentStep > 0 ? `${style['filler-left']}` : ''
-   const rightFillerCompleted = currentStep === 2 ? `${style['filler-right']}` : ''
+
+/* Animation bar effect related */
+const [animationStyle, setAnimationStyle] = useState('black')
+useEffect(()=> {
+  const animate = setTimeout(() => {
+    setAnimationStyle('rgb(114, 224, 228)')
+  },510)
+  return () => clearTimeout(animate);
+},[])
+
+const leftFillerCompleted = currentStep > 0 ? `${style['filler-left']}` : `${style['filler-reduce']}`
+const rightFillerCompleted = currentStep === 2 ? `${style['filler-right']}` : `${style['filler-reduce']}`
+/* Animation bar effect related */
 
   const steps = [
      <StepOne emailError={emailError} nextStepHandlerCheckEmail={nextStepHandlerCheckEmail} registerData={registerData}/>,
-     <StepTwo prevStepHandler={prevStepHandler} testData={testData} registerData={registerData} nextStepHandler={nextStepHandler}/>,
+     <StepTwo prevStepHandler={prevStepHandler} registerData={registerData} nextStepHandler={nextStepHandler}/>,
      <StepThree prevStepHandler={prevStepHandler} setClickedSubmit={setClickedSubmit} setCurrentStep={setCurrentStep} onRegisterClick={onRegisterClick} register={register} setRegisterData={setRegisterData} registerData={registerData}/>
       ]
 
@@ -124,13 +124,13 @@ const nextStepHandlerCheckEmail = async (currentData) => {
             {currentStep === 0 ? <p className={style['progress-num']}>1</p> : <span className={style.check}><i className="fa-solid fa-circle-check"></i></span>}
           </span>
           <div className={style['progress-line']}>
-            <div className={leftFillerCompleted}></div>
+            <div style={{background: `${animationStyle}`}}className={leftFillerCompleted}></div>
           </div>
           <span>
             {currentStep < 2 ? <p className={style['progress-num']}>2</p> : <span className={style.check}><i className="fa-solid fa-circle-check"></i></span>}
           </span>
           <div className={style['progress-line']}>
-          <div className={rightFillerCompleted}></div>
+          <div style={{background: `${animationStyle}`}} className={rightFillerCompleted}></div>
           </div>
           <span>
             {clickedSubmit === false ? <p className={style['progress-num']}>3</p> : <span className={style.check}><i className="fa-solid fa-circle-check"></i></span>}

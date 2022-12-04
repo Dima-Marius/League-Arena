@@ -11,6 +11,10 @@ const StepTwo = (props) => {
       nextStepHandler(values)
     }
 
+    const testHandler = (data) => {
+      console.log(data);
+    }
+
     const formik = useFormik({
         initialValues: {
             firstName: registerData.firstName,
