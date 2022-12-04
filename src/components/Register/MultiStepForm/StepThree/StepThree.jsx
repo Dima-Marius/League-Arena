@@ -1,15 +1,33 @@
-import { useFormik } from 'formik';
 import React from 'react';
+import { useFormik } from 'formik';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { stepThreeSchema } from '../../../../schemas/StepThreeSchema';
 import style from './stepThree.module.css'
 
 const StepThree = (props) => {
-  const { setRegisterData, onRegisterClick, register, registerData, prevStepHandler } = props
+  const { setRegisterData, setClickedSubmit, onRegisterClick, register, registerData, prevStepHandler } = props
 
   const onSubmit = (values) => {
     setRegisterData(prev => ({...prev, ...values}));
-    register(registerData);
   }
+
+  const [successMsg, setSuccessMsg] = useState(false)
+  const successMsgDisplay = successMsg ? `${style.enabled}` : '' 
+
+  useEffect(() => {
+    if (registerData.rank && registerData.role && registerData.region) {
+      setClickedSubmit(true)
+      setSuccessMsg(true);
+      register(registerData);
+      const redirectTimer = setTimeout(() => {
+        onRegisterClick();
+      },5000)
+      return () => {
+        clearTimeout(redirectTimer);
+      }
+    }
+  },[registerData])
 
     const formik = useFormik({
         initialValues: {
@@ -32,7 +50,8 @@ const rankErrorMsg = formik.errors.rank && formik.touched.rank ? `${style['error
 
   return (
     <form onSubmit={formik.handleSubmit} className={style['register-inputs']}>
-          <div>
+      <div className={`${style['success-msg']} ${successMsgDisplay}`}>{successMsg && <p>Account created successfully! <i className="fa-regular fa-circle-check"></i></p>}</div>
+          <div className={style['form-control']}>
             <select className={`${style.select} ${onInvalidRegion}`}
             id='region'
             onBlur={formik.handleBlur}
@@ -44,7 +63,7 @@ const rankErrorMsg = formik.errors.rank && formik.touched.rank ? `${style['error
             </select>
             <p className={regionErrorMsg}>{formik.errors.region}</p>
           </div>
-          <div>
+          <div className={style['form-control']}>
             <select className={`${style.select} ${onInvalidRole}`}
             id='role'
             onBlur={formik.handleBlur}
@@ -58,7 +77,7 @@ const rankErrorMsg = formik.errors.rank && formik.touched.rank ? `${style['error
             </select>
             <p className={roleErrorMsg}>{formik.errors.role}</p>
           </div>
-          <div>
+          <div className={style['form-control']}>
             <select className={`${style.select} ${onInvalidRank}`}
             id='rank'
             onBlur={formik.handleBlur}
@@ -76,8 +95,8 @@ const rankErrorMsg = formik.errors.rank && formik.touched.rank ? `${style['error
             <p className={rankErrorMsg}>{formik.errors.rank}</p>
           </div>
           <div className={style.wrapper}>
-              <button type='button' className={style.back} onClick={prevStepHandler}>Back</button>
-              <button type='submit' className={style.submit}>Submit!</button>
+              <button type='button' disabled={formik.isSubmitting} className={style.back} onClick={prevStepHandler}>Back</button>
+              <button type='submit' disabled={formik.isSubmitting} className={style.submit}>Submit!</button>
           </div>
     </form>
   )

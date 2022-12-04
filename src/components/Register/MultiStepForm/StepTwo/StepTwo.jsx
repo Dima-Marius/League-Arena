@@ -1,17 +1,15 @@
 import { useFormik } from 'formik';
 import React, { useContext } from 'react'
 import style from './stepTwo.module.css'
-import { registerSchema } from '../../../../schemas/schemas';
 import { stepTwoSchema } from '../../../../schemas/StepTwoSchema';
 
 const StepTwo = (props) => {
 
-    const { prevStepHandler, nextStepHandler, registerData } = props
+    const { prevStepHandler, testData, nextStepHandler, registerData } = props
 
     const onSubmit = (values) => {
-        nextStepHandler(values)
+      nextStepHandler(values)
     }
-
 
     const formik = useFormik({
         initialValues: {

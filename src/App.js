@@ -10,8 +10,6 @@ import About from '../src/routes/About/About'
 import Teams from './routes/Teams/Teams';
 import { AuthContextProvider } from './store/AuthContext';
 import PrivateRoutes from './routes/PrivateRoutes/PrivateRoutes';
-import Register from './routes/Register/Register';
-
 
 function App() {
   return (

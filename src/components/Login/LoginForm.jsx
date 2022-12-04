@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import style from './loginform.module.css';
 import logo from '../../assets/images/league-arena-login-logo-transformed.png'
 import AuthContext from '../../store/AuthContext';

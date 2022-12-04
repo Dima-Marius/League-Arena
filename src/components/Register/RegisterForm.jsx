@@ -35,6 +35,17 @@ const registerUrl = 'http://localhost:3500/register';
   const [users, setUsers] = useState([])
   const [clickedSubmit, setClickedSubmit] = useState(false)
   const [emailError, setEmailError] = useState('')
+  const [testData, setTestData] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    firstName: '',
+    lastName: '',
+    ign: '',
+    region: '',
+    role: '',
+    rank: '',
+  })
   const [registerData, setRegisterData] = useState({
     email: '',
     password: '',
@@ -47,8 +58,7 @@ const registerUrl = 'http://localhost:3500/register';
     rank: '',
 })
 
-  const prevStepHandler = (currentData) => {
-    setRegisterData(prev => ({...prev, ...currentData}))
+  const prevStepHandler = () => {
     setCurrentStep(prev => prev - 1)
   }
 
@@ -94,26 +104,15 @@ const nextStepHandlerCheckEmail = async (currentData) => {
     setEmailError('Email already exists.');
   }
 }
-  
-  const onSubmit = (currentData) => {
-    register(registerData);
-    
-    /* setTimeout(() => {
-      onRegisterClick();
-    },20000) */
-  }
 
    const leftFillerCompleted = currentStep > 0 ? `${style['filler-left']}` : ''
    const rightFillerCompleted = currentStep === 2 ? `${style['filler-right']}` : ''
 
-
-   /* StepThree appears 2 times for the last step to be completed when clicking submit. */
   const steps = [
      <StepOne emailError={emailError} nextStepHandlerCheckEmail={nextStepHandlerCheckEmail} registerData={registerData}/>,
-     <StepTwo prevStepHandler={prevStepHandler} registerData={registerData} nextStepHandler={nextStepHandler}/>,
-     <StepThree prevStepHandler={prevStepHandler} onFormSubmit={onSubmit} onRegisterClick={onRegisterClick} register={register} setRegisterData={setRegisterData} registerData={registerData}/>,
-     <StepThree prevStepHandler={prevStepHandler} onFormSubmit={onSubmit} onRegisterClick={onRegisterClick} register={register} setRegisterData={setRegisterData} registerData={registerData}/>
-    ]
+     <StepTwo prevStepHandler={prevStepHandler} testData={testData} registerData={registerData} nextStepHandler={nextStepHandler}/>,
+     <StepThree prevStepHandler={prevStepHandler} setClickedSubmit={setClickedSubmit} setCurrentStep={setCurrentStep} onRegisterClick={onRegisterClick} register={register} setRegisterData={setRegisterData} registerData={registerData}/>
+      ]
 
   return (
     <div className={style.container}>
