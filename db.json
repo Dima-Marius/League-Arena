@@ -166,6 +166,18 @@
       "role": "ADC",
       "rank": "CHALLENGER",
       "id": 5
+    },
+    {
+      "email": "shady1kx@gmail.com",
+      "password": "$2a$10$GZ3RNWtcFK4e4wEW5z/7SOo3z0cKPXrAInCPswu7IIPbcBN7yim4a",
+      "confirmPassword": "lamind15",
+      "firstName": "Marius",
+      "lastName": "Dima",
+      "ign": "Shady1k",
+      "region": "EUNE",
+      "role": "TOP",
+      "rank": "DIAMOND",
+      "id": 6
     }
   ]
 }

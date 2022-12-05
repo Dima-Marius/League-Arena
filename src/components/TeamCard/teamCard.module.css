@@ -20,22 +20,17 @@
     width: 100%;
     height: 350px;
     background-color:var(--matte-gray);
-   /*  color: rgb(143, 157, 179); */
-   /*  color: rgb(207, 207, 190); */
-   color:rgba(255, 255, 255, 0.89);
+    color:rgba(255, 255, 255, 0.89);
     font-size: 24px;
-    border: solid 2px var(--darker-blue);
-}
-
-.card { 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 400px;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
+    border: solid 2px var(--darker-blue) !important;
+    display: grid;
+    grid-area: card;
+    grid-template-columns: 1fr 1fr 1fr 400px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
     "logo name description description"
     "available-roles rank description description"
     "members members contact contact";
-  grid-area: card;
 }
 
 .logo {

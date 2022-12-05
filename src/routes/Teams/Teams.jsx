@@ -5,7 +5,6 @@ import Navbar from '../../components/Navbar/Navbar';
 import yasuosplash from '../../assets/images/yasuo-spirit-blossom.jpg';
 import championsqueue from '../../assets/images/champions-queue.jpg'
 import TeamOutput from '../../components/TeamOutput/TeamOutput';
-import leblanc from '../../assets/images/leblanc.png'
 
 const Teams = () => {
   return (
@@ -117,9 +116,6 @@ const Teams = () => {
         </div>
       </div>
     </div>
-{/*     <div className={style.splash}>
-      <img src={leblanc} alt='lb' height='1200px' width='1000px'></img>
-    </div> */}
       <div className={style.footer}>
         <Footer/>
       </div>

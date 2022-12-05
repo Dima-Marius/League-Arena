@@ -5,19 +5,23 @@ import style from './leaderboardDisplay.module.css'
 const LeaderboardDisplay = (props) => {
     const { searchRegion, searchRank, defaultRank, defaultRegion } = props;
     const [playerList, setPlayerList] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const defaultRankSearch = searchRank === defaultRank ? defaultRank : searchRank.target.value;
     const defaultRegionSearch = searchRegion === defaultRegion ? defaultRegion : searchRegion.target.value;
     
     const retrieveLimit = 10;
-    const challengerQueueUrl = `https://${defaultRegionSearch}.api.riotgames.com/lol/league/v4/${defaultRankSearch}leagues/by-queue/RANKED_SOLO_5x5?api_key=RGAPI-d20174ec-c730-4265-b7ac-55699d9b09a8`
+    const challengerQueueUrl = `https://${defaultRegionSearch}.api.riotgames.com/lol/league/v4/${defaultRankSearch}leagues/by-queue/RANKED_SOLO_5x5?api_key=RGAPI-584d5074-2010-4f07-9221-6561696d5f1c`
     
     useEffect(() => {
+        setIsLoading(true)
         fetch(challengerQueueUrl)
         .then(response => response.json())
-        .then(data => setPlayerList(data.entries));
+        .then(data => setPlayerList(data.entries))
+        .finally(() => setIsLoading(false))
     },[searchRegion, challengerQueueUrl])
 
+   if (!isLoading) { 
   return (
     <div className={style.container}>
          <table className={style.table} cellPadding="0" cellSpacing="0">
@@ -49,7 +53,20 @@ const LeaderboardDisplay = (props) => {
             </tbody>
         </table>
     </div>
-  )
+    )
+  }  else {
+    return (
+    <div className={style['loading-container']}>
+      <div>
+        <div className={style.loader}>
+        <div className={style.inner}>
+        </div>
+        </div>
+       <p className={style['website-title']}>League Arena <i className="fa-solid fa-chess-knight"></i></p>
+      </div>
+    </div>
+    )
+  }
 }
 
 export default LeaderboardDisplay
