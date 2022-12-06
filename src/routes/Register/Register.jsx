@@ -10,11 +10,9 @@ const Register = () => {
         <video className={style['bg-video']} autoPlay loop muted playsInline>
             <source src={bgvid} type='video/webm'/>
         </video>
-
         <div className={style['login-form-container']}>
           <RegisterForm/>
         </div>
-
         <div className={style['legal-nav-container']}>
            <LegalNavbar/>
         </div>

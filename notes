@@ -1,3 +1,50 @@
 
 
 /* change subtitle of first page LOGIN and REGISTER logo */
+
+/* fix step 3 register progress bar bounce */
+
+    
+/*     const getUsers = useCallback( async (value) => {
+      const response = await fetch(usersUrl)
+      const result = await response.json()
+      setUsers(result);
+    },[])
+
+
+    const checkUserList = useCallback(async (value) => {
+      for (const user of users) {
+        if (await user.ign === value) {
+          setUserExists(true);
+        }
+    }
+  }
+
+    useEffect(() => {
+      checkUserList(ign)
+    },[ign,checkUserList])
+     */
+
+/* 
+    const getUrl = () => {
+      return 'https://jsonplaceholder.typicode.com/todos/1'
+    }
+
+    const [dummy, setDummy] = useState([])
+
+    const getTodo = useCallback(() => { 
+      fetch(getUrl())
+      .then(response => response.json())
+      .then(json => setDummy(json))
+    },[])
+
+    const checkExists = useCallback(() => {
+      getTodo();
+      console.log(dummy)
+    },[getTodo])
+
+    useEffect(() => {
+      checkExists()
+      
+    },[checkExists])
+     */

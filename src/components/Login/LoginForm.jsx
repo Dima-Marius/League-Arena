@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import style from './loginform.module.css';
 import logo from '../../assets/images/league-arena-login-logo-transformed.png'
-import AuthContext from '../../store/AuthContext';
+import AuthContext from '../../context/AuthContext';
 import { useFormik } from 'formik';
 import { basicSchema } from '../../schemas/schemas';
 import { useNavigate } from 'react-router-dom';

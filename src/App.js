@@ -8,8 +8,11 @@ import Login from './routes/Login/Login';
 import NotFound from './routes/NotFound/NotFound';
 import About from '../src/routes/About/About'
 import Teams from './routes/Teams/Teams';
-import { AuthContextProvider } from './store/AuthContext';
+import { AuthContextProvider } from './context/AuthContext';
 import PrivateRoutes from './routes/PrivateRoutes/PrivateRoutes';
+import UserProfileRoutes from './routes/UserProfile/UserProfileRoutes.jsx';
+import UserProfile from './routes/UserProfile/UserProfile.jsx'
+import Redirect from './routes/Redirect/Redirect';
 
 function App() {
   return (
@@ -25,7 +28,10 @@ function App() {
             <Route path='/teams' element={<Teams/>} />
             <Route path='/ranking' element={<Navbar/>} />
             <Route path='/leaderboard' element={<Leaderboard/>} />
-            <Route path='/profile' element={<Navbar/>} />
+            <Route path='/userProfile'>
+              <Route index element={<Redirect/>}/>
+              <Route path='*' element={<UserProfileRoutes/>}/>
+            </Route>  
             <Route path='/settings' element={<Navbar/>} />
             <Route path='/about' element={<About/>} />
             <Route path='*' element={<NotFound/>} />
