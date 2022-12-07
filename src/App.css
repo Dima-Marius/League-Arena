@@ -1,18 +1,21 @@
 :root {
   --darker-blue: #0b0c10;
-  --dark-blue: #101319;
-  --lighter-blue: #1F2833;
+  --dark-blue: rgb(16, 19, 25);
+  --lighter-blue: rgb(31, 40, 51);
   --smokey: #A3ABB6;
-  --light-aqua: #66FCF1;
+  --light-aqua: rgb(102, 252, 241);
   --dark-aqua: #45A29E;
-  --alternative-dark-blue: #2e3047;
-  --alternative-purple: #6946e6;
+  --alternative-dark-blue: rgb(46, 48, 71);
+  --alternative-purple: rgb(105, 70, 230);
   --alternative-smokey: #c5c6c7;
   --gray: #34495e;
   --darkgray: #2c3e50;
   --crimson: #80374f;
+  --navbar-size: 74px;
+  --footer-size: 609px;
 }
 
+/* rgb bg 16 25 35 */
 ::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
