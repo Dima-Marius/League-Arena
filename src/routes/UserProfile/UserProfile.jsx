@@ -8,55 +8,42 @@ import Navbar from '../../components/Navbar/Navbar';
 import AuthContext from '../../context/AuthContext';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import NotFound from '../NotFound/NotFound';
-import style from './userProfile.module.css'
+import style from './userProfile.module.css';
+import profilepicture from '../../assets/images/dummy-profile-picture-removebg.png'
 
 const UserProfile = () => {
 
-    const loading = null;
-    const usersUrl = 'http://localhost:3500/users'
     const { ign } = useParams();
-    const [users, setUsers] = useState([])
+    const endpoint = `?ign=${ign}`;
+    const usersUrl = 'http://localhost:3500/users';
+    const loading = null;
+    const [currentUser, setCurrentUser] = useState({});
     const [userProfileExists, setUserProfileExists] = useState(loading);
 
-    useEffect(() => {
-      fetch(usersUrl)
-      .then(response => response.json())
-      .then(data => setUsers(data));
-    },[])
-
-    useEffect(() => {
-      if (users.length !== 0) {
-        users.find(item => item.ign === ign) ? setUserProfileExists(true) : setUserProfileExists(false)
-      }
-  },[users,ign])
-
-/*     const reRender = () => {
-      setRenderCount(prev => prev + 1);
-      console.log(renderCount);
-    }
-
-    const fetchUsers = useCallback(async () => {
-      const response = await fetch(usersUrl);
+    const getCurrentUser = useCallback( async () => {
+      const response = await fetch(usersUrl + endpoint);
       const result = await response.json();
-      setUsers(result);
-    },[])
+      setCurrentUser(result)
+      console.log(result);
+      return result.ign;
+    },[endpoint])
 
-    const checkUserExists = useCallback(async () => {
-      for (const user of users) {
-        if (user.ign === ign) {
-          setUserProfileExists(true)
-        }
+    const checkUserExists = useCallback( async () => {
+      if (await getCurrentUser()) {
+        setUserProfileExists(true)
+      } else {
+        setUserProfileExists(false)
       }
-    },[fetchUsers,ign])
+    },[getCurrentUser])
 
     useEffect(() => {
       checkUserExists()
     },[checkUserExists])
 
-     useEffect(() => {
-      console.log(users)
-    },[users])
-      */
+    useEffect(() => {
+      console.log(currentUser.ign)
+    },[currentUser.ign])
+
 
   if (userProfileExists === true) 
       return (
@@ -64,7 +51,7 @@ const UserProfile = () => {
       <div className={style.navbar}>
         <Navbar/>
       </div>
-      <div className={style['background-pattern']}>
+        <div className={style['background-pattern']}>
           <span></span>
           <span></span>
           <span></span>
@@ -115,8 +102,35 @@ const UserProfile = () => {
           <span></span>
           <span></span>
           <span></span>
-</div>
-<div className={style.main}></div>
+        </div>
+      <div className={style.main}>
+        <div className={style.title}>
+          <h2 className={style.h2}>{ign}'s Profile</h2>
+        </div>
+        <div className={style.contact}>
+          <div className={style.picture}>
+          <i className={`${'fa-solid fa-user'} ${style['profile-icon']}`}></i>
+          </div>
+          <ul className={style.social}>
+            <li><i className="fa-brands fa-discord"></i></li>
+            <li><i className="fa-solid fa-envelope"></i></li>
+            <li><i className="fa-solid fa-user-plus"></i></li>
+          </ul>
+        </div>
+        <div className={style.info}>
+          <p>Username: <span>{currentUser.ign}</span></p>
+          <p>Region: <span>{currentUser.region}</span></p>
+          <p>Role: <span>{currentUser.role}</span></p>
+        </div>
+        <div className={style.details}></div>
+        <div className={style.about}>
+          <div>
+            <h2>About</h2>
+          </div>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni deserunt minus voluptatibus officiis id, enim, autem nobis eius quasi animi fuga hic optio repudiandae explicabo obcaecati vitae debitis corrupti aliquid dolorem eligendi quisquam quis quaerat deleniti iure! Natus, exercitationem quos maxime nesciunt repudiandae suscipit alias eius officiis excepturi quisquam velit odit sint, quidem voluptates quod ut laborum, hic minus sequi ullam eligendi accusamus fugit! At praesentium maxime voluptatem illo maiores doloribus tenetur aperiam quos corrupti veniam. Nulla doloremque voluptates placeat rerum velit quia animi distinctio aperiam inventore? Voluptates aliquid recusandae quaerat eos ad eveniet veritatis animi perspiciatis, inventore officiis pariatur.</p>
+        </div>
+        <div className={style.team}></div>
+      </div>
       <div className={style.footer}>
         <Footer/>
       </div>

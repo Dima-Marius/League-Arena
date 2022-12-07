@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import style from './home.module.css';
 import mordesplash from '../../assets/images/morde.png';

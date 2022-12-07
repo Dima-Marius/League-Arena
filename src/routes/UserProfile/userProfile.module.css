@@ -20,7 +20,7 @@
     overflow: hidden;
     display: relative;
     display: grid;
-    grid-template-columns: 1fr 1400px 1fr;
+    grid-template-columns: 1fr 1500px 1fr;
     grid-template-rows:
     var(--navbar-size) [navbar-empty]
     100px [empty]
@@ -41,7 +41,12 @@
     width: 100%;
 }
 
-  .main {
+   .footer {
+    grid-area: footer;
+    z-index: 2;
+}
+
+.main {
     z-index: 1;
     position: static;
     grid-area: main;
@@ -51,12 +56,154 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: solid 1px rgba(0, 255, 255,0.6);
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns:20px 350px 1fr 1fr 200px 20px;
+    grid-template-rows:
+    150px [title]
+    1fr [contact info]
+    1fr [contact about]
+    1fr [contact about]
+    1fr [details team];
+    grid-template-areas:
+      "title title title title title title"
+      ". contact info info info ."
+      ". contact about about about ."
+      ". details team team team ."
+      ". details team team team .";
+}
+  /* TITLTE AREA *****/
+
+.title {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: title;
+    background-color: rgba(44, 62, 80,0.6);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
-   .footer {
-    grid-area: footer;
-    z-index: 2;
+.title .h2 {
+    font-size: 45px;
+    color:whitesmoke;
 }
+
+/* TITLTE AREA *****/
+  
+/* CONTACT AREA */
+
+.contact {
+   grid-area: contact;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 22px;
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: 18px;
+
+}
+
+.contact .social {
+    display: flex;
+    color: whitesmoke;
+    gap: 20px;
+    font-size: 30px;
+}
+
+.contact .social li {
+    background-color: rgba(128, 128, 128,0.2);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+}
+
+.profile-icon {
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    width:210px;
+    height: 210px;
+    border-radius: 100%;
+}
+
+/* CONTACT AREA */
+  
+/* INFO AREA */
+
+  .info {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    grid-area: info;
+}
+
+.info p {
+    color: var(--smokey);
+    font-size: 32px; 
+}
+
+.info > p > span {
+    color: whitesmoke;
+}
+
+/* INFO AREA */
+
+/* DETAILS AREA */
+
+  .details {
+    grid-area: details;
+}
+
+/* DETAILS AREA */
+  
+/* ABOUT AREA */
+
+  .about {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: about;
+}
+
+.about h2 {
+    color: var(--smokey);
+    font-size: 32px;
+    padding-left: 10px;
+}
+
+.about p {
+    font-size: 18px;
+    padding:5px 10px 10px 10px;
+    color: rgba(255, 245, 238, 0.718);
+}
+
+
+/* ABOUT AREA */
+  
+
+/* TEAM AREA */
+
+
+  .team {
+    grid-area: team;
+}
+
+/* TEAM AREA */
+  
 
 /* BG ANIMATION *******************************************************/
 

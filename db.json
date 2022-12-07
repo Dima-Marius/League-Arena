@@ -178,6 +178,35 @@
       "role": "TOP",
       "rank": "DIAMOND",
       "id": 6
+    },
+    {
+      "email": "faker@gmail.com",
+      "password": "$2a$10$I9ynlCimADafGy0x848uu.HlWZ7Oip/yb7jRDSvIFIHxYS9sB2Noy",
+      "confirmPassword": "123123",
+      "firstName": "Faker",
+      "lastName": "Yessir",
+      "ign": "T1 Faker",
+      "region": "EUW",
+      "role": "JUNGLE",
+      "rank": "GRANDMASTER",
+      "id": 7
+    },
+    {
+      "email": "tstststtsshadyzzd1k@email.us",
+      "password": "$2a$10$AQaP35YL320OYn/sN.MvJef1MlSjBmaFlm8V3TwlwSHGJyWpszg/e",
+      "dog": "false",
+      "id": 8
+    },
+    {
+      "email": "dummy@mail.com",
+      "password": "$2a$10$I9ynlCimADafGy0x848uu.HlWZ7Oip/yb7jRDSvIFIHxYS9sB2Noy",
+      "firstName": "Faker",
+      "lastName": "Yessir",
+      "ign": "dummy",
+      "region": "EUW",
+      "role": "JUNGLE",
+      "rank": "GRANDMASTER",
+      "id": 9
     }
   ]
 }
