@@ -61,18 +61,62 @@ const UserProfile = () => {
   if (userProfileExists === true) 
       return (
     <div className={style.container}>
-      <div className={style.nav}>
+      <div className={style.navbar}>
         <Navbar/>
       </div>
-      <div className={style['loading-container']}>
-        <div>
-          <div className={style.loader}>
-          <div className={style.inner}>
-          </div>
-          </div>
-         <p className={style['website-title']}>League Arena <i className="fa-solid fa-chess-knight"></i></p>
-        </div>
-      </div>
+      <div className={style['background-pattern']}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+</div>
+<div className={style.main}></div>
       <div className={style.footer}>
         <Footer/>
       </div>
@@ -90,3 +134,20 @@ const UserProfile = () => {
 }
 
 export default UserProfile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
