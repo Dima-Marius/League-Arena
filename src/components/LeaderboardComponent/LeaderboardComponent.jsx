@@ -12,12 +12,10 @@ function LeaderboardComponent() {
 
 
   const onRegionChange = (region) => {
-    
     setSearchRegion(region === defaultRegion ? defaultRegion : region)
   }
 
   const onRankChange = (rank) => {
-
     setSearchRank(rank === defaultRank ? defaultRank : rank)
   }
 
@@ -27,7 +25,7 @@ function LeaderboardComponent() {
             <Search onRankChange={onRankChange} onRegionChange={onRegionChange} />
           </div>
           <div className={style.display}>
-            <LeaderboardDisplay defaultRank={defaultRank} defaultRegion={defaultRegion} searchRegion={searchRegion} searchRank={searchRank}  />
+            <LeaderboardDisplay defaultRank={defaultRank} defaultRegion={defaultRegion} searchRegion={searchRegion} searchRank={searchRank}/>
           </div>
           <div className={style.options}>
             <button className={style.previous}>previous</button>

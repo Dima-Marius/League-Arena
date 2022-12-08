@@ -9,7 +9,10 @@ import AuthContext from '../../context/AuthContext';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import NotFound from '../NotFound/NotFound';
 import style from './userProfile.module.css';
-import profilepicture from '../../assets/images/dummy-profile-picture-removebg.png'
+import { getRankIcon } from '../../utils/getRankIcon';
+import { getRoleIcon } from '../../utils/getRoleIcon';
+import leaguelogo from '../../assets/logos/lol-logo.png'
+import '../../rankedTextGradients/rankedTextGradients.css'
 
 const UserProfile = () => {
 
@@ -17,15 +20,15 @@ const UserProfile = () => {
     const endpoint = `?ign=${ign}`;
     const usersUrl = 'http://localhost:3500/users';
     const loading = null;
-    const [currentUser, setCurrentUser] = useState({});
+    const [currentUser, setCurrentUser] = useState(null);
     const [userProfileExists, setUserProfileExists] = useState(loading);
-
-    const getCurrentUser = useCallback( async () => {
+    const [rankTextGradient, setRankTextGradient] = useState(style.diamond)
+    
+    const getCurrentUser = useCallback( async () => { 
       const response = await fetch(usersUrl + endpoint);
       const result = await response.json();
       setCurrentUser(result)
-      console.log(result);
-      return result.ign;
+      return result[0]?.ign;
     },[endpoint])
 
     const checkUserExists = useCallback( async () => {
@@ -38,12 +41,7 @@ const UserProfile = () => {
 
     useEffect(() => {
       checkUserExists()
-    },[checkUserExists])
-
-    useEffect(() => {
-      console.log(currentUser.ign)
-    },[currentUser.ign])
-
+    },[checkUserExists]) 
 
   if (userProfileExists === true) 
       return (
@@ -105,7 +103,9 @@ const UserProfile = () => {
         </div>
       <div className={style.main}>
         <div className={style.title}>
-          <h2 className={style.h2}>{ign}'s Profile</h2>
+          <h2 className={style.h2}>
+            {ign}'s Profile <span><img src={leaguelogo} alt='lol' width='50px' height='50px' /></span>
+          </h2>
         </div>
         <div className={style.contact}>
           <div className={style.picture}>
@@ -118,11 +118,25 @@ const UserProfile = () => {
           </ul>
         </div>
         <div className={style.info}>
-          <p>Username: <span>{currentUser.ign}</span></p>
-          <p>Region: <span>{currentUser.region}</span></p>
-          <p>Role: <span>{currentUser.role}</span></p>
+          <p>Username: <span>{currentUser[0]?.ign}</span></p>
+          <p>Region: <span>{currentUser[0]?.region}</span></p>
+          <p>Role:<span>{currentUser[0]?.role}</span>
+          <span className={style['role-icon']}>
+            <img src={currentUser.length !== 0 && getRoleIcon(currentUser[0].role)} width='50px' height='50px' alt='role' />
+          </span>
+          </p>
         </div>
-        <div className={style.details}></div>
+        <div className={style.details}>
+          <div>
+            <h2>
+              Rank <span className={style['ranking-star']}><i className="fa-solid fa-ranking-star"></i></span>
+            </h2>
+          </div>
+          <div>
+            <img src={currentUser.length !== 0 && getRankIcon(currentUser[0].rank)} width='200px' height='200px' alt='rank'/>
+            <p className={`${style['rank-text']} ${currentUser[0]?.rank.toLowerCase()}`}>{currentUser[0]?.rank}</p>
+          </div>
+        </div>
         <div className={style.about}>
           <div>
             <h2>About</h2>
@@ -148,20 +162,3 @@ const UserProfile = () => {
 }
 
 export default UserProfile
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

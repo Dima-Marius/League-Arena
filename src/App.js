@@ -13,11 +13,13 @@ import PrivateRoutes from './routes/PrivateRoutes/PrivateRoutes';
 import UserProfileRoutes from './routes/UserProfile/UserProfileRoutes.jsx';
 import UserProfile from './routes/UserProfile/UserProfile.jsx'
 import Redirect from './routes/Redirect/Redirect';
+import { ApiKeyContextProvider } from './context/ApiKeyContext';
 
 function App() {
   return (
     <div className="App">
       <AuthContextProvider>
+        <ApiKeyContextProvider>
         <Routes>
         <Route path='/' element={<Login/>} />
         <Route path='/login' element={<Login/>} />
@@ -37,6 +39,7 @@ function App() {
             <Route path='*' element={<NotFound/>} />
           </Route>
         </Routes>
+        </ApiKeyContextProvider>
         </AuthContextProvider>
     </div>
   );

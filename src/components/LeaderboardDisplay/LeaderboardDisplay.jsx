@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useContext } from 'react';
+import ApiKeyContext from '../../context/ApiKeyContext';
 import Player from '../Player/Player';
 import style from './leaderboardDisplay.module.css'
 
 const LeaderboardDisplay = (props) => {
+  const API_KEY_CTX = useContext(ApiKeyContext)
     const { searchRegion, searchRank, defaultRank, defaultRegion } = props;
     const [playerList, setPlayerList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -11,8 +14,8 @@ const LeaderboardDisplay = (props) => {
     const defaultRegionSearch = searchRegion === defaultRegion ? defaultRegion : searchRegion.target.value;
     
     const retrieveLimit = 10;
-    const challengerQueueUrl = `https://${defaultRegionSearch}.api.riotgames.com/lol/league/v4/${defaultRankSearch}leagues/by-queue/RANKED_SOLO_5x5?api_key=RGAPI-584d5074-2010-4f07-9221-6561696d5f1c`
-    
+    const challengerQueueUrl = `https://${defaultRegionSearch}.api.riotgames.com/lol/league/v4/${defaultRankSearch}leagues/by-queue/RANKED_SOLO_5x5?api_key=${API_KEY_CTX.apiKey}`
+
     useEffect(() => {
         setIsLoading(true)
         fetch(challengerQueueUrl)

@@ -60,17 +60,19 @@
     display: grid;
     grid-template-columns:20px 350px 1fr 1fr 200px 20px;
     grid-template-rows:
-    150px [title]
+    135px [title]
     1fr [contact info]
     1fr [contact about]
     1fr [contact about]
-    1fr [details team];
+    1fr [details team]
+    10px [empty];
     grid-template-areas:
       "title title title title title title"
       ". contact info info info ."
       ". contact about about about ."
       ". details team team team ."
-      ". details team team team .";
+      ". details team team team ."
+      ". . . . . .";
 }
   /* TITLTE AREA *****/
 
@@ -87,6 +89,17 @@
 .title .h2 {
     font-size: 45px;
     color:whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: hsla(40, 59%, 48%, 1);
+    background: linear-gradient(135deg, hsla(40, 59%, 48%, 1) 0%, hsla(183, 52%, 47%, 1) 100%);
+    background: -moz-linear-gradient(135deg, hsla(40, 59%, 48%, 1) 0%, hsla(183, 52%, 47%, 1) 100%);
+    background: -webkit-linear-gradient(135deg, hsla(40, 59%, 48%, 1) 0%, hsla(183, 52%, 47%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C39332", endColorstr="#39AFB6", GradientType=1 );
+    background-clip: text;
+    color:transparent;
 }
 
 /* TITLTE AREA *****/
@@ -150,19 +163,61 @@
 
 .info p {
     color: var(--smokey);
-    font-size: 32px; 
+    font-size: 32px;
+    display: flex;
+    gap: 8px;
 }
 
 .info > p > span {
     color: whitesmoke;
 }
 
+.info .role-icon {
+    display: inline-block;
+}
+
+.info p:has(span.role-icon) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 /* INFO AREA */
 
 /* DETAILS AREA */
 
-  .details {
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     grid-area: details;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+}
+
+.details > div:has(h2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    flex-grow: 2.6;
+    color: var(--smokey);
+}
+
+.details > div:has(p.rank-text) {
+    flex-grow: 3;
+
+}
+
+.details .rank-text {
+    text-align: center;
+    font-size: 34px;
+}
+
+.ranking-star {
+    position: relative;
+    bottom:5px;
 }
 
 /* DETAILS AREA */
@@ -200,6 +255,8 @@
 
   .team {
     grid-area: team;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
 }
 
 /* TEAM AREA */
