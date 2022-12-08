@@ -58,7 +58,7 @@
     border: solid 1px rgba(0, 255, 255,0.6);
     grid-gap: 10px;
     display: grid;
-    grid-template-columns:20px 350px 1fr 1fr 200px 20px;
+    grid-template-columns:20px 350px 1fr 1fr 2fr 20px;
     grid-template-rows:
     135px [title]
     1fr [contact info]
@@ -70,8 +70,8 @@
       "title title title title title title"
       ". contact info info info ."
       ". contact about about about ."
-      ". details team team team ."
-      ". details team team team ."
+      ". details team team stats ."
+      ". details team team stats ."
       ". . . . . .";
 }
   /* TITLTE AREA *****/
@@ -161,8 +161,12 @@
     grid-area: info;
 }
 
+.info .globe {
+    color: var(--dark-blue);
+}
+
 .info p {
-    color: var(--smokey);
+    color: #4aa9b2;
     font-size: 32px;
     display: flex;
     gap: 8px;
@@ -203,6 +207,7 @@
     font-size: 26px;
     flex-grow: 2.6;
     color: var(--smokey);
+    color:#4aa9b2;
 }
 
 .details > div:has(p.rank-text) {
@@ -235,9 +240,9 @@
 }
 
 .about h2 {
-    color: var(--smokey);
     font-size: 32px;
     padding-left: 10px;
+    color: #4aa9b2;
 }
 
 .about p {
@@ -254,12 +259,43 @@
 
 
   .team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     grid-area: team;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 18px;
+    
+}
+
+.team > h2 {
+    font-size: 36px;
+    color: #4aa9b2;
+    display: flex;
+    gap: 8px;
 }
 
 /* TEAM AREA */
+
+/* STATS AREA */
+
+.stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.1);
+    grid-area: stats;
+    border-radius: 18px;
+}
+
+.stats > h2 {
+    font-size: 32px;
+    color: #4aa9b2;
+}
+
+/* STATS AREA */
   
 
 /* BG ANIMATION *******************************************************/

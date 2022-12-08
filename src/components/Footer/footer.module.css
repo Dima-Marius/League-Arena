@@ -55,14 +55,13 @@
     font-size: 30px;
     justify-content: center;
     align-items: center;
-  
   }
-  
   
   .footer-social li {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor:pointer;
   }
   
   .footer-social li i {

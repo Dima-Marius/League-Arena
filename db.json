@@ -111,6 +111,21 @@
       "rank": "Master",
       "description": "Hello we are looking for new players, join us.",
       "id": 6
+    },
+    {
+      "teamName": "Team Cheetos",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrGz_SASejkM_Rb7q7dC5UY0MLmP1ZTXK-Vlx7PJ-INttAtOivN_nRBwIQF_heeXQGSU&usqp=CAU",
+      "region": "EUNE",
+      "members": [
+        "Shady1k"
+      ],
+      "availableRoles": [
+        "TOP",
+        "MID"
+      ],
+      "rank": "Master",
+      "description": "Hello we are looking for new players, join us.",
+      "id": 7
     }
   ],
   "users": [
@@ -176,8 +191,9 @@
       "ign": "Shady1k",
       "region": "EUNE",
       "role": "TOP",
-      "rank": "DIAMOND",
-      "id": 6
+      "rank": "GRANDMASTER",
+      "id": 6,
+      "team": "Team Cheetos"
     },
     {
       "email": "faker@gmail.com",

@@ -17,19 +17,21 @@ import '../../rankedTextGradients/rankedTextGradients.css'
 const UserProfile = () => {
 
     const { ign } = useParams();
-    const endpoint = `?ign=${ign}`;
+    const usersEndpoint = `?ign=${ign}`;
     const usersUrl = 'http://localhost:3500/users';
+    const teamsUrl = 'http://localhost:3500/createdTeams'
     const loading = null;
+    const [teamsEndpoint, setTeamsEndpoint] = useState('')
     const [currentUser, setCurrentUser] = useState(null);
+    const [userTeam, setUserTeam] = useState([])
     const [userProfileExists, setUserProfileExists] = useState(loading);
-    const [rankTextGradient, setRankTextGradient] = useState(style.diamond)
-    
+
     const getCurrentUser = useCallback( async () => { 
-      const response = await fetch(usersUrl + endpoint);
+      const response = await fetch(usersUrl + usersEndpoint);
       const result = await response.json();
       setCurrentUser(result)
       return result[0]?.ign;
-    },[endpoint])
+    },[usersEndpoint])
 
     const checkUserExists = useCallback( async () => {
       if (await getCurrentUser()) {
@@ -41,7 +43,16 @@ const UserProfile = () => {
 
     useEffect(() => {
       checkUserExists()
-    },[checkUserExists]) 
+    },[checkUserExists])
+
+    useEffect(() => {
+      if (currentUser !== null) {
+      setTeamsEndpoint(`?teamName=${currentUser[0]?.team}`)
+      fetch(teamsUrl + teamsEndpoint)
+      .then(response => response.json())
+      .then(data => setUserTeam(data))
+    }
+    },[currentUser,teamsEndpoint])
 
   if (userProfileExists === true) 
       return (
@@ -119,7 +130,7 @@ const UserProfile = () => {
         </div>
         <div className={style.info}>
           <p>Username: <span>{currentUser[0]?.ign}</span></p>
-          <p>Region: <span>{currentUser[0]?.region}</span></p>
+          <p>Region: <span>{currentUser[0]?.region} <span className={style.globe}><i class="fa-solid fa-globe"></i></span></span></p>
           <p>Role:<span>{currentUser[0]?.role}</span>
           <span className={style['role-icon']}>
             <img src={currentUser.length !== 0 && getRoleIcon(currentUser[0].role)} width='50px' height='50px' alt='role' />
@@ -143,7 +154,18 @@ const UserProfile = () => {
           </div>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni deserunt minus voluptatibus officiis id, enim, autem nobis eius quasi animi fuga hic optio repudiandae explicabo obcaecati vitae debitis corrupti aliquid dolorem eligendi quisquam quis quaerat deleniti iure! Natus, exercitationem quos maxime nesciunt repudiandae suscipit alias eius officiis excepturi quisquam velit odit sint, quidem voluptates quod ut laborum, hic minus sequi ullam eligendi accusamus fugit! At praesentium maxime voluptatem illo maiores doloribus tenetur aperiam quos corrupti veniam. Nulla doloremque voluptates placeat rerum velit quia animi distinctio aperiam inventore? Voluptates aliquid recusandae quaerat eos ad eveniet veritatis animi perspiciatis, inventore officiis pariatur.</p>
         </div>
-        <div className={style.team}></div>
+        <div className={style.team}>
+          <h2>TEAM <span><i className="fa-brands fa-teamspeak"></i></span></h2>
+          <div>
+            <p>{userTeam[0]?.teamName}</p>
+            <p><img src={userTeam[0]?.logo} alt='team logo'></img></p>
+            <p>Members: {userTeam[0]?.members}</p>
+          </div>
+        </div>
+        <div className={style.stats}>
+            <h2>STATS <span><i class="fa-sharp fa-solid fa-chart-simple"></i></span></h2>
+          <div></div>
+        </div>
       </div>
       <div className={style.footer}>
         <Footer/>
