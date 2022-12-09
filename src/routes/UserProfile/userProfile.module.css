@@ -35,13 +35,13 @@
       "footer footer footer";
   }
 
-  .navbar {
+.navbar {
     z-index: 3;
     position:fixed;
     width: 100%;
 }
 
-   .footer {
+.footer {
     grid-area: footer;
     z-index: 2;
 }
@@ -150,7 +150,7 @@
   
 /* INFO AREA */
 
-  .info {
+.info {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 18px;
     padding-left: 10px;
@@ -229,7 +229,7 @@
   
 /* ABOUT AREA */
 
-  .about {
+.about {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 18px;
     display: flex;
@@ -258,15 +258,14 @@
 /* TEAM AREA */
 
 
-  .team {
+.team {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     grid-area: team;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 18px;
-    
 }
 
 .team > h2 {
@@ -274,6 +273,9 @@
     color: #4aa9b2;
     display: flex;
     gap: 8px;
+    position: relative;
+    top:4px;
+
 }
 
 /* TEAM AREA */
@@ -294,6 +296,8 @@
     font-size: 32px;
     color: #4aa9b2;
 }
+
+
 
 /* STATS AREA */
   

@@ -2,13 +2,13 @@ import React from 'react';
 import style from './footer.module.css';
 import { TbPhone } from 'react-icons/tb';
 import { TfiEmail } from 'react-icons/tfi';
-import riotlogo from '../../assets/logos/riot-logo.png'
+
 
 function Footer() {
   return (
     <footer className={style['footer-area']}>
     <div className={style.about}>
-      <img src={riotlogo} width='150px' height='150px' alt='riot games logo' />
+
       <p>API Site names and logos 	&#40;Riot Games, leagueoflegends.com, playvalorant.com, riotgames.com&#41; are © Riot Games Inc.<br></br> This site is in no way affiliated with Riot Games Inc. except for the fact that we use their awesome API to provide you this service.</p>
       <div>
       </div>

@@ -11,21 +11,25 @@ import NotFound from '../NotFound/NotFound';
 import style from './userProfile.module.css';
 import { getRankIcon } from '../../utils/getRankIcon';
 import { getRoleIcon } from '../../utils/getRoleIcon';
-import leaguelogo from '../../assets/logos/lol-logo.png'
+
 import '../../rankedTextGradients/rankedTextGradients.css'
+import ApiKeyContext from '../../context/ApiKeyContext';
 
 const UserProfile = () => {
 
+    const API_KEY_CTX = useContext(ApiKeyContext)
     const { ign } = useParams();
     const usersEndpoint = `?ign=${ign}`;
     const usersUrl = 'http://localhost:3500/users';
     const teamsUrl = 'http://localhost:3500/createdTeams'
     const loading = null;
+    const [summonerInfo, setSummonerInfo] = useState([])
+    const summonerUrl = `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${ign}?api_key=${API_KEY_CTX.apiKey}`
     const [teamsEndpoint, setTeamsEndpoint] = useState('')
     const [currentUser, setCurrentUser] = useState(null);
     const [userTeam, setUserTeam] = useState([])
     const [userProfileExists, setUserProfileExists] = useState(loading);
-
+  
     const getCurrentUser = useCallback( async () => { 
       const response = await fetch(usersUrl + usersEndpoint);
       const result = await response.json();
@@ -47,12 +51,18 @@ const UserProfile = () => {
 
     useEffect(() => {
       if (currentUser !== null) {
-      setTeamsEndpoint(`?teamName=${currentUser[0]?.team}`)
+      setTeamsEndpoint(`?teamName=${currentUser[0].team}`)
       fetch(teamsUrl + teamsEndpoint)
       .then(response => response.json())
       .then(data => setUserTeam(data))
     }
-    },[currentUser,teamsEndpoint])
+  },[currentUser,teamsEndpoint])
+
+  useEffect(() => {
+      fetch(summonerUrl)
+      .then(response => response.json())
+      .then(data => setSummonerInfo(data))
+  }, [ign, API_KEY_CTX.apiKey,summonerUrl]);
 
   if (userProfileExists === true) 
       return (
@@ -115,7 +125,7 @@ const UserProfile = () => {
       <div className={style.main}>
         <div className={style.title}>
           <h2 className={style.h2}>
-            {ign}'s Profile <span><img src={leaguelogo} alt='lol' width='50px' height='50px' /></span>
+            {ign}'s Profile <span></span>
           </h2>
         </div>
         <div className={style.contact}>
@@ -130,10 +140,10 @@ const UserProfile = () => {
         </div>
         <div className={style.info}>
           <p>Username: <span>{currentUser[0]?.ign}</span></p>
-          <p>Region: <span>{currentUser[0]?.region} <span className={style.globe}><i class="fa-solid fa-globe"></i></span></span></p>
+          <p>Region: <span>{currentUser[0]?.region} <span className={style.globe}><i className="fa-solid fa-globe"></i></span></span></p>
           <p>Role:<span>{currentUser[0]?.role}</span>
           <span className={style['role-icon']}>
-            <img src={currentUser.length !== 0 && getRoleIcon(currentUser[0].role)} width='50px' height='50px' alt='role' />
+            <img src={currentUser.length !== 0 && getRoleIcon(currentUser[0]?.role)} width='50px' height='50px' alt='role' />
           </span>
           </p>
         </div>
@@ -144,7 +154,7 @@ const UserProfile = () => {
             </h2>
           </div>
           <div>
-            <img src={currentUser.length !== 0 && getRankIcon(currentUser[0].rank)} width='200px' height='200px' alt='rank'/>
+            <img src={currentUser.length !== 0 && getRankIcon(currentUser[0]?.rank)} width='200px' height='200px' alt='rank'/>
             <p className={`${style['rank-text']} ${currentUser[0]?.rank.toLowerCase()}`}>{currentUser[0]?.rank}</p>
           </div>
         </div>
@@ -159,12 +169,16 @@ const UserProfile = () => {
           <div>
             <p>{userTeam[0]?.teamName}</p>
             <p><img src={userTeam[0]?.logo} alt='team logo'></img></p>
-            <p>Members: {userTeam[0]?.members}</p>
+          </div>
+          <div>
+          <p>Members: {userTeam[0]?.members}</p>
           </div>
         </div>
         <div className={style.stats}>
-            <h2>STATS <span><i class="fa-sharp fa-solid fa-chart-simple"></i></span></h2>
-          <div></div>
+            <h2>STATS <span><i className="fa-sharp fa-solid fa-chart-simple"></i></span></h2>
+          <div>
+            level: {summonerInfo?.summonerLevel}
+          </div>
         </div>
       </div>
       <div className={style.footer}>
