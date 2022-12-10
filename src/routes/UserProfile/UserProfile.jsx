@@ -66,10 +66,10 @@ const UserProfile = () => {
   }, [ign, API_KEY_CTX.apiKey,summonerUrl]);
 
   useEffect(() => {
-    fetch('https://europe.api.riotgames.com/lol/match/v5/matches/EUN1_3270671953?api_key=RGAPI-604a774f-facc-4035-805e-0604f0d326db')
+    fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/EUN1_3270671953?api_key=${API_KEY_CTX.apiKey}`)
     .then(response => response.json())
     .then(data => console.log(data))
-  },[])
+  },[API_KEY_CTX.apiKey])
 
   useEffect(() => {
     console.log(summonerInfo);
