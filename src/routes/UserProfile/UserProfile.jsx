@@ -11,7 +11,6 @@ import NotFound from '../NotFound/NotFound';
 import style from './userProfile.module.css';
 import { getRankIcon } from '../../utils/getRankIcon';
 import { getRoleIcon } from '../../utils/getRoleIcon';
-
 import '../../rankedTextGradients/rankedTextGradients.css'
 import ApiKeyContext from '../../context/ApiKeyContext';
 
@@ -29,6 +28,8 @@ const UserProfile = () => {
     const [currentUser, setCurrentUser] = useState(null);
     const [userTeam, setUserTeam] = useState([])
     const [userProfileExists, setUserProfileExists] = useState(loading);
+    const profileIconUrl = `http://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${summonerInfo.profileIconId}.png`
+
   
     const getCurrentUser = useCallback( async () => { 
       const response = await fetch(usersUrl + usersEndpoint);
@@ -63,6 +64,16 @@ const UserProfile = () => {
       .then(response => response.json())
       .then(data => setSummonerInfo(data))
   }, [ign, API_KEY_CTX.apiKey,summonerUrl]);
+
+  useEffect(() => {
+    fetch('https://europe.api.riotgames.com/lol/match/v5/matches/EUN1_3270671953?api_key=RGAPI-604a774f-facc-4035-805e-0604f0d326db')
+    .then(response => response.json())
+    .then(data => console.log(data))
+  },[])
+
+  useEffect(() => {
+    console.log(summonerInfo);
+  },[summonerInfo])
 
   if (userProfileExists === true) 
       return (
@@ -130,7 +141,7 @@ const UserProfile = () => {
         </div>
         <div className={style.contact}>
           <div className={style.picture}>
-          <i className={`${'fa-solid fa-user'} ${style['profile-icon']}`}></i>
+          <img src={profileIconUrl} alt='profile icon' width='200px' height='200px'></img>
           </div>
           <ul className={style.social}>
             <li><i className="fa-brands fa-discord"></i></li>

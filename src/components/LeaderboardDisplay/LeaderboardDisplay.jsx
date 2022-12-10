@@ -21,8 +21,9 @@ const LeaderboardDisplay = (props) => {
         fetch(challengerQueueUrl)
         .then(response => response.json())
         .then(data => setPlayerList(data.entries))
+        .catch(err => console.log(err))
         .finally(() => setIsLoading(false))
-    },[searchRegion, challengerQueueUrl])
+    },[searchRegion, challengerQueueUrl,])
 
    if (!isLoading) { 
   return (
@@ -42,13 +43,15 @@ const LeaderboardDisplay = (props) => {
                 {
                 playerList.sort((a, b) => b.leaguePoints - a.leaguePoints)
                 .map((player,idx) => idx < retrieveLimit &&
-                <Player summonerName={player.summonerName} 
+                <Player summonerName={player.summonerName}
                 idx={idx}
                 key={player.summonerId}
+                summonerIcon={player.profileIconId}
                 leaguePoints={player.leaguePoints} 
                 searchRank={searchRank}
                 defaultRank={defaultRank}
                 defaultRankSearch={defaultRankSearch}
+                defaultRegionSearch={defaultRegionSearch}
                 searchRegion={searchRegion}
                 wins={player.wins}
                 losses={player.losses}/>)
