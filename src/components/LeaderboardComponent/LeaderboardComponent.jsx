@@ -5,11 +5,10 @@ import style from './leaderboardcomponent.module.css'
 
 function LeaderboardComponent() {
   const defaultRegion = 'eun1';
-  const defaultRank = 'challenger'
+  const defaultRank = 'challenger';
 
   const [searchRegion, setSearchRegion] = useState(defaultRegion);
   const [searchRank, setSearchRank] = useState(defaultRank)
-
 
   const onRegionChange = (region) => {
     setSearchRegion(region === defaultRegion ? defaultRegion : region)
