@@ -20,6 +20,9 @@ const Player = (props) => {
         .finally(() => setProfileIcon((JSON.parse(localStorage.getItem(summonerName)) ?? 1)))
         .catch(localStorage.setItem(summonerName,JSON.stringify(null)))
      }
+     if (localStorage.getItem(summonerName)) {
+      setProfileIcon(JSON.parse(localStorage.getItem(summonerName)) ?? 7)
+     }
     },[summonerName,playerUrl])
 
     const capitalize = (word) => {

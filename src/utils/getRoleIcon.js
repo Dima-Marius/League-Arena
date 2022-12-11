@@ -5,19 +5,19 @@ import adcRole from '../assets/Roles/Position_Gold-Bot.png';
 import supportRole from '../assets/Roles/Position_Gold-Support.png';
 
 export const getRoleIcon = (role) => {
-    if (role.toLowerCase() === 'top') {
+    if (role?.toLowerCase() === 'top') {
         return topRole;
     }
-    if (role.toLowerCase() === 'mid') {
+    if (role?.toLowerCase() === 'mid' || role?.toLowerCase() === 'middle') {
         return midRole;
     }
-    if (role.toLowerCase() === 'jungle') {
+    if (role?.toLowerCase() === 'jungle') {
         return jungleRole;
     }
-    if (role.toLowerCase() === 'adc') {
+    if (role?.toLowerCase() === 'adc' || role?.toLowerCase() === 'bottom') {
         return adcRole;
     }
-    if (role.toLowerCase() === 'support') {
+    if (role?.toLowerCase() === 'support' || role?.toLowerCase() === 'utility') {
         return supportRole;
     }
 }

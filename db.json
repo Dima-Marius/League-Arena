@@ -2,8 +2,10 @@
   "createdTeams": [
     {
       "teamName": "Hardstuck Stepbros",
-      "logo": "LOGO HERE",
+      "logo": "https://as1.ftcdn.net/v2/jpg/03/37/94/86/1000_F_337948696_vkgzHJEhzNlwQ6t1jCJUTGYS9z5wZ7SL.jpg",
       "region": "EUNE",
+      "wins": 0,
+      "losses": 0,
       "members": [
         "Dog",
         "Cat",
@@ -22,6 +24,8 @@
       "teamName": "SKT T1",
       "logo": "LOGO HERE",
       "region": "KOREA",
+      "wins": 0,
+      "losses": 0,
       "members": [
         "FAKER",
         "DEJI",
@@ -41,6 +45,8 @@
       "teamName": "SKT T1",
       "logo": "LOGO HERE",
       "region": "KOREA",
+      "wins": 0,
+      "losses": 0,
       "members": [
         "Dog",
         "Cat",
@@ -60,6 +66,8 @@
       "teamName": "SKT T1",
       "logo": "LOGO HERE",
       "region": "KOREA",
+      "wins": 0,
+      "losses": 0,
       "members": [
         "FAKER",
         "DEJI",
@@ -78,6 +86,8 @@
       "teamName": "SKT T1",
       "logo": "LOGO HERE",
       "region": "KOREA",
+      "wins": 0,
+      "losses": 0,
       "members": [
         "Dog",
         "Cat",
@@ -99,6 +109,8 @@
       "teamName": "SKT T1",
       "logo": "LOGO HERE",
       "region": "NA",
+      "wins": 0,
+      "losses": 0,
       "members": [
         "dog",
         "cat",
@@ -114,10 +126,16 @@
     },
     {
       "teamName": "Team Cheetos",
-      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrGz_SASejkM_Rb7q7dC5UY0MLmP1ZTXK-Vlx7PJ-INttAtOivN_nRBwIQF_heeXQGSU&usqp=CAU",
+      "logo": "https://cdn.dribbble.com/users/3144264/screenshots/15684959/153.png",
       "region": "EUNE",
+      "wins": 27,
+      "losses": 5,
       "members": [
-        "Shady1k"
+        "PSG Shady",
+        "dog",
+        "cat",
+        "ilynagava",
+        "T1 Faker"
       ],
       "availableRoles": [
         "TOP",
@@ -188,7 +206,7 @@
       "confirmPassword": "lamind15",
       "firstName": "Marius",
       "lastName": "Dima",
-      "ign": "Shady1k",
+      "ign": "PSG Shady",
       "region": "EUNE",
       "role": "TOP",
       "rank": "GRANDMASTER",
@@ -205,7 +223,8 @@
       "region": "EUW",
       "role": "JUNGLE",
       "rank": "GRANDMASTER",
-      "id": 7
+      "id": 7,
+      "team": "Team Cheetos"
     },
     {
       "email": "tstststtsshadyzzd1k@email.us",
@@ -223,6 +242,19 @@
       "role": "JUNGLE",
       "rank": "GRANDMASTER",
       "id": 9
+    },
+    {
+      "email": "dummyacc1@mail.com",
+      "password": "$2a$10$fkrS41CLTMxexjZdzNXUdeFQQlcNSVDQmt4mZs4ZkE.AfW0/1dEa.",
+      "confirmPassword": "qweqwe",
+      "firstName": "ilynagava",
+      "lastName": "dummy",
+      "ign": "ilynagava",
+      "region": "EUNE",
+      "role": "JUNGLE",
+      "rank": "MASTER",
+      "id": 10,
+      "team": "Hardstuck Stepbros"
     }
   ]
 }

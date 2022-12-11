@@ -1,0 +1,11 @@
+.li {
+    font-size: 22px;
+    position: relative;
+    margin-bottom:15px;
+}
+
+.profilepic {
+    position: absolute;
+    left:100px;
+    top:0;
+}

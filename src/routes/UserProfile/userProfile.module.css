@@ -115,7 +115,8 @@
    gap: 22px;
    background-color: rgba(255, 255, 255, 0.1);
    border-radius: 18px;
-
+   border-top: solid 1px aqua;
+   border-bottom: solid 1px aqua;
 }
 
 .contact .social {
@@ -277,8 +278,137 @@
     gap: 8px;
     position: relative;
     top:4px;
-
 }
+
+.team-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-wrapper h3 {
+    text-align: center;
+}
+
+.team-name {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    font-size: 24px;
+}
+
+.members {
+margin-left: 30px;
+    
+}
+.members-container h3 {
+    background-color: rgba(245, 245, 245,0.1);
+    border-bottom-right-radius: 18px;
+}
+
+.team-logo {
+    height: 300px;
+    width: 340px;
+    border-bottom-left-radius: 18px;
+    border: solid 2px rgba(245, 245, 245,0.1);
+}
+
+.team-record {
+    flex:50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.record {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50%;
+    color: #4aa9b2
+}
+
+.members {
+    position: relative;
+    left:30px;
+    top: 14px;
+}
+
+.members-container {
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(16, 19, 25,0.3);
+    width: 50%;
+    border-bottom-right-radius: 18px;
+    border-bottom: solid 2px rgba(245, 245, 245,0.1);
+    border-right: solid 2px rgba(245, 245, 245,0.1);
+}
+
+.team-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-name { 
+    background-color:rgba(16, 19, 25,0.3);
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    display: block;
+}
+
+.wins, .losses, .good, .bad {
+    font-size: 28px;
+    font-family: Anton;
+}
+
+.record {
+    display: flex;
+    gap: 50px;
+}
+
+.record > div:first-of-type {
+    display: flex;
+    gap: 6px;
+}
+
+.record p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.wins, .good {
+    color: #41cf55
+}
+
+.losses, .bad {
+    color:#df4837;
+}
+
+.logo-members {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* --darker-blue: rgb(11, 12, 16);
+--dark-blue: rgb(16, 19, 25);
+--lighter-blue: rgb(31, 40, 51);
+--smokey: #A3ABB6;
+--light-aqua: rgb(102, 252, 241);
+--dark-aqua: #45A29E;
+--alternative-dark-blue: rgb(46, 48, 71);
+--alternative-purple: rgb(105, 70, 230);
+--alternative-smokey: #c5c6c7;
+--gray: #34495e;
+--darkgray: #2c3e50;
+--crimson: #80374f;
+--navbar-size: 74px;
+--footer-size: 609px; */
+
 
 /* TEAM AREA */
 
@@ -286,12 +416,13 @@
 
 .stats {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.1);
     grid-area: stats;
     border-radius: 18px;
+
 }
 
 .stats > h2 {
@@ -299,7 +430,21 @@
     color: #4aa9b2;
 }
 
+.match-history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 
+.match-history > li:last-child {
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+}
+
+/* .match-history > li:last-child .test img {
+    border-bottom-left-radius: 18px;
+} */
 
 /* STATS AREA */
   
@@ -789,3 +934,5 @@
 }
 
 /* BG ANIMATION *******************************************************/
+
+

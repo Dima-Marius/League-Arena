@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useCallback } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
@@ -13,6 +13,8 @@ import { getRankIcon } from '../../utils/getRankIcon';
 import { getRoleIcon } from '../../utils/getRoleIcon';
 import '../../rankedTextGradients/rankedTextGradients.css'
 import ApiKeyContext from '../../context/ApiKeyContext';
+import TeamMember from './TeamMember';
+import MatchItem from './MatchItem';
 
 const UserProfile = () => {
 
@@ -24,17 +26,21 @@ const UserProfile = () => {
     const loading = null;
     const [summonerInfo, setSummonerInfo] = useState([])
     const summonerUrl = `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${ign}?api_key=${API_KEY_CTX.apiKey}`
+    const [summonerId, setSummonerId] = useState(null)
+    const summonerMatchesUrl = `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${summonerId}/ids?start=0&count=5&api_key=RGAPI-8c90c701-1e08-4309-aa76-876f91315209`
     const [teamsEndpoint, setTeamsEndpoint] = useState('')
     const [currentUser, setCurrentUser] = useState(null);
-    const [userTeam, setUserTeam] = useState([])
+    const [userTeam, setUserTeam] = useState({})
     const [userProfileExists, setUserProfileExists] = useState(loading);
     const profileIconUrl = `http://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${summonerInfo.profileIconId}.png`
+    const [winrate, setWinrate] = useState('Loading...')
+    const [summonerMatches, setSummonerMatches] = useState([])
 
   
     const getCurrentUser = useCallback( async () => { 
       const response = await fetch(usersUrl + usersEndpoint);
       const result = await response.json();
-      setCurrentUser(result)
+      setCurrentUser(result[0])
       return result[0]?.ign;
     },[usersEndpoint])
 
@@ -50,14 +56,27 @@ const UserProfile = () => {
       checkUserExists()
     },[checkUserExists])
 
+/*     const calcWinrate = ((userTeam[0]?.wins / (userTeam[0]?.wins + userTeam[0]?.losses)) * 100 ).toFixed(2) ?? 0; */
+
+
+    const calculateWinrate = useMemo(() => {
+      const winrate = ((userTeam?.wins / (userTeam?.wins + userTeam?.losses)) * 100 ).toFixed(2)
+      if (winrate > 0) {
+        return winrate;
+      } else {
+        return 0;
+      }
+    },[userTeam])
+
     useEffect(() => {
       if (currentUser !== null) {
-      setTeamsEndpoint(`?teamName=${currentUser[0].team}`)
+      setTeamsEndpoint(`?teamName=${currentUser?.team}`)
       fetch(teamsUrl + teamsEndpoint)
       .then(response => response.json())
-      .then(data => setUserTeam(data))
+      .then(data => setUserTeam(data[0]))
+      .finally(() => setWinrate(calculateWinrate))
     }
-  },[currentUser,teamsEndpoint])
+  },[currentUser,teamsEndpoint, calculateWinrate]) 
 
   useEffect(() => {
       fetch(summonerUrl)
@@ -65,15 +84,27 @@ const UserProfile = () => {
       .then(data => setSummonerInfo(data))
   }, [ign, API_KEY_CTX.apiKey,summonerUrl]);
 
-  useEffect(() => {
+/*    useEffect(() => {
     fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/EUN1_3270671953?api_key=${API_KEY_CTX.apiKey}`)
     .then(response => response.json())
     .then(data => console.log(data))
   },[API_KEY_CTX.apiKey])
+ */
+/*   useEffect(() => {
+    console.log(summonerInfo);
+  },[summonerInfo]) */
 
   useEffect(() => {
-    console.log(summonerInfo);
-  },[summonerInfo])
+    setSummonerId(summonerInfo.puuid)
+  },[summonerInfo.puuid])
+
+  useEffect(() => {
+    if (summonerId !== null && summonerId !== undefined) {
+      fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${summonerId}/ids?start=0&count=5&api_key=RGAPI-8c90c701-1e08-4309-aa76-876f91315209`)
+      .then(response => response.json())
+      .then(data => setSummonerMatches(data));
+    }
+  },[summonerId,summonerMatchesUrl,summonerInfo.puuid])
 
   if (userProfileExists === true) 
       return (
@@ -150,11 +181,11 @@ const UserProfile = () => {
           </ul>
         </div>
         <div className={style.info}>
-          <p>Username: <span>{currentUser[0]?.ign}</span></p>
-          <p>Region: <span>{currentUser[0]?.region} <span className={style.globe}><i className="fa-solid fa-globe"></i></span></span></p>
-          <p>Role:<span>{currentUser[0]?.role}</span>
+          <p>Username: <span>{currentUser?.ign}</span></p>
+          <p>Region: <span>{currentUser?.region} <span className={style.globe}><i className="fa-solid fa-globe"></i></span></span></p>
+          <p>Role:<span>{currentUser?.role}</span>
           <span className={style['role-icon']}>
-            <img src={currentUser.length !== 0 && getRoleIcon(currentUser[0]?.role)} width='50px' height='50px' alt='role' />
+            <img src={currentUser.length !== 0 && getRoleIcon(currentUser?.role)} width='50px' height='50px' alt='role' />
           </span>
           </p>
         </div>
@@ -165,8 +196,8 @@ const UserProfile = () => {
             </h2>
           </div>
           <div>
-            <img src={currentUser.length !== 0 && getRankIcon(currentUser[0]?.rank)} width='200px' height='200px' alt='rank'/>
-            <p className={`${style['rank-text']} ${currentUser[0]?.rank.toLowerCase()}`}>{currentUser[0]?.rank}</p>
+            <img src={currentUser.length !== 0 && getRankIcon(currentUser?.rank)} width='200px' height='200px' alt='rank'/>
+            <p className={`${style['rank-text']} ${currentUser?.rank.toLowerCase()}`}>{currentUser?.rank}</p>
           </div>
         </div>
         <div className={style.about}>
@@ -176,13 +207,32 @@ const UserProfile = () => {
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni deserunt minus voluptatibus officiis id, enim, autem nobis eius quasi animi fuga hic optio repudiandae explicabo obcaecati vitae debitis corrupti aliquid dolorem eligendi quisquam quis quaerat deleniti iure! Natus, exercitationem quos maxime nesciunt repudiandae suscipit alias eius officiis excepturi quisquam velit odit sint, quidem voluptates quod ut laborum, hic minus sequi ullam eligendi accusamus fugit! At praesentium maxime voluptatem illo maiores doloribus tenetur aperiam quos corrupti veniam. Nulla doloremque voluptates placeat rerum velit quia animi distinctio aperiam inventore? Voluptates aliquid recusandae quaerat eos ad eveniet veritatis animi perspiciatis, inventore officiis pariatur.</p>
         </div>
         <div className={style.team}>
-          <h2>TEAM <span><i className="fa-brands fa-teamspeak"></i></span></h2>
-          <div>
-            <p>{userTeam[0]?.teamName}</p>
-            <p><img src={userTeam[0]?.logo} alt='team logo'></img></p>
-          </div>
-          <div>
-          <p>Members: {userTeam[0]?.members}</p>
+          <div className={style['team-wrapper']}>
+          <div className={style['team-record']}>
+              <p className={style['team-name']}>{userTeam?.teamName}</p>
+              <div className={style.record}>
+                <div>
+                <p>
+                  Wins:<span className={style.wins}>{userTeam?.wins}</span>
+                </p>
+                <p>
+                  Losses:<span className={style.losses}>{userTeam?.losses}</span>
+                </p>
+                </div>
+                <p>Winrate:<span className={winrate >= 50 && winrate ? `${style.good}` : `${style.bad}` }>{winrate}%</span></p>
+              </div>
+            </div>
+            <div className={style['logo-members']}>
+              <div>
+                <p><img className={style['team-logo']} src={userTeam?.logo} alt='team logo'/></p>
+              </div>
+              <div className={style['members-container']}>
+                <h3>MEMBERS</h3>
+                 <ol className={style.members}>
+                    {userTeam?.members?.map((member,idx) => <TeamMember key={idx} memberName={member}/>)}
+                </ol>
+              </div>
+            </div>
           </div>
         </div>
         <div className={style.stats}>
@@ -190,6 +240,9 @@ const UserProfile = () => {
           <div>
             level: {summonerInfo?.summonerLevel}
           </div>
+          <ul className={style['match-history']}>
+            {summonerMatches?.map(match => <MatchItem key={match} currentSummoner={ign} matchId={match}/>)}
+          </ul>
         </div>
       </div>
       <div className={style.footer}>

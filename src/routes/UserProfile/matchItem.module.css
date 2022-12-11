@@ -1,0 +1,44 @@
+.victory {
+    color: #41cf55
+}
+
+.defeat {
+    color:#df4837;
+}
+
+.li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: rgba(245, 245, 245,0.1);
+    color:lavenderblush;
+}
+
+.score-container {
+    margin-left:24px;
+}
+
+.score {
+    color:#4aa9b2;
+}
+
+
+.items-list {
+    display: flex;
+    position: absolute;
+    right:160px;
+    top:50%;
+    transform:translateY(-50%)
+}
+
+.verdict {
+    position: absolute;
+    right:30px;
+}
+
+.role {
+    position: absolute;
+    right:100px;
+}
