@@ -5,8 +5,17 @@ import Navbar from '../../components/Navbar/Navbar';
 import yasuosplash from '../../assets/images/yasuo-spirit-blossom.jpg';
 import championsqueue from '../../assets/images/champions-queue.jpg'
 import TeamOutput from '../../components/TeamOutput/TeamOutput';
+import { useState } from 'react';
 
 const Teams = () => {
+
+  const [rankSearch, setRankSearch] = useState('Grandmaster')
+
+  const onRankSearch = (e) => {
+    debugger
+    setRankSearch(e.target.value.toLowerCase())
+  }
+
   return (
     <div className={style.container}>
         <div className={style.nav}>
@@ -21,7 +30,6 @@ const Teams = () => {
           <span></span><span style={{position:'relative',bottom:'7px'}}>-</span><span></span>
           </div>
         </div>
-        
     <div className={style.teams}>
       <div className={style.header}>
         <img className={style['champions-queue-img']} alt='header' src={championsqueue} width='100%' height='500px'></img>
@@ -90,7 +98,7 @@ const Teams = () => {
           <div className={style['region-filters']}>
             <div>
             <label htmlFor='region'>Rank</label>
-            <select className={style.select} id='region'>
+            <select defaultValue='Grandmaster' onChange={onRankSearch} className={style.select} id='region'>
                 <option>Bronze</option>
                 <option>Silver</option>
                 <option>Gold</option>
@@ -105,7 +113,7 @@ const Teams = () => {
          </div>
       </div>
       <div className={style['team-list']}>
-        <TeamOutput/>
+        <TeamOutput rankSearch={rankSearch} />
       </div>
       <div className={style['navigation-buttons']}>
         <div>

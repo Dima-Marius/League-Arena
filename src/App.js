@@ -11,7 +11,6 @@ import Teams from './routes/Teams/Teams';
 import { AuthContextProvider } from './context/AuthContext';
 import PrivateRoutes from './routes/PrivateRoutes/PrivateRoutes';
 import UserProfileRoutes from './routes/UserProfile/UserProfileRoutes.jsx';
-import UserProfile from './routes/UserProfile/UserProfile.jsx'
 import Redirect from './routes/Redirect/Redirect';
 import { ApiKeyContextProvider } from './context/ApiKeyContext';
 
@@ -33,7 +32,7 @@ function App() {
             <Route path='/userProfile'>
               <Route index element={<Redirect/>}/>
               <Route path='*' element={<UserProfileRoutes/>}/>
-            </Route>  
+            </Route>
             <Route path='/settings' element={<Navbar/>} />
             <Route path='/about' element={<About/>} />
             <Route path='*' element={<NotFound/>} />

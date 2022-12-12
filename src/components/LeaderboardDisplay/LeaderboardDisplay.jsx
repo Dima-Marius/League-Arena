@@ -21,7 +21,6 @@ const LeaderboardDisplay = (props) => {
         fetch(challengerQueueUrl)
         .then(response => response.json())
         .then(data => setPlayerList(data.entries))
-        .catch(err => console.log(err))
         .finally(() => setIsLoading(false))
     },[searchRegion, challengerQueueUrl,])
 

@@ -24,7 +24,7 @@ const Navbar = () => {
 
     <nav className={style['nav-container']}>   
       <ul className={style.ul}>
-      <div className={style['main-logo']}><img src={weblogo} width='180px' height='60px' alt='website logo'/></div>
+        <div className={style['main-logo']}><img src={weblogo} width='180px' height='60px' alt='website logo'/></div>
           <NavLink className={addActiveClass} to='/home'><li><i className="fa-solid fa-house"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/teams'><li><i className="fa-solid fa-gamepad"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/leaderboard'><li><i className="fa-solid fa-earth-americas"></i></li></NavLink>

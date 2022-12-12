@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './teamCard.module.css';
-import teampic from '../../assets/images/team-profile-pic.jpg';
 import { BiWorld } from 'react-icons/bi'
 import { RiTeamFill } from 'react-icons/ri'
 import { GiPositionMarker } from 'react-icons/gi'
@@ -11,18 +10,20 @@ import { GrContact } from 'react-icons/gr'
 import { FaDiscord } from 'react-icons/fa'
 import PlayerItem from '../PlayerItem/PlayerItem';
 import RoleItem from '../RoleItem/RoleItem';
+import { getRankIcon } from '../../utils/getRankIcon';
 
 const TeamCard = (props) => {
+
   const {teamName, logo, region, members, availableRoles, rank, description} = props;
 
-
+  const rankClass = rank.toLowerCase()
 
   return (
-    <div className={style.card}>
+    <div key={teamName} className={style.card}>
         <div className={style.logo}>
           <div className={style['logo-wrapper']}>
           <div>
-            <img src={teampic} width='65px' height='65px' alt='team logo'></img>
+            <img src={logo} width='85px' height='85px' alt='team logo'></img>
           </div>
           <div>
             <h3>
@@ -40,17 +41,16 @@ const TeamCard = (props) => {
             {region}
           </div>
         </div>
-{/*         <div className={style.region}>{region}</div> */}
         <div className={style['available-roles']}>
           <div className={style['roles-wrapper']}>
           <div>
             <h3>
               LOOKING FOR <GiPositionMarker/>
-              </h3>
+            </h3>
           </div>
           <div>
             <ul className={style['role-list']}>
-            {availableRoles.map(item => <RoleItem role={item} />)}
+            {availableRoles.map(item => <RoleItem key={item} role={item} />)}
             </ul>
           </div>
           </div>
@@ -75,7 +75,12 @@ const TeamCard = (props) => {
               </h3>
             </div>
             <div>
-              {rank}
+            <p className={style['rank-text']}>
+              <p className={`${rankClass}`}>{rank}</p>
+              <span>
+                <img className={style['rank-img']} src={getRankIcon(rank)} height='43px' width='43px' alt=''/>
+              </span>
+              </p>
             </div>
           </div>
         </div>
@@ -88,7 +93,7 @@ const TeamCard = (props) => {
            </div>
            <div>
             <ul className={style['player-list']}>
-           {members.map(item => <PlayerItem playerName={item}/>)}
+           {members.map((item,idx) => <PlayerItem key={idx} playerName={item}/>)}
            </ul>
            </div>
           </div>

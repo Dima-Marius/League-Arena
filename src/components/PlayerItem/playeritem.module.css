@@ -1,9 +1,18 @@
 .player {
-    color: beige;
+    color: whitesmoke;
     cursor: pointer;
 }
 
 .player:active {
     position: relative;
     top:1px;
+}
+
+.player, .player > * {
+    display: flex;
+    gap: 4px;
+}
+
+.player {
+    margin-left:auto;
 }

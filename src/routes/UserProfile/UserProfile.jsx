@@ -56,9 +56,6 @@ const UserProfile = () => {
       checkUserExists()
     },[checkUserExists])
 
-/*     const calcWinrate = ((userTeam[0]?.wins / (userTeam[0]?.wins + userTeam[0]?.losses)) * 100 ).toFixed(2) ?? 0; */
-
-
     const calculateWinrate = useMemo(() => {
       const winrate = ((userTeam?.wins / (userTeam?.wins + userTeam?.losses)) * 100 ).toFixed(2)
       if (winrate > 0) {
@@ -84,27 +81,17 @@ const UserProfile = () => {
       .then(data => setSummonerInfo(data))
   }, [ign, API_KEY_CTX.apiKey,summonerUrl]);
 
-/*    useEffect(() => {
-    fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/EUN1_3270671953?api_key=${API_KEY_CTX.apiKey}`)
-    .then(response => response.json())
-    .then(data => console.log(data))
-  },[API_KEY_CTX.apiKey])
- */
-/*   useEffect(() => {
-    console.log(summonerInfo);
-  },[summonerInfo]) */
-
   useEffect(() => {
     setSummonerId(summonerInfo.puuid)
   },[summonerInfo.puuid])
 
   useEffect(() => {
     if (summonerId !== null && summonerId !== undefined) {
-      fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${summonerId}/ids?start=0&count=5&api_key=RGAPI-8c90c701-1e08-4309-aa76-876f91315209`)
+      fetch(`https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${summonerId}/ids?start=0&count=5&api_key=${API_KEY_CTX.apiKey}`)
       .then(response => response.json())
       .then(data => setSummonerMatches(data));
     }
-  },[summonerId,summonerMatchesUrl,summonerInfo.puuid])
+  },[summonerId,summonerMatchesUrl,summonerInfo.puuid, API_KEY_CTX.apiKey])
 
   if (userProfileExists === true) 
       return (
@@ -207,6 +194,9 @@ const UserProfile = () => {
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni deserunt minus voluptatibus officiis id, enim, autem nobis eius quasi animi fuga hic optio repudiandae explicabo obcaecati vitae debitis corrupti aliquid dolorem eligendi quisquam quis quaerat deleniti iure! Natus, exercitationem quos maxime nesciunt repudiandae suscipit alias eius officiis excepturi quisquam velit odit sint, quidem voluptates quod ut laborum, hic minus sequi ullam eligendi accusamus fugit! At praesentium maxime voluptatem illo maiores doloribus tenetur aperiam quos corrupti veniam. Nulla doloremque voluptates placeat rerum velit quia animi distinctio aperiam inventore? Voluptates aliquid recusandae quaerat eos ad eveniet veritatis animi perspiciatis, inventore officiis pariatur.</p>
         </div>
         <div className={style.team}>
+          {
+          userTeam
+          ? 
           <div className={style['team-wrapper']}>
           <div className={style['team-record']}>
               <p className={style['team-name']}>{userTeam?.teamName}</p>
@@ -229,16 +219,22 @@ const UserProfile = () => {
               <div className={style['members-container']}>
                 <h3>MEMBERS</h3>
                  <ol className={style.members}>
-                    {userTeam?.members?.map((member,idx) => <TeamMember key={idx} memberName={member}/>)}
+                    {userTeam?.members?.map(member => <TeamMember key={member} memberName={member}/>)}
                 </ol>
               </div>
             </div>
           </div>
-        </div>
+          :
+          <div>
+              <h2 className={style['no-team']}>User has not joined a team yet :&#40;</h2>
+          </div>
+          }
+          </div>
         <div className={style.stats}>
             <h2>STATS <span><i className="fa-sharp fa-solid fa-chart-simple"></i></span></h2>
-          <div>
-            level: {summonerInfo?.summonerLevel}
+          <div className={style.top}>
+            <p>Last 5 Matches</p>
+            <p>level: {summonerInfo?.summonerLevel}</p>
           </div>
           <ul className={style['match-history']}>
             {summonerMatches?.map(match => <MatchItem key={match} currentSummoner={ign} matchId={match}/>)}
