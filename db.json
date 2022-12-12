@@ -197,15 +197,15 @@
       "id": 5
     },
     {
-      "email": "shady1kx@gmail.com",
-      "password": "$2a$10$GZ3RNWtcFK4e4wEW5z/7SOo3z0cKPXrAInCPswu7IIPbcBN7yim4a",
-      "confirmPassword": "lamind15",
-      "firstName": "Marius",
-      "lastName": "Dima",
+      "email": "shady2kx@gmail.com",
+      "password": "$2a$10$IJN0snn//C4oQ7fJmGRLFe4c66.0z7p6rD.EfmOcogpP9MrIyGGGC",
+      "confirmPassword": "123123",
+      "firstName": "myself",
+      "lastName": "me",
       "ign": "PSG Shady",
       "region": "EUNE",
       "role": "TOP",
-      "rank": "GRANDMASTER",
+      "rank": "CHALLENGER",
       "id": 6,
       "team": "Team Liquid"
     },

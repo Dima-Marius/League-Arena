@@ -10,19 +10,6 @@ import { FiEdit3 } from 'react-icons/fi'
 
 const LoginForm = ({ userClickedRegister }) => {
 
-/*   useEffect(() => {
-    fetch('http://localhost:3500/register',{
-      method: 'POST',
-      body: JSON.stringify({
-        email: 'dog@emailll.com',
-        password: '123123123',
-      }),
-      headers : {
-        'Content-type' : 'application/json'
-      }
-    })
-  }) */
-
 const authCtx = useContext(AuthContext);
 const loginUrl = 'http://localhost:3500/login';
 const redirect = useNavigate()

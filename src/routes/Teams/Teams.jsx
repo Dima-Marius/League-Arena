@@ -9,11 +9,25 @@ import { useState } from 'react';
 
 const Teams = () => {
 
-  const [rankSearch, setRankSearch] = useState('Grandmaster')
+  const [rankSearch, setRankSearch] = useState('any')
+  const [regionSearch, setRegionSearch] = useState('any')
+  const [languageSearch, setLanguageSearch] = useState('english')
+  const [inputSearch, setInputSearch] = useState('')
 
-  const onRankSearch = (e) => {
-    debugger
+  const handleRankSearch = (e) => {
     setRankSearch(e.target.value.toLowerCase())
+  }
+
+  const handleRegionSearch = (e) => {
+    setRegionSearch(e.target.value.toLowerCase())
+  }
+
+  const handleLanguageSearch = (e) => {
+    setLanguageSearch(e.target.value.toLowerCase())
+  }
+
+  const handleInputSearch = (e) => {
+    setInputSearch(e.target.value)
   }
 
   return (
@@ -47,7 +61,7 @@ const Teams = () => {
         <div className={style['rank-filters']}>
             <div className={style.search}>
                 <div className={style['search-wrapper']}>
-                  <input placeholder='...search' type='text'></input>
+                  <input onChange={handleInputSearch} placeholder='...search' type='text' />
                   <span><i className="fa-solid fa-magnifying-glass"></i></span>
                 </div>
             </div>
@@ -77,10 +91,12 @@ const Teams = () => {
           <div className={style['region-filters']}>
             <div>
             <label htmlFor='region'>Region</label>
-            <select className={style.select} id='region'>
+            <select className={style.select} onChange={handleRegionSearch} defaultValue='Any' id='region'>
+                <option>Any</option>
                 <option>EUNE</option>
                 <option>EUW</option>
                 <option>NA</option>
+                <option>KOREA</option>
                 <option>RUSSIA</option>
                 <option>OCEANIA</option>
             </select>
@@ -88,8 +104,9 @@ const Teams = () => {
           </div>
           <div className={style['region-filters']}>
             <div>
-            <label htmlFor='region'>Language</label>
-            <select className={style.select} id='region'>
+            <label htmlFor='language'>Language</label>
+            <select className={style.select} onChange={handleLanguageSearch} defaultValue='Any' id='language'>
+                <option>Any</option>
                 <option>English</option>
                 <option>Romanian</option>
             </select>
@@ -97,8 +114,9 @@ const Teams = () => {
           </div>
           <div className={style['region-filters']}>
             <div>
-            <label htmlFor='region'>Rank</label>
-            <select defaultValue='Grandmaster' onChange={onRankSearch} className={style.select} id='region'>
+            <label htmlFor='rank'>Rank</label>
+            <select defaultValue='Any' onChange={handleRankSearch} className={style.select} id='rank'>
+                <option>Any</option>
                 <option>Bronze</option>
                 <option>Silver</option>
                 <option>Gold</option>
@@ -113,7 +131,7 @@ const Teams = () => {
          </div>
       </div>
       <div className={style['team-list']}>
-        <TeamOutput rankSearch={rankSearch} />
+        <TeamOutput inputSearch={inputSearch} languageSearch={languageSearch} regionSearch={regionSearch} rankSearch={rankSearch} />
       </div>
       <div className={style['navigation-buttons']}>
         <div>

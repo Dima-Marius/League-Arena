@@ -13,6 +13,7 @@ import PrivateRoutes from './routes/PrivateRoutes/PrivateRoutes';
 import UserProfileRoutes from './routes/UserProfile/UserProfileRoutes.jsx';
 import Redirect from './routes/Redirect/Redirect';
 import { ApiKeyContextProvider } from './context/ApiKeyContext';
+import Settings from './routes/Settings/Settings';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
               <Route index element={<Redirect/>}/>
               <Route path='*' element={<UserProfileRoutes/>}/>
             </Route>
-            <Route path='/settings' element={<Navbar/>} />
+            <Route path='/settings' element={<Settings/>} />
             <Route path='/about' element={<About/>} />
             <Route path='*' element={<NotFound/>} />
           </Route>
