@@ -7,7 +7,7 @@ const ApiKeyContext = React.createContext({
 export default ApiKeyContext
 
 export const ApiKeyContextProvider = (props) => {
-    const [apiKey, setApiKey] = useState('RGAPI-3dea2e41-97ff-4bbe-b5f2-f3c8b50f8c13')
+    const [apiKey, setApiKey] = useState('RGAPI-88aa59b8-32e8-47e8-acf2-e54e1e2890dd')
 
     return (
         <ApiKeyContext.Provider value={{apiKey:apiKey, setApiKey:setApiKey}}>

@@ -6,7 +6,7 @@
     grid-template-rows:
     var(--navbar-size) [navbar-empty]
     100px [empty]
-    1230px [main]
+    1000px [main]
     100px [empty]
     var(--footer-size) [footer];
     grid-template-areas:
@@ -46,11 +46,11 @@
 .main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 140px 1fr;
+    grid-template-rows: 140px 57px 1fr;
     grid-template-areas:
       "title"
+      "navigation-container"
       "account-settings"
-
   }
   
 .title {
@@ -59,7 +59,6 @@
     justify-content: center;
     align-items: center;
     grid-area: title;
-
 }
 
 .title h2 {
@@ -67,14 +66,83 @@
     font-size: 36px;
 }
   
-  .account-settings {
+.account-settings {
+    display: flex;
+    margin-top: 80px;
+    align-items: center;
+    grid-area: account-settings;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.navigation {
+    grid-area: navigation-container;
+}
+
+.navigation {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: account-settings;
+    font-size: 22px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
 }
+
+.navigation h2 {
+    display:flex;
+    gap:8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation h2 i {
+    font-size: 24px;
+}
+
+
+.navigation button {
+    border: none;
+    background-color: rgba(103, 142, 248, 0.219);
+    width:100%;
+    color:rgb(0, 0, 0);
+}
+
+.navigation li:not(:last-child) {
+    border-right: solid 1px black;
+}
+
+.navigation li {
+    width:100%;
+}
+
+.clicked {
+    color:rgb(15, 152, 216) !important;
+/*     color:rgb(135, 116, 255) !important; */
+}
+
+/* .account-settings h2 {
+    display: flex;
+    gap: 8px;
+    font-size: 26px;
+    color: rgb(139, 41, 230);
+}
+
+.security-settings h2 {
+    display: flex;
+    gap: 8px;
+    font-size: 26px;
+    color: rgb(139, 41, 230);
+}
+
+.security-settings {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: security-settings;
+} */
   
-  .team-title {
+/*   .team-title {
     grid-area: team-title;
     border: solid 3px rgb(0, 217, 255);
 }
@@ -88,10 +156,7 @@
     grid-area: buttons;
     border: solid 3px rgb(255, 0, 255);
 }
-  
-
-
-
+   */
 
 /* BG ANIMATION *******************************************************/
 

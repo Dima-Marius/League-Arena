@@ -7,9 +7,9 @@ const RoleItem = (props) => {
 
   return (
     <li className={style.role}>
-      <p>
-        {role} <span><img src={getRoleIcon(role)} width='20px' height='20px' alt=''/></span>
-      </p>
+        <p>
+          {role} <span><img src={getRoleIcon(role)} width='20px' height='20px' alt=''/></span>
+        </p>
       </li>
   )
 }

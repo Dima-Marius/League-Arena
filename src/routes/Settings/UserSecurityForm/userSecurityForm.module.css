@@ -1,8 +1,4 @@
-.email-error {
-    border-bottom: solid 1px red !important;
-  }
-
-  .register-inputs {
+.register-inputs {
     display: flex;
     flex-direction: column;
     gap:3.4rem;
@@ -34,41 +30,24 @@
   }
 
 
-  .select {
-    text-align: center;
-    font-size: 20px;
-    width: 210px;
-    outline: 0;
-    border: none;
-    box-shadow: none;
-    color: rgb(0, 0, 0);
-    background-color: transparent;
-    cursor: pointer;
-    border-bottom: solid 2px var(--gray)
-  }
-  
-  .select * {
-    background-color: rgb(136, 157, 172);
-  }
-
 
   /* SUBMIT BTN */
 
   .submit {
     background-color: transparent;
-    border: 1px solid #222222;
+    border: 1px solid #ffffff;
     border-radius: 8px;
     box-sizing: border-box;
-    color: #222222;
+    color: #ffffff;
     cursor: pointer;
     display: inline-block;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 20px;
     margin: 0;
     outline: none;
-    padding: 6px 23px;
+    padding: 10px 42px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -78,9 +57,12 @@
     -webkit-user-select: none;
     width: auto;
   }
-  
-  .submit {
-    padding: 6px 16px;
+
+  .form-container > h2 {
+    color: slategray;
+    font-size: 32px;
+    border-bottom: solid;
+    text-align: center;
   }
   
   .submit:focus-visible, .back:focus-visible {
@@ -94,4 +76,56 @@
     transform: scale(.96);
   }
 
+  .form-container {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+    gap: 100px;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    gap:5px;
+  }
+
+  .form-container > h2 {
+    color: slategray;
+    font-size: 32px;
+    border-bottom: solid;
+  }
+
   /* SUBMIT BTN */
+
+
+  .register-inputs {
+    display: flex;
+    flex-direction: column;
+    gap:100px;
+    margin-top:auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-inputs > div > input {
+    background-color: transparent;
+    border:none;
+    border-bottom: solid 1px rgb(172, 238, 250);
+    text-align: center;
+    width: 300px;
+    color:rgb(235, 232, 232);
+    outline: none;
+    font-size: 1.5em;
+  }
+  
+  .register-inputs > div > i {
+    position: relative;
+    right:21px;
+  }
+  
+  .register-inputs > input::placeholder {
+    font-size: 20px;
+    color:initial;
+    font-weight: initial;
+  }

@@ -1,0 +1,90 @@
+.email-error {
+    border-bottom: solid 1px red !important;
+  }
+
+  .register-inputs {
+    display: flex;
+    flex-direction: column;
+    gap:3.4rem;
+    margin-top:auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-inputs > div > input {
+    background-color: transparent;
+    border:none;
+    border-bottom: solid 1px rgb(172, 238, 250);
+    text-align: center;
+    width: 300px;
+    color:rgb(235, 232, 232);
+    outline: none;
+    font-size: 1.5em;
+  }
+  
+  .register-inputs > div > i {
+    position: relative;
+    right:21px;
+  }
+  
+  .register-inputs > input::placeholder {
+    font-size: 20px;
+    color:initial;
+    font-weight: initial;
+  }
+
+  .form-container {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+    gap: 100px;
+  }
+
+  .form-container > h2 {
+    color: slategray;
+    font-size: 32px;
+    border-bottom: solid;
+  }
+
+
+  /* SUBMIT BTN */
+
+  .submit {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 10px 42px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+  }
+  
+  
+  .submit:focus-visible, .back:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+  .submit:active, .back:active {
+    background-color: #f7f7f750;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+
+  /* SUBMIT BTN */

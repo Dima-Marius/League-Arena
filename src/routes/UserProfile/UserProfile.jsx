@@ -11,7 +11,7 @@ import NotFound from '../NotFound/NotFound';
 import style from './userProfile.module.css';
 import { getRankIcon } from '../../utils/getRankIcon';
 import { getRoleIcon } from '../../utils/getRoleIcon';
-import '../../rankedTextGradients/rankedTextGradients.css'
+import '../../utils/rankedTextGradients/rankedTextGradients.css'
 import ApiKeyContext from '../../context/ApiKeyContext';
 import TeamMember from './TeamMember';
 import MatchItem from './MatchItem';
