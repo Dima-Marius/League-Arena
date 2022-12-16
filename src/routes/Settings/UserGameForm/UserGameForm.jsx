@@ -102,7 +102,9 @@ const UserGameForm = (props) => {
             </select>
             <p className={rankErrorMsg}>{formik.errors.rank}</p>
           </div>
-          <button type='submit' className={style.submit}>Save Changes</button>
+          <div className={style['btn-wrapper']}>
+            <button type='submit' className={style.submit}>Save Changes</button>
+          </div>
       </form>
     </div>
   )

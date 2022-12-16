@@ -34,7 +34,7 @@
   .form {
     display: flex;
     justify-content: center;
-    gap:100px;
+    gap:80px;
     align-items: center;
     flex-direction: column;
   }
@@ -67,7 +67,7 @@
     color:whitesmoke;
     background-color: transparent;
     cursor: pointer;
-    border-bottom: solid 2px var(--gray)
+    border-bottom: solid 1px rgb(172, 238, 250);
   }
   
   .select * {
@@ -85,6 +85,11 @@
 
   /* SUBMIT BTN */
 
+  .btn-wrapper {
+    position: relative;
+    top:119px;
+  }
+
   .submit {
     background-color: transparent;
     border: 1px solid #ffffff;
@@ -99,7 +104,7 @@
     line-height: 20px;
     margin: 0;
     outline: none;
-    padding: 10px 42px;
+    padding: 8px 30px;
     position: relative;
     text-align: center;
     text-decoration: none;

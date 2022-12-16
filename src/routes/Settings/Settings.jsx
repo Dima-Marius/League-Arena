@@ -33,9 +33,9 @@ const Settings = () => {
       setTabs(prev => prev.map((item,index) => index === idx ? true : false))
   }
 
-  const onButtonClick = (clickedSection) => {
+/*   const onButtonClick = (clickedSection) => {
     setTabs(clickedSection)
-  }
+  } */
 
   let activeTab = tabs.findIndex(tab => tab === true)
 

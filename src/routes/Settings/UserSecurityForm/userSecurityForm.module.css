@@ -47,7 +47,7 @@
     line-height: 20px;
     margin: 0;
     outline: none;
-    padding: 10px 42px;
+    padding: 8px 30px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -97,6 +97,11 @@
   }
 
   /* SUBMIT BTN */
+
+  .btn-wrap {
+    position: relative;
+    top:184px;
+  }
 
 
   .register-inputs {

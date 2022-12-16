@@ -103,6 +103,7 @@ const UserDataForm = (props) => {
       <h2>Account Information</h2>
      <form onSubmit={formik.handleSubmit} className={style['register-inputs']}>
        <div>
+        <h3>Email</h3>
          <input id='email'
          onBlur={formik.handleBlur}
          className={onInvalidEmail}
@@ -114,6 +115,7 @@ const UserDataForm = (props) => {
          <p className={emailErrorMsg}>{formik.errors.email || emailError}</p>
        </div>
        <div>
+       <h3>First Name</h3>
             <input className={onInvalidFirstName}
             id='firstName'
             placeholder='First Name'
@@ -125,6 +127,7 @@ const UserDataForm = (props) => {
             <p className={firstNameErrorMsg}>{formik.errors.firstName}</p>
         </div>
         <div>
+        <h3>Last Name</h3>
             <input className={onInvalidLastName}
             id='lastName'
             placeholder='Last Name'
@@ -136,6 +139,7 @@ const UserDataForm = (props) => {
             <p className={lastNameErrorMsg}>{formik.errors.lastName}</p>
         </div>
         <div>
+        <h3>Username</h3>
             <input className={onInvalidUsername}
             id='ign'
             placeholder='Username'
@@ -148,7 +152,7 @@ const UserDataForm = (props) => {
           </div>
           <div className={`${style['success-msg']} ${successMsgDisplay}`}>{successMsg && <p>Account created successfully! <i className="fa-regular fa-circle-check"></i></p>}</div>
           <div className={style.wrapper}>
-              <button type='submit' className={style.submit}>Submit!</button>
+              <button type='submit' className={style.submit}>Save Changes</button>
           </div>
         </form>
     </div>

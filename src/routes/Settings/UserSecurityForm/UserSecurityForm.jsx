@@ -1,11 +1,12 @@
 import { useFormik } from 'formik';
 import React from 'react';
+import { passwordSchema } from '../../../schemas/PasswordSchema';
 import { stepOneSchema } from '../../../schemas/StepOneSchema';
 import style from './userSecurityForm.module.css'
 
 const UserSecurityForm = (props) => {
 
-  const { authCtx,userUrl,userData,setUserData,updateAuth,setUpdateAuth } = props
+  const { authCtx,userUrl,updateAuth,setUpdateAuth } = props
 
   const onSubmit = (values) => {
     fetch(userUrl, {
@@ -17,17 +18,19 @@ const UserSecurityForm = (props) => {
     }).then(setUpdateAuth({
         ...updateAuth,
         user: {
-            email:values.email,
+            email:authCtx.auth.user.email,
             password:values.password,
             confirmPassword:values.confirmPassword,
-            firstName: values.firstName,
-            lastName:values.lastName,
-            ign: values.ign,
-            region: values.region,
-            role: values.role,
-            rank: values.rank,
+            firstName: authCtx.auth.user.firstName,
+            lastName:authCtx.auth.user.lastName,
+            ign: authCtx.auth.user.ign,
+            region: authCtx.auth.user.region,
+            role: authCtx.auth.user.role,
+            rank: authCtx.auth.user.rank,
             id: authCtx.auth.user.id
-        }}))}
+        }}
+      ))
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -35,7 +38,7 @@ const UserSecurityForm = (props) => {
           confirmPassword: '',
           
         },
-    validationSchema: stepOneSchema,
+    validationSchema: passwordSchema,
     validateOnMount: false,
     validateOnBlur: false,
     onSubmit,
@@ -49,7 +52,7 @@ const UserSecurityForm = (props) => {
   return (
   <div className={style['form-container']}>
       <h2>Security <span><i className="fa-solid fa-user-shield"></i></span></h2>
-     <form className={style['register-inputs']}>
+     <form onSubmit={formik.handleSubmit} className={style['register-inputs']}>
       <div>
         <input className={onInvalidPassword}
         id='password'
@@ -74,7 +77,9 @@ const UserSecurityForm = (props) => {
         <i className="fa-solid fa-lock"></i>
         <p className={passwordConfirmErrorMsg}>{formik.errors.confirmPassword}</p>
      </div>
-     <button className={style.submit} type='submit'>Change Password</button>
+     <div className={style['btn-wrap']}>
+       <button className={style.submit} type='submit'>Save Changes</button>
+     </div>
     </form>
   </div>
   )
