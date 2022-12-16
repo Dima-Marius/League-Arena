@@ -15,16 +15,20 @@ const UserDataForm = (props) => {
 
     const [teamData, setTeamData] = useState({})
     const userTeamName = authCtx.auth.user.team
+    const [updatedUserName, setUpdatedUsername] = useState('')
+    const [updatedMembers, setUpdatedMembers] = useState()
 
     useEffect(() => {
       fetch(`http://localhost:3500/createdTeams?teamName=${userTeamName}`)
       .then(res => res.json())
-      .then(data => setTeamData(data[0]));
+      .then(data => setTeamData(data[0]))
     },[userTeamName])
 
     useEffect(() => {
-      console.log(teamData)
-    },[teamData])
+      if (teamData && Object.keys(teamData).length !== 0) {
+        setUpdatedMembers(teamData?.members?.filter(member => member !== userData.ign))
+      }
+    },[teamData, userData.ign])
 
     const onSubmit = (values) => {
         fetch(userUrl, {
@@ -48,11 +52,21 @@ const UserDataForm = (props) => {
                 id: authCtx.auth.user.id,
                 team: authCtx.auth.user.team
             }
-          }
-          ))
-
- /*          fetch(`http://localhost:3500/createdteams/${team.id}`) */
-        }
+          }))
+          setUpdatedMembers(updatedMembers?.concat(values.ign))
+       }
+    
+        useEffect(() => {
+          if (teamData && Object.keys(teamData).length !== 0 && updatedMembers?.length === 5) {
+          fetch(`http://localhost:3500/createdteams/${teamData.id}`, {
+            headers: {
+                "Content-type": "application/json",
+            },
+            method: 'PATCH',
+            body: JSON.stringify({...teamData, members: updatedMembers})
+          })
+         }
+        },[teamData,updatedMembers]) 
 
      useEffect(() => {
         authCtx.setAuth(updateAuth)
@@ -62,14 +76,9 @@ const UserDataForm = (props) => {
     const formik = useFormik({
       initialValues: {
         email: userData.email,
-/*         password: '',
-        confirmPassword: '', */
         firstName: userData.firstName,
         lastName: userData.lastName,
         ign: userData.ign,
-/*         region: userData.region,
-        role: userData.role,
-        rank: userData.rank, */
       },
   validationSchema: detailsSchema,
   validateOnMount: false,

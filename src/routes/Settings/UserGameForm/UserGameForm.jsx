@@ -1,10 +1,12 @@
 import { useFormik } from 'formik';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { stepOneSchema } from '../../../schemas/StepOneSchema';
 import style from './userGameForm.module.css'
+import useGetUserInfo from '../../../hooks/useGetUserInfo';
+import { gamingSchema } from '../../../schemas/GamingSchema';
 
 const UserGameForm = (props) => {
-    const { authCtx,userUrl,userData,setUserData,updateAuth,setUpdateAuth } = props
+    const { authCtx,userUrl,userData,updateAuth,setUpdateAuth } = props
 
     const onSubmit = (values) => {
         fetch(userUrl, {
@@ -16,17 +18,19 @@ const UserGameForm = (props) => {
         }).then(setUpdateAuth({
             ...updateAuth,
             user: {
-                email:values.email,
-                password:values.password,
-                confirmPassword:values.confirmPassword,
-                firstName: values.firstName,
-                lastName:values.lastName,
-                ign: values.ign,
+                email:authCtx.auth.user.email,
+                password:authCtx.auth.user.password,
+                confirmPassword:authCtx.auth.user.confirmPassword,
+                firstName: authCtx.auth.userfirstName,
+                lastName:authCtx.auth.userlastName,
+                ign: authCtx.auth.userign,
+                id: authCtx.auth.user.id,
                 region: values.region,
                 role: values.role,
-                rank: values.rank,
-                id: authCtx.auth.user.id
-            }}))}
+                rank: values.rank
+            }}
+          ))
+        }
 
 
             const formik = useFormik({
@@ -41,7 +45,7 @@ const UserGameForm = (props) => {
                 role: userData.role,
                 rank: userData.rank,
               },
-          validationSchema: stepOneSchema,
+          validationSchema: gamingSchema,
           validateOnMount: false,
           validateOnBlur: false,
           onSubmit,
@@ -57,7 +61,7 @@ const UserGameForm = (props) => {
   return (
     <div className={style['form-container']}>
       <h2>Player Prefferences</h2>
-      <form className={style.form}>
+      <form onSubmit={formik.handleSubmit} className={style.form}>
         <div className={style['form-control']}>
             <select defaultValue={userData.region} className={`${style.select} ${onInvalidRegion}`}
             id='region'
@@ -98,6 +102,7 @@ const UserGameForm = (props) => {
             </select>
             <p className={rankErrorMsg}>{formik.errors.rank}</p>
           </div>
+          <button type='submit' className={style.submit}>Save Changes</button>
       </form>
     </div>
   )

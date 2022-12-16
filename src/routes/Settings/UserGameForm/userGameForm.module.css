@@ -34,8 +34,9 @@
   .form {
     display: flex;
     justify-content: center;
-    gap:6px;
+    gap:100px;
     align-items: center;
+    flex-direction: column;
   }
 
   .form-container > h2 {
