@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { registerSchema } from '../../../schemas/schemas';
 import style from './userDataForm.module.css'
+import { detailsSchema } from '../../../schemas/DetailsSchema';
 
 const UserDataForm = (props) => {
   const { authCtx,userUrl,userData,setUserData,updateAuth,setUpdateAuth } = props
@@ -11,6 +12,19 @@ const UserDataForm = (props) => {
     
     const [emailError, setEmailError] = useState('')
     const [successMsg, setSuccessMsg] = useState(false)
+
+    const [teamData, setTeamData] = useState({})
+    const userTeamName = authCtx.auth.user.team
+
+    useEffect(() => {
+      fetch(`http://localhost:3500/createdTeams?teamName=${userTeamName}`)
+      .then(res => res.json())
+      .then(data => setTeamData(data[0]));
+    },[userTeamName])
+
+    useEffect(() => {
+      console.log(teamData)
+    },[teamData])
 
     const onSubmit = (values) => {
         fetch(userUrl, {
@@ -23,16 +37,22 @@ const UserDataForm = (props) => {
             ...updateAuth,
             user: {
                 email:values.email,
-                password:values.password,
-                confirmPassword:values.confirmPassword,
                 firstName: values.firstName,
                 lastName:values.lastName,
                 ign: values.ign,
-                region: values.region,
-                role: values.role,
-                rank: values.rank,
-                id: authCtx.auth.user.id
-            }}))}
+                password:authCtx.auth.user.password,
+                confirmPassword:authCtx.auth.user.confirmPassword,
+                region: authCtx.auth.user.region,
+                role: authCtx.auth.user.role,
+                rank: authCtx.auth.user.rank,
+                id: authCtx.auth.user.id,
+                team: authCtx.auth.user.team
+            }
+          }
+          ))
+
+ /*          fetch(`http://localhost:3500/createdteams/${team.id}`) */
+        }
 
      useEffect(() => {
         authCtx.setAuth(updateAuth)
@@ -42,16 +62,16 @@ const UserDataForm = (props) => {
     const formik = useFormik({
       initialValues: {
         email: userData.email,
-        password: '',
-        confirmPassword: '',
+/*         password: '',
+        confirmPassword: '', */
         firstName: userData.firstName,
         lastName: userData.lastName,
         ign: userData.ign,
-        region: userData.region,
+/*         region: userData.region,
         role: userData.role,
-        rank: userData.rank,
+        rank: userData.rank, */
       },
-  validationSchema: registerSchema,
+  validationSchema: detailsSchema,
   validateOnMount: false,
   validateOnBlur: false,
   onSubmit,

@@ -7,6 +7,9 @@ import style from './teamMember.module.css'
 
 const TeamMember = ({memberName}) => {
 
+
+
+
   const API_KEY_CTX = useContext(ApiKeyContext)
   const [profileIcon, setProfileIcon] = useState(JSON.parse(localStorage.getItem(memberName)) ?? 7)
   const playerUrl = `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${memberName}?api_key=${API_KEY_CTX.apiKey}`

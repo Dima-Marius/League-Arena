@@ -197,12 +197,12 @@
       "id": 5
     },
     {
-      "email": "shady2kx@gmail.com",
+      "email": "shady1kx@mail.com",
       "password": "$2a$10$IJN0snn//C4oQ7fJmGRLFe4c66.0z7p6rD.EfmOcogpP9MrIyGGGC",
       "confirmPassword": "123123",
       "firstName": "myself",
       "lastName": "me",
-      "ign": "PSG Shady",
+      "ign": "Butterfly",
       "region": "EUNE",
       "role": "TOP",
       "rank": "CHALLENGER",
@@ -210,12 +210,12 @@
       "team": "Team Liquid"
     },
     {
-      "email": "faker@gmail.com",
-      "password": "$2a$10$I9ynlCimADafGy0x848uu.HlWZ7Oip/yb7jRDSvIFIHxYS9sB2Noy",
+      "email": "shady1kx@gmail.com",
+      "password": "123123",
       "confirmPassword": "123123",
       "firstName": "Faker",
       "lastName": "Yessir",
-      "ign": "T1 Faker",
+      "ign": "Updated Name",
       "region": "EUW",
       "role": "JUNGLE",
       "rank": "GRANDMASTER",
@@ -258,7 +258,7 @@
       "confirmPassword": "lamind15",
       "firstName": "asd",
       "lastName": "dsa",
-      "ign": "Flajpr",
+      "ign": "Flapjr",
       "region": "EUNE",
       "role": "MID",
       "rank": "CHALLENGER",
@@ -271,12 +271,36 @@
       "confirmPassword": "lamind15",
       "firstName": "asd",
       "lastName": "dsa",
-      "ign": "stone43",
+      "ign": "Wild Lulu",
       "region": "EUNE",
       "role": "MID",
       "rank": "CHALLENGER",
       "id": 12,
       "team": "Team Liquid"
+    },
+    {
+      "email": "marius981@email.com",
+      "password": "$2a$10$6OVCVF/sxhK4anXiZ..u3u.EAm/QdYCxH.wheEPnz2xDyEvwmuLnG",
+      "confirmPassword": "qweqwe",
+      "firstName": "qweqwe",
+      "lastName": "wqewqe",
+      "ign": "qqqwe",
+      "region": "EUNE",
+      "role": "JUNGLE",
+      "rank": "CHALLENGER",
+      "id": 13
+    },
+    {
+      "email": "shady1k123x@gmail.com",
+      "password": "$2a$10$1QYKq24gPA4aa/QZn4s35uw3z0.ohKCUN3iKoG9Xvh2ud/ibuw7q2",
+      "confirmPassword": "123123",
+      "firstName": "wqeqwe",
+      "lastName": "qwe",
+      "ign": "wqewqe",
+      "region": "EUNE",
+      "role": "TOP",
+      "rank": "SILVER",
+      "id": 14
     }
   ]
 }

@@ -5,7 +5,7 @@
   .register-inputs {
     display: flex;
     flex-direction: column;
-    gap:3.4rem;
+    gap:60px;
     margin-top:auto;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
     align-items: center;
     flex-direction: column;
     justify-content:center;
-    gap: 100px;
+    gap: 110px;
   }
 
   .form-container > h2 {
@@ -87,4 +87,20 @@
     transform: scale(.96);
   }
 
+  .form-container form div:has(input) {
+    position:relative;
+  }
+
+  .form-container form div:has(input) h3 {
+    position:absolute;
+    bottom:34px;
+    color: slategray;
+    font-size: larger;
+  }
+
+  .form-container form div:has(input) p {
+    position:absolute;
+    top:40px;
+    color: burlywood;
+  }
   /* SUBMIT BTN */
