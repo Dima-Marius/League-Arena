@@ -14,6 +14,8 @@ import UserProfileRoutes from './routes/UserProfile/UserProfileRoutes.jsx';
 import Redirect from './routes/Redirect/Redirect';
 import { ApiKeyContextProvider } from './context/ApiKeyContext';
 import Settings from './routes/Settings/Settings';
+import TeamProfileRoutes from './routes/TeamProfile/TeamProfile';
+import TeamProfileRedirect from './routes/TeamProfile/TeamProfileRedirect';
 
 function App() {
   return (
@@ -27,12 +29,15 @@ function App() {
         <Route path='/register' element={<Login/>} />
           <Route element={<PrivateRoutes/>}>
             <Route path='/Home' element={<Home/>} />
-            <Route path='/teams' element={<Teams/>} />
-            <Route path='/ranking' element={<Navbar/>} />
+            <Route path='/search' element={<Teams/>} />
             <Route path='/leaderboard' element={<Leaderboard/>} />
             <Route path='/userProfile'>
               <Route index element={<Redirect/>}/>
               <Route path='*' element={<UserProfileRoutes/>}/>
+            </Route>
+            <Route path='/teamProfile'>
+              <Route index element={<TeamProfileRedirect/>}/>
+              <Route path='*' element={<TeamProfileRoutes/>}/>
             </Route>
             <Route path='/settings' element={<Settings/>} />
             <Route path='/about' element={<About/>} />

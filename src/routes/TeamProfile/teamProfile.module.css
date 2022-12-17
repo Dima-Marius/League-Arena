@@ -1,464 +1,72 @@
 .container {
-    overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr 1500px 1fr;
+    grid-template-columns: 1fr 800px 800px 1fr;
     grid-template-rows:
-    var(--navbar-size) [navbar-empty]
-    100px [empty]
-    1030px [main]
-    100px [empty]
+    240px [empty]
+    850px [main]
+    600px [posts]
+    240px [empty]
     var(--footer-size) [footer];
     grid-template-areas:
-      ". . ."
-      ". . ."
-      ". main ."
-      ". . ."
-      "footer footer footer";
-  }
-
-.navbar {
-    z-index: 9;
-    position:fixed;
-    width: 100%;
+      "navbar navbar navbar navbar"
+      ". main main ."
+      ". posts posts ."
+      ". . . ."
+      "footer footer footer footer";
 }
+  
+.navbar {
+    grid-area:navbar;
+    position: fixed;
+    width: 100%;
+    border: solid 3px red;
+}
+  
+.posts {
+    grid-area: posts;
+    border: solid 3px rgb(255, 123, 0);
 
+}
+  
 .footer {
     grid-area: footer;
-    z-index: 2;
+    border: solid 3px rgb(251, 255, 0);
+
 }
 
 .main {
-    z-index: 1;
-    position: static;
+    border: solid 3px rgb(94, 255, 0);
     grid-area: main;
-    background: rgba(31, 40, 51,0.8);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: solid 1px rgba(0, 255, 255,0.6);
-    grid-gap: 10px;
     display: grid;
-    grid-template-columns:20px 350px 1fr 1fr 2fr 20px;
-    grid-template-rows:
-    135px [title]
-    1fr [contact info]
-    1fr [contact about]
-    1fr [contact about]
-    1fr [details team]
-    10px [empty];
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100px 400px 1fr;
     grid-template-areas:
-      "title title title title title title"
-      ". contact info info info ."
-      ". contact about about about ."
-      ". details team team stats ."
-      ". details team team stats ."
-      ". . . . . .";
+      "header header header"
+      "logo info description"
+      "players players players";
 }
-  /* TITLE AREA *****/
-
-.title {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: title;
-    background-color: rgba(44, 62, 80,0.6);
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-}
-
-.title .h2 {
-    font-size: 45px;
-    color:whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    background: hsla(40, 59%, 48%, 1);
-    background: linear-gradient(135deg, hsla(40, 59%, 48%, 1) 0%, hsla(183, 52%, 47%, 1) 100%);
-    background: -moz-linear-gradient(135deg, hsla(40, 59%, 48%, 1) 0%, hsla(183, 52%, 47%, 1) 100%);
-    background: -webkit-linear-gradient(135deg, hsla(40, 59%, 48%, 1) 0%, hsla(183, 52%, 47%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C39332", endColorstr="#39AFB6", GradientType=1 );
-    background-clip: text;
-    color:transparent;
-}
-
-/* TITLTE AREA *****/
   
-/* CONTACT AREA */
-
-.contact {
-   grid-area: contact;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 22px;
-   background-color: rgba(255, 255, 255, 0.1);
-   border-radius: 18px;
-   border-top: solid 1px aqua;
-   border-bottom: solid 1px aqua;
+.logo {
+    grid-area: logo;
+    border: solid 3px rgb(0, 255, 242);
 }
-
-.contact .social {
-    display: flex;
-    color: whitesmoke;
-    gap: 20px;
-    font-size: 30px;
-}
-
-.contact .social li {
-    background-color: rgba(128, 128, 128,0.2);
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 55px;
-    height: 55px;
-}
-
-.profile-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:210px;
-    height: 210px;
-    border-radius: 100%;
-}
-
-/* CONTACT AREA */
   
-/* INFO AREA */
-
 .info {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 18px;
-    padding-left: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
     grid-area: info;
+    border: solid 3px rgb(0, 38, 255);
 }
-
-.info .globe {
-    color: var(--dark-blue);
-}
-
-.info p {
-    color: #4aa9b2;
-    font-size: 32px;
-    display: flex;
-    gap: 8px;
-}
-
-.info > p > span {
-    color: whitesmoke;
-}
-
-.info .role-icon {
-    display: inline-block;
-}
-
-.info p:has(span.role-icon) {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.picture > img {
-    border-radius: 100%;
-}
-
-/* INFO AREA */
-
-/* DETAILS AREA */
-
-.details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    grid-area: details;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 18px;
-}
-
-.details > div:has(h2) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 26px;
-    flex-grow: 2.6;
-    color: var(--smokey);
-    color:#4aa9b2;
-}
-
-.details > div:has(p.rank-text) {
-    flex-grow: 3;
-
-}
-
-.details .rank-text {
-    text-align: center;
-    font-size: 34px;
-}
-
-.ranking-star {
-    position: relative;
-    bottom:5px;
-}
-
-/* DETAILS AREA */
   
-/* ABOUT AREA */
-
-.about {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 18px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center;
-    grid-area: about;
+.description {
+    grid-area: description;
+    border: solid 3px rgb(247, 0, 255);
 }
-
-.about h2 {
-    font-size: 32px;
-    padding-left: 10px;
-    color: #4aa9b2;
+  
+.players {
+    grid-area: players;
+    border: solid 3px rgb(255, 255, 255);
 }
-
-.about p {
-    font-size: 18px;
-    padding:5px 10px 10px 10px;
-    color: rgba(255, 245, 238, 0.718);
-}
-
-
-/* ABOUT AREA */
   
 
-/* TEAM AREA */
-
-
-.team {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    grid-area: team;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 18px;
-}
-
-.no-team {
-    color: #4aa9b2;
-
-}
-
-.team > h2 {
-    font-size: 36px;
-    color: #4aa9b2;
-    display: flex;
-    gap: 8px;
-    
-}
-
-.team-wrapper {
-    display: flex;
-    justify-content: space-between;
-}
-
-.team-wrapper h3 {
-    text-align: center;
-}
-
-.team-name {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    color: whitesmoke;
-    font-size: 24px;
-}
-
-.top {
-    width:100%;
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgba(16, 19, 25,0.3);
-    border-top-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    height: 40px;
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
-}
-
-.top p {
-    font-size: 23px;
-    color: whitesmoke;
-}
-
-.members {
-margin-left: 30px;
-    
-}
-.members-container h3 {
-    background-color: rgba(245, 245, 245,0.1);
-    border-bottom-right-radius: 18px;
-}
-
-.team-logo {
-    height: 300px;
-    width: 340px;
-    border-bottom-left-radius: 18px;
-    border: solid 2px rgba(245, 245, 245,0.1);
-}
-
-.team-record {
-    flex:50%;
-    display: flex;
-    flex-direction: column;
-}
-
-.record {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50%;
-    color: #4aa9b2
-}
-
-.members {
-    position: relative;
-    left:30px;
-    top: 14px;
-}
-
-.members-container {
-    display: flex;
-    flex-direction: column;
-    background-color:rgba(16, 19, 25,0.3);
-    width: 50%;
-    border-bottom-right-radius: 18px;
-    border-bottom: solid 2px rgba(245, 245, 245,0.1);
-    border-right: solid 2px rgba(245, 245, 245,0.1);
-}
-
-.team-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.team-name { 
-    background-color:rgba(16, 19, 25,0.3);
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    display: block;
-    color:#4aa9b2;
-}
-
-.wins, .losses, .good, .bad {
-    font-size: 28px;
-    font-family: Anton;
-}
-
-.record {
-    display: flex;
-    gap: 50px;
-}
-
-.record > div:first-of-type {
-    display: flex;
-    gap: 6px;
-}
-
-.record p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-}
-
-.wins, .good {
-    color: #41cf55
-}
-
-.losses, .bad {
-    color:#df4837;
-}
-
-.logo-members {
-    display: flex;
-    flex-direction: row;
-}
-
-/* TEAM AREA */
-
-/* STATS AREA */
-
-.stats {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.1);
-    grid-area: stats;
-    border-radius: 18px;
-
-}
-
-.stats > h2 {
-    font-size: 32px;
-    color: #4aa9b2;
-    text-align:center;
-    margin-top: auto;
-    position: relative;
-    bottom: 13px;
-}
-
-.stats-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    background-color: red;
-    margin-top: auto;
-    background-color: rgba(16, 19, 25,0.3);
-    border-top-left-radius: 18px;
-    border-block: solid 1px black;
-    border-bottom-right-radius: 18px;
-
-}
-
-.match-history {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.match-history > li:last-child {
-    border-bottom-right-radius: 18px;
-    border-bottom-left-radius: 18px;
-}
-
-.summoner-level {
-    color: whitesmoke;
-    font-size: 26px;
-}
-
-/* .match-history > li:last-child .test img {
-    border-bottom-left-radius: 18px;
-} */
-
-/* STATS AREA */
-  
 
 /* BG ANIMATION *******************************************************/
 
@@ -471,6 +79,7 @@ margin-left: 30px;
 .background-pattern {
     max-height: 100%;
     overflow: hidden;
+    z-index: -1;
     width: 100%;
     height: 100%;
     position: fixed;
