@@ -123,3 +123,51 @@
 
   /* 
   let activeTab = tabs.findIndex(tab => tab === true) */
+
+
+    /* TODO TEAM PROFILE PAGE
+  * 0. Check if player has a team, if the player has a team, set LOADING TRUE, FETCH and display-
+  * 0. from db.json using getParams(); then SET LOADING FALSE
+  * 0. If the player doesn't have a team, redirect to create team page.
+  * 0. If the player tries to go to a team page that doesn't exist
+  * 0. redirect to his team if he HAS a team, or to create team page
+  * 0. if he doesn't have one, which could also be default teamProfile page cause it
+  * 0. will have a redirect for not having a team.
+  * 2. Fetch and display team members with cards similar to profile one with links to their profiles
+  * 3. Make team ADMIN, able to kick members out of the team, with a button that is
+  * 3. only visible to the admin with a modal asking for confirmation.
+  * 4. Make a POSTS section, which only the TEAM MEMBERS can see and post
+  * 4. but only the admin can delete posts.
+  * 5. 
+  * 6. 
+  * 7. 
+  * 8. 
+  * 
+  * EXTRA - section to see team join requests
+  * EXTRA - button for deleting team maybe ?
+  * EXTRA - button for leaving team maybe ?
+  * EXTRA - button for requesting to join team maybe ?  
+  * EXTRA - button for changing team name maybe ?
+  * EXTRA - button for changing team description maybe ?
+  * EXTRA - button for changing team logo maybe ?
+  * EXTRA - button for changing team background maybe ?
+  */
+
+  /* TODO ABOUT PAGE
+
+  * 0. CHANGE ABOUT PAGE WITH MESSAGE ICON / DROPDOWN for team INVITES and
+  * 0. team join REQUESTS with ACCEPT AND DECLINE BUTTONS
+  * 0. BETTER NOT ADD ANY ABOUT ON IT CAUSE IT'S NOT WORTH.
+  * 0. 
+  * 
+   */
+
+  /* TODO SEARCH PAGE
+
+
+  * 0. PLAYERS OUTPUT CONTAINER WHERE YOU CAN INVITE PLAYERS TO YOUR TEAM
+  * 0. TEAM OUTPUT CONTAINER WHERE YOU CAN JOIN TEAMS SENDING THE TEAM ADMIN A JOIN REQUEST
+  * 0. WHICH HE RECEIVES IN NOTIFICATIONS AND IS ABLE TO DECLINE OR ACCEPT THE REQUEST
+  * 
+  * EXTRA - ADD TEXT TO YOUR REQUEST HI IM X PLAYER AND I WANT TO JOIN YOUR TEAM 
+   */

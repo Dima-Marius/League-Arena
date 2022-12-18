@@ -43,16 +43,17 @@
     },
     {
       "teamName": "Team Liquid",
+      "owner" : "PSG Shady",
       "logo": "https://cdn.dribbble.com/users/3144264/screenshots/15684959/153.png",
       "region": "EUNE",
       "wins": 27,
       "losses": 5,
       "members": [
-        "PSG Shady",
         "Quanttum",
         "Szemes",
         "T1 Faker",
-        "Yogurt"
+        "Yogurt",
+        "PSG Shady"
       ],
       "availableRoles": [
         "TOP",
@@ -60,6 +61,14 @@
       ],
       "rank": "Master",
       "description": "Hello we are looking for new players, join us.",
+      "posts": [
+        {
+        "title": "Looking for a new mid laner",
+        "description": "We are looking for a new mid laner, if you are interested please contact me on discord: PSG Shady#0001",
+        "author": "PSG Shady",
+        "id": 1
+        }
+      ],
       "id": 3
     },
     {

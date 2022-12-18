@@ -28,7 +28,13 @@ function App() {
         <Route path='/signin' element={<Login/>} />
         <Route path='/register' element={<Login/>} />
           <Route element={<PrivateRoutes/>}>
+
+
             <Route path='/Home' element={<Home/>} />
+
+
+
+            
             <Route path='/search' element={<Teams/>} />
             <Route path='/leaderboard' element={<Leaderboard/>} />
             <Route path='/userProfile'>

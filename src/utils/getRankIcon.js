@@ -8,28 +8,28 @@ import grandmasterRank from '../assets/RankIcons/Emblem_Grandmaster.png';
 import challengerRank from '../assets/RankIcons/Emblem_Challenger.png';
 
 export const getRankIcon = (rank) => {
-    if (rank.toLowerCase() === 'bronze') {
+    if (rank?.toLowerCase() === 'bronze') {
         return bronzeRank
     }
-    if (rank.toLowerCase() === 'silver') {
+    if (rank?.toLowerCase() === 'silver') {
         return silverRank
     }
-    if (rank.toLowerCase() === 'gold') {
+    if (rank?.toLowerCase() === 'gold') {
         return goldRank
     }
-    if (rank.toLowerCase() === 'platinum') {
+    if (rank?.toLowerCase() === 'platinum') {
         return platinumRank
     }
-    if (rank.toLowerCase() === 'diamond') {
+    if (rank?.toLowerCase() === 'diamond') {
         return diamondRank
     }
-    if (rank.toLowerCase() === 'master') {
+    if (rank?.toLowerCase() === 'master') {
         return masterRank
     }
-    if (rank.toLowerCase() === 'grandmaster') {
+    if (rank?.toLowerCase() === 'grandmaster') {
         return grandmasterRank
     }
-    if (rank.toLowerCase() === 'challenger') {
+    if (rank?.toLowerCase() === 'challenger') {
         return challengerRank
     }
 };
