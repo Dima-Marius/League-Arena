@@ -6,6 +6,7 @@ import ApiKeyContext from '../../context/ApiKeyContext';
 import style from './playeritem.module.css';
 
 const PlayerItem = (props) => {
+      
       const {playerName} = props
       const API_KEY_CTX = useContext(ApiKeyContext)
       const [summonerInfo, setSummonerInfo] = useState(JSON.parse(localStorage.getItem(playerName)) ?? 7)
@@ -24,7 +25,6 @@ const PlayerItem = (props) => {
       },[playerName,summonerUrl])
       
   return (
-      
         <li className={style.player}>
             <Link to={`/userProfile/${playerName}`}>
             <img src={profileIconUrl} width='35px' height='35px' alt=''/>

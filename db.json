@@ -43,7 +43,7 @@
     },
     {
       "teamName": "Team Liquid",
-      "owner" : "PSG Shady",
+      "owner": "PSG Shady",
       "logo": "https://cdn.dribbble.com/users/3144264/screenshots/15684959/153.png",
       "region": "EUNE",
       "wins": 27,
@@ -61,12 +61,29 @@
       ],
       "rank": "Master",
       "description": "Hello we are looking for new players, join us.",
-      "posts": [
+      "discussions": [
         {
-        "title": "Looking for a new mid laner",
-        "description": "We are looking for a new mid laner, if you are interested please contact me on discord: PSG Shady#0001",
-        "author": "PSG Shady",
-        "id": 1
+          "title": "Looking for a new mid laner",
+          "description": "We are looking for a new mid laner, if you are interested please contact me on discord: PSG Shady#0001",
+          "author": "PSG Shady",
+          "likes": [],
+          "comments": [],
+          "id": 1
+        },
+        {
+          "title": "sadsa",
+          "content": "dsadsa",
+          "author": "You"
+        },
+        {
+          "title": "hey",
+          "content": "how are you\n",
+          "author": "You"
+        },
+        {
+          "title": "I just added a post!",
+          "content": "yeah it's working!",
+          "author": "You"
         }
       ],
       "id": 3

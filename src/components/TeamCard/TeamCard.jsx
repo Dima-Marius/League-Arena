@@ -75,12 +75,12 @@ const TeamCard = (props) => {
               </h3>
             </div>
             <div>
-            <p className={style['rank-text']}>
+            <div className={style['rank-text']}>
               <p className={`${rankClass}`}>{rank}</p>
               <span>
                 <img className={style['rank-img']} src={getRankIcon(rank)} height='43px' width='43px' alt=''/>
               </span>
-              </p>
+              </div>
             </div>
           </div>
         </div>

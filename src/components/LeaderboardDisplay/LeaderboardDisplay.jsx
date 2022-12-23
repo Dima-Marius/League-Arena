@@ -5,7 +5,7 @@ import Player from '../Player/Player';
 import style from './leaderboardDisplay.module.css'
 
 const LeaderboardDisplay = (props) => {
-  const API_KEY_CTX = useContext(ApiKeyContext)
+    const API_KEY_CTX = useContext(ApiKeyContext)
     const { searchRegion, searchRank, defaultRank, defaultRegion } = props;
     const [playerList, setPlayerList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -22,7 +22,7 @@ const LeaderboardDisplay = (props) => {
         .then(response => response.json())
         .then(data => setPlayerList(data.entries))
         .finally(() => setIsLoading(false))
-    },[searchRegion, challengerQueueUrl,])
+    },[searchRegion, challengerQueueUrl])
 
    if (!isLoading) { 
   return (

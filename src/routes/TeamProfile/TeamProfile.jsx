@@ -9,6 +9,7 @@ import { getRankIcon } from '../../utils/getRankIcon';
 import '../../utils/rankedTextGradients/rankedTextGradients.css'
 import TeamMemberCard from './TeamMemberCard';
 import TeamPostCard from './TeamPostCard';
+import Modal from '../../components/Modal/Modal';
 
 const TeamProfile = () => {
 
@@ -21,6 +22,8 @@ const TeamProfile = () => {
 
   /* set this state to team winrate after fetch */
   const [winrate, setWinrate] = useState(0);
+
+  const [showCreatePostModal, setShowCreatePostModal] = useState(false);
   
   /* Get team winrate */
   const calculateWinrate = useMemo(() => {
@@ -40,6 +43,15 @@ const TeamProfile = () => {
       .finally(() => setWinrate(calculateWinrate + '%'));
   },[teamName, calculateWinrate])
 
+  /* Create post button handler */
+
+  const createPostHandler = () => {
+    setShowCreatePostModal(true);
+  }
+
+  const handleModalClose = (bool) => {
+    setShowCreatePostModal(bool);
+  } 
 
   /* get teamrate color based on percentage */
   const winrateColor = calculateWinrate >= 50 ? `${style.good}` : `${style.bad}`;
@@ -143,16 +155,19 @@ const TeamProfile = () => {
               <h3>Posts</h3>
             </div>
             <div className={style.output}>
-              {teamData?.posts?.map(item => <TeamPostCard key={item.title} title={item.title} author={item.author} description={item.description}/>)}
+              {teamData?.discussions?.map(item => <TeamPostCard key={item.title} title={item.title} author={item.author} description={item.description}/>)}
+            </div>
+            <div className={style['btn-container']}>
+              <button onClick={createPostHandler} className={style['create-post']}>Create New Post</button>
             </div>
           </div>
       </div>
-
         <div className={style.footer}>
           <Footer/>
         </div>
+        {showCreatePostModal && <Modal teamData={teamData} handleModalClose={handleModalClose} />}
     </div>
-
+    
   )
 }
 

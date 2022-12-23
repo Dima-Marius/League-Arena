@@ -8,7 +8,7 @@
     grid-template-rows:
     240px [empty]
     850px [main]
-    600px [posts]
+    auto [posts]
     240px [empty]
     var(--footer-size) [footer];
     grid-template-areas:
@@ -28,7 +28,10 @@
   
 .posts {
     grid-area: posts;
-
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 0;
 }
   
 .footer {
@@ -40,7 +43,7 @@
     grid-area: main;
     display: grid;
     grid-template-columns: 20px 1fr 1fr 1fr 20px;
-    grid-template-rows: 100px 400px 1fr 500px;
+    grid-template-rows: 100px 400px 1fr auto;
     grid-template-areas:
       "header header header header header"
       ". logo info description ."
@@ -64,6 +67,8 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(44, 62, 80,0.6);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
 .header h2 {
@@ -161,6 +166,7 @@
 .rank-info {
     display: flex;
     align-items: center;
+    gap: 6px;
 }
   
 .description {
@@ -234,6 +240,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center
+}
+
+.create-post {
+    background-color: rgb(50, 60, 66);
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    min-height: 44px;
+    min-width: 10px;
+    outline: none;
+    overflow: hidden;
+    padding: 9px 20px 8px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 300px;
+    margin: 50px 0;
+}
+
+.create-post:active {
+    position: relative;
+    top: 2px;
 }
 
 /* BG ANIMATION *******************************************************/

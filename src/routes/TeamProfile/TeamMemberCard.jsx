@@ -8,24 +8,25 @@ import style from './teamMemberCard.module.css';
 
 const TeamMemberCard = (props) => {
     const { memberName, owner } = props
-
     const API_KEY_CTX = useContext(ApiKeyContext)
+
     const [memberData, setMemberData] = useState({});
+    const [userAvatar, setUserAvatar] = useState(JSON.parse(localStorage.getItem(memberName)) ?? 7)
 
     const userProfileUrl = `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${memberName}?api_key=${API_KEY_CTX.apiKey}`
-    const profilePictureUrl = `http://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${memberData?.profileIconId}.png`
+    const profilePictureUrl = `http://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${userAvatar ?? 7}.png`
 
     useEffect(() => {
         fetch(userProfileUrl)
         .then(res => res.json())
-        .then(data => setMemberData(data))
-    },[memberName,userProfileUrl])
-
-    useEffect(() => {
-        if (!localStorage.getItem(memberName)) {
-            localStorage.setItem(memberName, JSON.stringify(memberData?.profileIconId));
-        }
-    },[memberName, memberData?.profileIconId])
+        .then(data => {
+            setMemberData(data)
+            return data;
+        })
+        .then(data => localStorage.setItem(memberName,JSON.stringify(data.profileIconId)))
+        .finally(() => setUserAvatar(JSON.parse(localStorage.getItem(memberName))))
+        .catch(localStorage.setItem(memberName,JSON.stringify(null)))
+    },[memberName,userProfileUrl,memberData?.profileIconId])
 
   return (
     <li className={style.li}>
