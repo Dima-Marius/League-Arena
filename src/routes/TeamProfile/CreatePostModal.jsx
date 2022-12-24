@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import useGetUserInfo from '../../hooks/useGetUserInfo'
 import style from './createPostModal.module.css'
 
 const CreatePostModal = ({ handleModalClose, teamData }) => {
@@ -8,6 +9,7 @@ const CreatePostModal = ({ handleModalClose, teamData }) => {
     const [content, setContent] = useState('')
 
     const teamUrl = `http://localhost:3500/createdTeams/${teamData.id}`
+    const user = useGetUserInfo();
 
     const submitPost = (event) => {
         event.preventDefault()
@@ -17,11 +19,15 @@ const CreatePostModal = ({ handleModalClose, teamData }) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                ...teamData, discussions: [...teamData.discussions, { title, content, author: 'You'}]
+                discussions: [
+                ...teamData.discussions,
+                { title: title, content: content, author: user.ign, likes: [],
+                  comments: [], date : new Date().toLocaleDateString(),
+                  time: new Date().toLocaleTimeString()}
+                ]
           })
         });
         handleModalClose(false);
-        
     };
 
     const handleTitleChange = (event) => {
@@ -38,7 +44,7 @@ const CreatePostModal = ({ handleModalClose, teamData }) => {
         <form onSubmit={submitPost} className={style.form}>
             <input type="text" value={title} onChange={handleTitleChange} placeholder="Title" />
             <textarea onChange={handleContentChange} rows='6' cols='75' placeholder="Content" />
-            <button type='submit'>Submit</button>
+            <button className={style.submit} type='submit'>Submit</button>
         </form>
     </div>
   )

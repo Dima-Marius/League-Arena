@@ -15,8 +15,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
+    width: 900px;
+    height: 700px;
     background-color: white;
     z-index: 3;
     background-color: transparent;

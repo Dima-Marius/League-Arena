@@ -1,29 +1,10 @@
-
-:root {
-    --darker-blue: #0b0c10;
-    --dark-blue: rgb(16, 19, 25);
-    --lighter-blue: rgb(31, 40, 51);
-    --smokey: #A3ABB6;
-    --light-aqua: rgb(102, 252, 241);
-    --dark-aqua: #45A29E;
-    --alternative-dark-blue: rgb(46, 48, 71);
-    --alternative-purple: rgb(105, 70, 230);
-    --alternative-smokey: #c5c6c7;
-    --gray: #34495e;
-    --darkgray: #2c3e50;
-    --crimson: #80374f;
-    --navbar-size: 74px;
-    --footer-size: 609px;
-  }
-  
-
 .post {
     font-size: 30px;
     color: whitesmoke;
     border: solid 2px var(--alternative-purple);
     border-radius: 18px;
     padding: 10px 10px 10px 15px;
-    
+    position: relative;
 }
 
 .author {
@@ -120,7 +101,53 @@
     width: 130px;
 }
 
-.like-btn {
+.like {
     position: relative;
     bottom: 2px;
 }
+
+.likes {
+    display: flex;
+    gap: 6px;
+}
+
+.delete {
+    position:absolute;
+    right:20px;
+}
+
+.comment-btn {
+    padding: 0px 8px;
+}
+
+.delete-btn {
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 50px;
+    height: 50px;
+    color: rgba(0, 255, 255, 0.685);
+    border-radius: 38px;
+    border: none;
+}
+
+.delete-btn:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+  .delete-btn:active {
+    background-color: #f7f7f750;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+
+  .like:active {
+    background-color: #f7f7f750;
+    border-color: #000000;
+    transform: scale(.92);
+  }
+
+  .comments {
+    font-weight: 100;
+    font-size: 20px;
+  }
+

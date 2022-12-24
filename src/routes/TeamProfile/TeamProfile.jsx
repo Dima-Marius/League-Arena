@@ -20,6 +20,12 @@ const TeamProfile = () => {
   /* Fetch team data from server */
   const [teamData, setTeamData] = useState({});
 
+  const [like, setLike] = useState(false);
+
+  const likeUpdate = (bool) => {
+    setLike(bool);
+  }
+
   /* set this state to team winrate after fetch */
   const [winrate, setWinrate] = useState(0);
 
@@ -41,7 +47,7 @@ const TeamProfile = () => {
       .then((res) => res.json())
       .then((data) => setTeamData(data[0]))
       .finally(() => setWinrate(calculateWinrate + '%'));
-  },[teamName, calculateWinrate])
+  },[teamName, calculateWinrate, showCreatePostModal, like])
 
   /* Create post button handler */
 
@@ -155,7 +161,11 @@ const TeamProfile = () => {
               <h3>Posts</h3>
             </div>
             <div className={style.output}>
-              {teamData?.discussions?.map(item => <TeamPostCard key={item.title} title={item.title} author={item.author} description={item.description}/>)}
+              {teamData?.discussions?.map(item => /* wrong, just pass ...teamData, short on time to fix */
+              <TeamPostCard setTeamData={setTeamData} key={item.title} teamData={teamData} title={item.title} likes={item.likes} author={item.author}
+              content={item.content} date={item.date} comments={item.comments} time={item.time}
+              likeUpdate={likeUpdate}/>
+              )}
             </div>
             <div className={style['btn-container']}>
               <button onClick={createPostHandler} className={style['create-post']}>Create New Post</button>
