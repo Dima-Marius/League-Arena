@@ -16,12 +16,14 @@ import { ApiKeyContextProvider } from './context/ApiKeyContext';
 import Settings from './routes/Settings/Settings';
 import TeamProfileRoutes from './routes/TeamProfile/TeamProfile';
 import TeamProfileRedirect from './routes/TeamProfile/TeamProfileRedirect';
+import { LikeContextProvider } from './context/LikeContext';
 
 function App() {
   return (
     <div className="App">
       <AuthContextProvider>
         <ApiKeyContextProvider>
+        <LikeContextProvider>
         <Routes>
         <Route path='/' element={<Login/>} />
         <Route path='/login' element={<Login/>} />
@@ -44,6 +46,7 @@ function App() {
             <Route path='*' element={<NotFound/>} />
           </Route>
         </Routes>
+        </LikeContextProvider>
         </ApiKeyContextProvider>
         </AuthContextProvider>
     </div>

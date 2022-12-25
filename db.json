@@ -63,85 +63,38 @@
       "description": "Hello we are looking for new players, join us.",
       "discussions": [
         {
-          "title": "test",
-          "content": "hey guys\n",
+          "title": "example post",
+          "content": "content goes here\n",
           "author": "PSG Shady",
-          "likes": ["Quanttum", "Szemes", "T1 Faker"],
+          "likes": [
+            "PSG Shady"
+          ],
           "comments": [],
-          "date": "12/24/2022",
-          "time": "5:23:52 PM"
+          "date": "12/25/2022",
+          "time": "2:27:23 AM",
+          "id": 0
         },
         {
-          "title": "Hey guys, welcome kamy",
-          "content": "how are you text idk asdadssadsa",
+          "title": "adssad",
+          "content": "dsasadsa",
           "author": "PSG Shady",
           "likes": [],
           "comments": [],
-          "date": "12/24/2022",
-          "time": "5:24:34 PM"
+          "date": "12/25/2022",
+          "time": "2:27:53 AM",
+          "id": 1
         },
         {
-          "title": "asdads",
-          "content": "sadassaazzzzz",
+          "title": "zxccxz",
+          "content": "cxzcxzcxzxz",
           "author": "PSG Shady",
-          "likes": [],
+          "likes": [
+            "PSG Shady"
+          ],
           "comments": [],
-          "date": "12/24/2022",
-          "time": "5:25:42 PM"
-        },
-        {
-          "title": "zz",
-          "content": "dsadsadsadsadsas",
-          "author": "PSG Shady",
-          "likes": [],
-          "comments": [],
-          "date": "12/24/2022",
-          "time": "5:26:29 PM"
-        },
-        {
-          "title": "This is an example post",
-          "content": "this will appear here",
-          "author": "PSG Shady",
-          "likes": [],
-          "comments": [],
-          "date": "12/24/2022",
-          "time": "5:29:17 PM"
-        },
-        {
-          "title": "this should work",
-          "content": "sample text hour should be 5:52",
-          "author": "PSG Shady",
-          "likes": [],
-          "comments": [],
-          "date": "12/24/2022",
-          "time": "5:52:51 PM"
-        },
-        {
-          "title": "new post",
-          "content": "created now z",
-          "author": "PSG Shady",
-          "likes": [],
-          "comments": [],
-          "date": "12/24/2022",
-          "time": "5:59:05 PM"
-        },
-        {
-          "title": "Heyo",
-          "content": "test",
-          "author": "PSG Shady",
-          "likes": [],
-          "comments": [],
-          "date": "12/24/2022",
-          "time": "6:06:39 PM"
-        },
-        {
-          "title": "asd",
-          "content": "zxc",
-          "author": "PSG Shady",
-          "likes": [],
-          "comments": [],
-          "date": "12/24/2022",
-          "time": "7:29:07 PM"
+          "date": "12/25/2022",
+          "time": "2:27:58 AM",
+          "id": 2
         }
       ],
       "id": 3

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useMemo } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -10,6 +10,7 @@ import '../../utils/rankedTextGradients/rankedTextGradients.css'
 import TeamMemberCard from './TeamMemberCard';
 import TeamPostCard from './TeamPostCard';
 import Modal from '../../components/Modal/Modal';
+import LikeContext from '../../context/LikeContext';
 
 const TeamProfile = () => {
 
@@ -19,17 +20,19 @@ const TeamProfile = () => {
 
   /* Fetch team data from server */
   const [teamData, setTeamData] = useState({});
+/* 
+  const [like, setLike] = useState(false); */
 
-  const [like, setLike] = useState(false);
-
-  const likeUpdate = (bool) => {
+/*   const likeUpdate = (bool) => {
     setLike(bool);
   }
-
+ */
   /* set this state to team winrate after fetch */
   const [winrate, setWinrate] = useState(0);
 
   const [showCreatePostModal, setShowCreatePostModal] = useState(false);
+
+  const likeUpdate = useContext(LikeContext)
   
   /* Get team winrate */
   const calculateWinrate = useMemo(() => {
@@ -47,7 +50,7 @@ const TeamProfile = () => {
       .then((res) => res.json())
       .then((data) => setTeamData(data[0]))
       .finally(() => setWinrate(calculateWinrate + '%'));
-  },[teamName, calculateWinrate, showCreatePostModal, like])
+  },[teamName, calculateWinrate, showCreatePostModal, likeUpdate.like])
 
   /* Create post button handler */
 
@@ -164,7 +167,7 @@ const TeamProfile = () => {
               {teamData?.discussions?.map(item => /* wrong, just pass ...teamData, short on time to fix */
               <TeamPostCard setTeamData={setTeamData} key={item.title} teamData={teamData} title={item.title} likes={item.likes} author={item.author}
               content={item.content} date={item.date} comments={item.comments} time={item.time}
-              likeUpdate={likeUpdate}/>
+              id={item.id}/>
               )}
             </div>
             <div className={style['btn-container']}>

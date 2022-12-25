@@ -11,6 +11,21 @@ const CreatePostModal = ({ handleModalClose, teamData }) => {
     const teamUrl = `http://localhost:3500/createdTeams/${teamData.id}`
     const user = useGetUserInfo();
 
+
+    const postId = Object.keys(teamData.discussions).length
+
+    const body = {
+        discussions: [
+        ...teamData.discussions,
+        {
+            title: title, content: content, author: user.ign, likes: [],
+          comments: [], date : new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
+          id: postId
+        }
+        ]
+    }
+
     const submitPost = (event) => {
         event.preventDefault()
         fetch(teamUrl, {
@@ -18,14 +33,7 @@ const CreatePostModal = ({ handleModalClose, teamData }) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                discussions: [
-                ...teamData.discussions,
-                { title: title, content: content, author: user.ign, likes: [],
-                  comments: [], date : new Date().toLocaleDateString(),
-                  time: new Date().toLocaleTimeString()}
-                ]
-          })
+            body: JSON.stringify(body)
         });
         handleModalClose(false);
     };

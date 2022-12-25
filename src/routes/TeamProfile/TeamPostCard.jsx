@@ -5,34 +5,48 @@ import { useEffect } from 'react';
 import { AiOutlineLike } from 'react-icons/ai'
 import { AiFillLike } from 'react-icons/ai'
 import ApiKeyContext from '../../context/ApiKeyContext';
+import LikeContext from '../../context/LikeContext';
 import style from './teamPostCard.module.css';
 
 const TeamPostCard = (props) => {
-    const { title, content, author, date, time, likes, setTeamData, comments, teamData, likeUpdate} = props;
+    const { title, id, content, author, date, time, likes, comments, teamData, setTeamData} = props;
     const API_KEY_CTX = useContext(ApiKeyContext) 
     const [authorIcon, setAuthorIcon] = useState(JSON.parse(localStorage.getItem(author)) ?? 7)
-    const [like, setLike] = useState(false)
-    const [commentCount, setCommentCount] = useState(comments.length ?? 0)
-    const [likeCount, setLikeCount] = useState(likes.length)
+    const [like, setLike] = useState(likes.includes(author))
+    const [commentCount, setCommentCount] = useState(comments?.length ?? 0)
+    const [likeCount, setLikeCount] = useState(likes?.length)
  
     const userProfileUrl = `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${author}?api_key=${API_KEY_CTX.apiKey}`
     const profilePictureUrl = `http://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${JSON.parse(localStorage.getItem(author)) ?? authorIcon}.png`
 
-    const addLike = {discussions: [...teamData.discussions]}
-    const removeLike = {likes: likes.filter(like => like !== author)}
+    const likeUpdate = useContext(LikeContext);
+
+    let addLike = teamData.discussions.map(item => {
+      if (item.id === id && !item.likes.includes(author)) {
+        return {...item, likes: [...item.likes, author]}
+      } else {
+        return item
+      }})
+
+    let removeLike = teamData?.discussions?.map(item => {
+      if (item.id === id) {
+        return {...item, likes: item.likes.filter(like => like !== author)}
+      } else {
+        return item
+      }})
 
     const likeHandler = () => {
         setLike(!like);
-        setTeamData({...teamData, discussions: [...teamData.discussions, ]})
          fetch(`http://localhost:3500/createdTeams/${teamData.id}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(like ? addLike : removeLike)
-        })
-        console.log(title,content,author,date,time)
-        likeUpdate(!like);
+          body: JSON.stringify(!like ? {discussions: addLike } : { discussions: removeLike } )
+        }).finally(() =>
+        fetch(`http://localhost:3500/createdTeams?teamName=${teamData.teamName}`)
+        .then(res => res.json())
+        .then(data => setTeamData(data[0])))
     }
 
      useEffect(() => {
@@ -73,7 +87,7 @@ const TeamPostCard = (props) => {
           <p className={style.description}>{content}</p>
         </div>
         <div className={style['post-footer']}>
-          <ul className={style.likes}>{likes.length !== 0 && <p>Liked by</p>} {likes.length !== 0 ? likes.map(item => <li>{item}</li>) : 'No likes yet'}</ul>
+          <ul className={style.likes}>{likes?.length !== 0 && <p>Liked by</p>} {likes?.length !== 0 ? likes.map(item => <li key={item}>{item}</li>) : 'No likes yet'}</ul>
         </div>
         <ul className={style.buttons}>
           <li className={style.like}>
