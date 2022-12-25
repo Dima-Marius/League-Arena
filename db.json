@@ -78,7 +78,9 @@
           "title": "adssad",
           "content": "dsasadsa",
           "author": "PSG Shady",
-          "likes": [],
+          "likes": [
+            "PSG Shady"
+          ],
           "comments": [],
           "date": "12/25/2022",
           "time": "2:27:53 AM",
