@@ -111,6 +111,20 @@
     gap: 6px;
 }
 
+/* style for users who liked post */
+
+.liked {
+    color: #0fd4f7;
+}
+
+.liked span {
+    color: seashell;
+}
+
+.liked:last-child span {
+    display: none;
+}
+
 .delete {
     position:absolute;
     right:20px;

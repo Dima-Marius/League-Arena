@@ -67,7 +67,8 @@
           "content": "content goes here\n",
           "author": "PSG Shady",
           "likes": [
-            "PSG Shady"
+            "PSG Shady",
+            "Szemes"
           ],
           "comments": [],
           "date": "12/25/2022",
@@ -75,28 +76,38 @@
           "id": 0
         },
         {
-          "title": "adssad",
-          "content": "dsasadsa",
-          "author": "PSG Shady",
-          "likes": [
-            "PSG Shady"
-          ],
+          "title": "This is a sample title",
+          "content": "Hi everyone this is a test post",
+          "author": "Szemes",
+          "likes": [],
           "comments": [],
-          "date": "12/25/2022",
-          "time": "2:27:53 AM",
+          "date": "12/26/2022",
+          "time": "11:47:21 PM",
           "id": 1
         },
         {
-          "title": "zxccxz",
-          "content": "cxzcxzcxzxz",
-          "author": "PSG Shady",
+          "title": "We need to work on team play",
+          "content": "The first area we want to discuss is counter jungling, as it’s been a hot topic ever since the changes were announced earlier this year. And while we do think it’s a core part of the role, and adds depth and skill expression in the forms of pathing, ganking, and general decision making, we also don’t think the way it was in the game before Preseason was the healthiest version of it.",
+          "author": "Szemes",
           "likes": [
-            "PSG Shady"
+            "Szemes",
+            "PSG Shady",
+            "Quanttum"
           ],
           "comments": [],
-          "date": "12/25/2022",
-          "time": "2:27:58 AM",
+          "date": "12/26/2022",
+          "time": "11:56:17 PM",
           "id": 2
+        },
+        {
+          "title": "How much should we prioritize a player’s learned skills and experience over things like role accessibility, champion diversity, and so on?",
+          "content": "The answer to that is... complicated. Optimizations are good for the role, with two major exceptions: Jungle viability being defined by clear speeds, and unintuitive optimizations like camp dot dragging.\n\nWe still want clear optimizations to exist. We think that they’re a healthy aspect of jungling skill expression, but we want that to be taken out of champion select and into the game by putting AoE and single-target junglers on a more even playing field and removing the particularly unintuitive optimization of letting a camp die to the jungle DoT while you walk to your next camp (this still sort of exists though, as your companion will damage camps when you start to walk away).",
+          "author": "Quanttum",
+          "likes": [],
+          "comments": [],
+          "date": "12/27/2022",
+          "time": "12:20:48 AM",
+          "id": 3
         }
       ],
       "id": 3
