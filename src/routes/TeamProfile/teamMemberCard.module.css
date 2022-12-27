@@ -10,6 +10,13 @@
     transition: ease-in-out 0.3s;
     cursor: pointer;
     position: relative;
+    border-radius: 20px;
+    margin: 10px 0;
+    background-image: url('https://cdn.discordapp.com/attachments/1017045858379890800/1057377778837749870/borderMarius.png');
+    background-size: cover;
+    background-position: center;
+    -webkit-clip-path: polygon(49% 0, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);
+    clip-path: polygon(49% 0, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);
 }
 
 .li a {
@@ -20,6 +27,8 @@
 
 .li:hover {
     background-color: rgba(255, 255, 255, 0.3);
+    -webkit-clip-path: polygon(50% 10%, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);
+    clip-path: polygon(50% 10%, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);
 }
 
 .level {

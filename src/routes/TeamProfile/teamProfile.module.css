@@ -43,11 +43,11 @@
     grid-area: main;
     display: grid;
     grid-template-columns: 20px 1fr 1fr 1fr 20px;
-    grid-template-rows: 100px 400px 1fr auto;
+    grid-template-rows: 100px 400px 500px auto;
     grid-template-areas:
       "header header header header header"
       ". logo info description ."
-      ". players players players ."
+      "players players players players players"
       ". posts posts posts .";
 }
 
@@ -127,7 +127,10 @@
 .info > h3 {
     color: var(--profile-color);
     font-size: 30px;
-    padding-left: 10px;
+    padding-left: 25px;
+    position: relative;
+    top:10px
+
 }
 
 .info .record-wrapper {
@@ -146,6 +149,15 @@
     padding-left: 10px;
     flex-direction: column;
     height: 100%;
+    padding: 25px;
+}
+
+.description::-webkit-scrollbar-track {
+    background-color: rgb(76, 88, 95);
+}
+
+.description::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .info p span {
@@ -170,6 +182,7 @@
 }
   
 .description {
+    overflow-y: scroll;
     grid-area: description;
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -177,13 +190,15 @@
 .description h3 {
     color: var(--profile-color);
     font-size: 30px;
-    padding-left: 10px;
+    padding: 10px;
+    padding-left:25px;
 }
 
 .description p {
     color: slategray;
     padding: 10px;
     font-size: 20px;
+
 }
   
 .players {
@@ -216,12 +231,14 @@
     display: flex;
     height: calc(100% - 65px);
     gap:8px;
+    border-left: solid 10px rgba(44, 62, 80,0.6);
+    border-right: solid 10px rgba(44, 62, 80,0.6);
+    border-bottom: solid 30px rgba(44, 62, 80,0.6);
 }
 
 .players > div {
     width: 100%;
 }
-
 
 .logo, .info, .description {
     border-radius: 18px;

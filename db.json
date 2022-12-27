@@ -60,15 +60,15 @@
         "MID"
       ],
       "rank": "Master",
-      "description": "Hello we are looking for new players, join us.",
+      "description": "Hello we are looking for new players, join us.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, comes from a line in section 1.10.32.",
       "discussions": [
         {
           "title": "example post",
           "content": "content goes here\n",
           "author": "PSG Shady",
           "likes": [
-            "PSG Shady",
-            "Szemes"
+            "Szemes",
+            "PSG Shady"
           ],
           "comments": [],
           "date": "12/25/2022",
@@ -91,7 +91,6 @@
           "author": "Szemes",
           "likes": [
             "Szemes",
-            "PSG Shady",
             "Quanttum"
           ],
           "comments": [],
@@ -103,7 +102,9 @@
           "title": "How much should we prioritize a player’s learned skills and experience over things like role accessibility, champion diversity, and so on?",
           "content": "The answer to that is... complicated. Optimizations are good for the role, with two major exceptions: Jungle viability being defined by clear speeds, and unintuitive optimizations like camp dot dragging.\n\nWe still want clear optimizations to exist. We think that they’re a healthy aspect of jungling skill expression, but we want that to be taken out of champion select and into the game by putting AoE and single-target junglers on a more even playing field and removing the particularly unintuitive optimization of letting a camp die to the jungle DoT while you walk to your next camp (this still sort of exists though, as your companion will damage camps when you start to walk away).",
           "author": "Quanttum",
-          "likes": [],
+          "likes": [
+            "PSG Shady"
+          ],
           "comments": [],
           "date": "12/27/2022",
           "time": "12:20:48 AM",
