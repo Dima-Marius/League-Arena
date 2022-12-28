@@ -52,6 +52,7 @@
         "T1 Faker",
         "PSG Shady",
         "Szemes",
+        "Nightmare",
         "Quanttum"
       ],
       "availableRoles": [
@@ -254,11 +255,11 @@
       "confirmPassword": "lamind15",
       "firstName": "Nathan",
       "lastName": "Smith",
-      "ign": "Yogurt",
+      "ign": "Nightmare",
       "region": "EUW",
       "role": "JUNGLE",
       "rank": "DIAMOND",
-      "team": "",
+      "team": "Team Liquid",
       "id": 5
     }
   ]

@@ -8,6 +8,7 @@ import ApiKeyContext from "../../context/ApiKeyContext";
 import style from "./teamPostCard.module.css";
 import useGetUserInfo from "../../hooks/useGetUserInfo";
 import ConfirmationModal from "./ConfirmationModal";
+import EditPostModal from "./EditPostModal/EditPostModal";
 
 const TeamPostCard = (props) => {
   const {
@@ -27,15 +28,23 @@ const TeamPostCard = (props) => {
   const [authorIcon, setAuthorIcon] = useState(
     JSON.parse(localStorage.getItem(author)) ?? 7
   );
+
+  /* Likes comments */
   const [like, setLike] = useState(likes.includes(user.ign));
   const [commentCount, setCommentCount] = useState(comments?.length ?? 0);
-  const [isDeleting, setIsDeleting] = useState(false);
 
+  /* User Actions */
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+
+  /* user info */
   const userProfileUrl = `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${author}?api_key=${API_KEY_CTX.apiKey}`;
   const profilePictureUrl = `http://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${
     JSON.parse(localStorage.getItem(author)) ?? authorIcon
   }.png`;
 
+
+  /* like and unlike functionality */
   const addLike = teamData.discussions.map((item) => {
     if (item.id === id && !item.likes.includes(user.ign)) {
       return { ...item, likes: [...item.likes, user.ign] };
@@ -52,6 +61,8 @@ const TeamPostCard = (props) => {
     }
   });
 
+
+  /* delete post  */
   const deletePostHandler = () => {
     fetch(`http://localhost:3500/createdTeams/${teamData.id}`, {
       method: "PATCH",
@@ -69,6 +80,7 @@ const TeamPostCard = (props) => {
     });
   };
 
+  /* like and unlike functionality */
   const likeHandler = () => {
     setLike(!like);
     fetch(`http://localhost:3500/createdTeams/${teamData.id}`, {
@@ -86,6 +98,7 @@ const TeamPostCard = (props) => {
     );
   };
 
+  /* get info */
   useEffect(() => {
     if (!localStorage.getItem(author)) {
       fetch(userProfileUrl)
@@ -96,6 +109,30 @@ const TeamPostCard = (props) => {
         .finally(() => setAuthorIcon(JSON.parse(localStorage.getItem(author))));
     }
   }, [author, userProfileUrl, authorIcon.profileIconId, authorIcon]);
+
+  const postEditHandler = (title,content) => {
+    fetch(`http://localhost:3500/createdTeams/${teamData.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          discussions: teamData.discussions.map((item) => {
+            if (item.id === id) {
+              return { ...item, title: title, content: content };
+            } else {
+              return item;
+            }
+          }),
+        }),
+      }).finally(() => {
+        fetch(`http://localhost:3500/createdTeams?teamName=${teamData.teamName}`)
+          .then((res) => res.json())
+          .then((data) => setTeamData(data[0]))
+          .then(setIsEditing(false));
+      }
+    );
+  };
 
   return (
     <div className={style.post}>
@@ -113,7 +150,10 @@ const TeamPostCard = (props) => {
         </p>
         {
           <p className={style.delete}>
-            {author === user.ign && (
+            {author === user.ign && <button onClick={() => setIsEditing(!isEditing)} className={style['edit-btn']}>
+            <i className="fa-solid fa-pen-to-square"></i>
+            </button>}
+            {(author === user.ign || teamData.owner === user.ign)  && (
               <button
                 onClick={() => setIsDeleting(true)}
                 className={style["delete-btn"]}
@@ -148,7 +188,7 @@ const TeamPostCard = (props) => {
           </button>
         </li>
         <li>
-          <button className={style["comment-btn"]}>
+          <button onClick={() => console.log(title)}className={style["comment-btn"]}>
             <i className="fa-regular fa-comment"></i>
             <span>Comment</span>
           </button>
@@ -162,6 +202,19 @@ const TeamPostCard = (props) => {
             setIsDeleting={setIsDeleting}
           />
         )}
+        {isEditing && (
+          <EditPostModal
+            postEditHandler={postEditHandler}
+            isEditing={isEditing}
+            setIsEditing={setIsEditing}
+            title={title}
+            content={content}
+            id={id}
+            teamData={teamData}
+            setTeamData={setTeamData}
+          />
+        )}
+
       </div>
     </div>
   );

@@ -188,7 +188,7 @@ const TeamProfile = () => {
             <h3>Members</h3>
             <button
               onClick={() => setIsEditingMembers(!isEditingMembers)}
-              className={style["edit-members-btn"]}
+              className={`${style["edit-members-btn"]} ${isEditingMembers && `${style.active}` }`}
             >
               <i className="fa-solid fa-user-pen"></i>
             </button>

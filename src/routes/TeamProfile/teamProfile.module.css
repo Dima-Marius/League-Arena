@@ -242,7 +242,7 @@
     right:40px;
     background-color: transparent;
     border: none;
-    color: aquamarine;
+    color: seashell;
     font-size: 30px;
     cursor: pointer;
     transition: 0.3s;
@@ -253,6 +253,21 @@
     position: relative;
     left:2px;
 }
+
+.edit-members-btn:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+
+  .active {
+    color:crimson;
+  }
+  
+.edit-members-btn:active {
+    background-color: #f7f7f750;
+    border-color: #000000;
+    transform: scale(.96);
+  }
 
 .players div:first-child {
     background-color: rgba(44, 62, 80,0.6);

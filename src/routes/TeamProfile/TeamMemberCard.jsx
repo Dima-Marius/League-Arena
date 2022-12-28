@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ApiKeyContext from "../../context/ApiKeyContext";
 import style from "./teamMemberCard.module.css";
 import useGetUserInfo from "../../hooks/useGetUserInfo";
+import RemoveUserModal from "./RemoveUserModal";
 
 const TeamMemberCard = (props) => {
   const { memberName, owner, isEditingMembers, teamData, setTeamData } = props;
@@ -16,37 +17,40 @@ const TeamMemberCard = (props) => {
   const [userAvatar, setUserAvatar] = useState(
     JSON.parse(localStorage.getItem(memberName)) ?? 7
   );
-  const [openMemberOptions, setOpenMemberOptions] = useState(false);
+
+  const [userRemoveModal, setUserRemoveModal] = useState(false);
 
   const removeUserHandler = (e) => {
-      fetch(`http://localhost:3500/createdTeams/${teamData.id}`, {
+    fetch(`http://localhost:3500/createdTeams/${teamData.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          members: teamData.members.filter(member => member !== memberName),
-          }),
-        }).finally(() => {
-          fetch(`http://localhost:3500/createdTeams?teamName=${teamData.teamName}`)
-            .then((res) => res.json())
-            .then((data) => setTeamData(data[0]));
-        });
+      },
+      body: JSON.stringify({
+        members: teamData.members.filter((member) => member !== memberName),
+      }),
+    }).finally(() => {
+      fetch(`http://localhost:3500/createdTeams?teamName=${teamData.teamName}`)
+        .then((res) => res.json())
+        .then((data) => setTeamData(data[0]));
+    });
 
-        fetch(`http://localhost:3500/users?ign=${memberName}`)
-          .then(res => res.json())
-          .then(data => {
-              fetch(`http://localhost:3500/users/${data[0].id}`, {
-                method: "PATCH",
-                headers: {
-                  "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    team: '',
-                    }),
-              })
-        })
-  }
+    fetch(`http://localhost:3500/users?ign=${memberName}`)
+      .then((res) => res.json())
+      .then((data) => {
+        fetch(`http://localhost:3500/users/${data[0].id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            team: "",
+          }),
+        });
+      });
+
+    setUserRemoveModal(!userRemoveModal);
+  };
 
   const isOwner = owner === memberName && style.isOwner;
 
@@ -73,10 +77,16 @@ const TeamMemberCard = (props) => {
 
   return (
     <li className={style.li}>
-      {
-      (user.ign !== memberName && isEditingMembers === true && user.ign === owner) &&
-        <button onClick={removeUserHandler} className={style['remove-user-btn']}><i className="fa-solid fa-x"></i></button>
-      }
+      {user.ign !== memberName &&
+        isEditingMembers === true &&
+        user.ign === owner && (
+          <button
+            onClick={() => setUserRemoveModal(!userRemoveModal)}
+            className={style["remove-user-btn"]}
+          >
+            <i className="fa-solid fa-x"></i>
+          </button>
+        )}
       {owner === memberName && (
         <p className={style.owner}>
           Leader <i className="fa-sharp fa-solid fa-crown"></i>
@@ -91,7 +101,18 @@ const TeamMemberCard = (props) => {
         alt=""
       />
       <p className={style.name}>{memberName}</p>
-      <p className={`${style.level} ${isOwner}`}>lvl.{memberData?.summonerLevel}</p>
+      <p className={`${style.level} ${isOwner}`}>
+        lvl.{memberData?.summonerLevel}
+      </p>
+      <div>
+        {userRemoveModal && (
+          <RemoveUserModal
+            setUserRemoveModal={setUserRemoveModal}
+            removeUserHandler={removeUserHandler}
+            userRemoveModal={userRemoveModal}
+          />
+        )}
+      </div>
     </li>
   );
 };

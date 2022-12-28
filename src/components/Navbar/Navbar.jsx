@@ -31,7 +31,7 @@ const Navbar = () => {
           <NavLink className={addActiveClass} to='/teamProfile'><li><GiSwordsEmblem size={43}/></li></NavLink>
           <NavLink className={addActiveClass} to={`/userProfile/${user.ign}`}><li><i className="fa-solid fa-user"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/settings'><li><i className="fa-solid fa-gear"></i></li></NavLink>
-          <NavLink className={addActiveClass} to='/about'><li><i className="fa-solid fa-circle-question"></i></li></NavLink>
+          <NavLink className={addActiveClass} to='/about'><li><i className="fa-solid fa-envelope"></i></li></NavLink>
           <div className={style.logout}>
           <button onClick={logoutHandler}> {/* putting only pathname with no / threats it as a sub-route */}
             <i className="fa-solid fa-arrow-right-from-bracket"></i>
