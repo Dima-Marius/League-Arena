@@ -26,6 +26,8 @@ const TeamProfile = () => {
 
   const [showCreatePostModal, setShowCreatePostModal] = useState(false);
 
+  const [isEditingMembers, setIsEditingMembers] = useState(false);
+
   const likeUpdate = useContext(LikeContext);
 
   /* Get team winrate */
@@ -144,11 +146,11 @@ const TeamProfile = () => {
               Leader: <span>{teamData?.owner}</span>
             </p>
             <p className={style["rank-info"]}>
-              Rank:{" "}
+              Entry Rank:
               <span
                 className={`${teamData?.rank?.toLowerCase()} ${style.rank}`}
               >
-                {teamData?.rank}{" "}
+                {teamData?.rank}
                 <img
                   src={getRankIcon(teamData?.rank)}
                   height="50px"
@@ -175,22 +177,31 @@ const TeamProfile = () => {
             </p>
           </div>
         </div>
-        <div className={style['description-title']}>
+        <div className={style["description-title"]}>
           <h3>Description</h3>
         </div>
         <div className={style.description}>
-            <p>{teamData.description}</p>
+          <p>{teamData.description}</p>
         </div>
         <div className={style.players}>
           <div>
             <h3>Members</h3>
+            <button
+              onClick={() => setIsEditingMembers(!isEditingMembers)}
+              className={style["edit-members-btn"]}
+            >
+              <i className="fa-solid fa-user-pen"></i>
+            </button>
           </div>
           <ul className={style["members-list"]}>
             {teamData?.members?.map((item) => (
               <TeamMemberCard
+                isEditingMembers={isEditingMembers}
                 owner={teamData.owner}
                 key={item}
                 memberName={item}
+                teamData={teamData}
+                setTeamData={setTeamData}
               />
             ))}
           </ul>
@@ -234,9 +245,9 @@ const TeamProfile = () => {
         <Footer />
       </div>
       <div>
-      {showCreatePostModal && (
-        <Modal teamData={teamData} handleModalClose={handleModalClose} />
-      )}
+        {showCreatePostModal && (
+          <Modal teamData={teamData} handleModalClose={handleModalClose} />
+        )}
       </div>
     </div>
   );

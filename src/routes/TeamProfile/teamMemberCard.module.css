@@ -1,5 +1,6 @@
 .li {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -16,7 +17,9 @@
     background-size: cover;
     background-position: center;
     -webkit-clip-path: polygon(49% 0, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);
-    clip-path: polygon(49% 0, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);
+    clip-path: polygon(49% 0, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0); 
+
+
 }
 
 .li a {
@@ -27,8 +30,8 @@
 
 .li:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    -webkit-clip-path: polygon(50% 10%, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);
-    clip-path: polygon(50% 10%, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);
+    -webkit-clip-path: polygon(50% 10%, 100% 0, 100% 80%, 50% 100%, 0% 80%, 0 0);
+    clip-path: polygon(50% 10%, 100% 0, 100% 80%, 50% 100%, 0% 80%, 0 0); 
 }
 
 .level {
@@ -48,4 +51,61 @@
 
 .owner {
     color:gold;
+}
+
+.member-options-btn {
+    color: seashell;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 44px;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    width: 40px;
+    height: 27px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.options-container {
+    position: relative;
+}
+
+.remove-user-btn {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    position: absolute;
+    top:48px;
+    z-index: 9;
+}
+
+.remove-user-btn i {
+    font-size: 20px;
+}
+
+.level {
+    margin-bottom: 0px;
+}
+
+
+/* modifiers */
+
+.isOwner {
+    margin-bottom: 45px;
 }
