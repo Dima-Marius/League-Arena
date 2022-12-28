@@ -12,7 +12,7 @@
     position: relative;
     border-radius: 20px;
     margin: 10px 0;
-    background-image: url('https://cdn.discordapp.com/attachments/1017045858379890800/1057377778837749870/borderMarius.png');
+    background-image: url('https://images.unsplash.com/photo-1607128849509-bdccb1b58d09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
     background-size: cover;
     background-position: center;
     -webkit-clip-path: polygon(49% 0, 100% 0, 100% 70%, 50% 100%, 0% 70%, 0 0);

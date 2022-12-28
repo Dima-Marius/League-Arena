@@ -175,9 +175,11 @@ const TeamProfile = () => {
             </p>
           </div>
         </div>
-        <div className={style.description}>
+        <div className={style['description-title']}>
           <h3>Description</h3>
-          <p>{teamData.description}</p>
+        </div>
+        <div className={style.description}>
+            <p>{teamData.description}</p>
         </div>
         <div className={style.players}>
           <div>

@@ -2,13 +2,14 @@ import React from 'react';
 import style from './footer.module.css';
 import { TbPhone } from 'react-icons/tb';
 import { TfiEmail } from 'react-icons/tfi';
+import riotlogo from '../../assets/logos/riot-logo.png'
 
 
 function Footer() {
   return (
     <footer className={style['footer-area']}>
     <div className={style.about}>
-
+      <img src={riotlogo} height='300px' width='300px' alt='riot games'/>
       <p>API Site names and logos 	&#40;Riot Games, leagueoflegends.com, playvalorant.com, riotgames.com&#41; are © Riot Games Inc.<br></br> This site is in no way affiliated with Riot Games Inc. except for the fact that we use their awesome API to provide you this service.</p>
       <div>
       </div>
@@ -49,13 +50,13 @@ function Footer() {
         <p>someone@here.somewhere.com</p>
         </div>
         <div className={style.github}>
-          <a href='https://github.com/Shady1kx'>Check out my Github profile!</a>
+          <a href='https://github.com/Dima-Marius'>Check out my Github profile!</a>
           </div>
       </div>
     </div>
     <div className={style.disclaimer}>
     <div className={style.divider}><span></span><span style={{position:'relative',bottom:'7px'}}>Made with <i className="fa-regular fa-heart"></i></span><span></span></div>
-      <h2><span>Original creator:</span> <a href='https://github.com/Shady1kx'>https://github.com/Shady1kx</a></h2>
+      <h2><a className={style.credits} href='https://github.com/Dima-Marius'>https://github.com/Dima-Marius</a></h2>
     </div>
   </footer>
   )

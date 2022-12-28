@@ -63,8 +63,8 @@
       "description": "Hello we are looking for new players, join us.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, comes from a line in section 1.10.32.",
       "discussions": [
         {
-          "title": "example post",
-          "content": "content goes here\n",
+          "title": "What’s coming next",
+          "content": "Today, a lot of players use external websites and third-party apps that provide all sorts of information about their teammates. With this information, players are drawing conclusions that aren’t necessarily correct and pressuring their teammates into things that they might not want to do, like picking the exact same champion every game because it’s their highest winrate or most played. We think the best version of League is not one where you metagame based on the players in your lobby, weigh who’s on a win or loss streak or playing a different champion, and dodge or pressure others to dodge when your setup doesn’t meet perfect conditions. ",
           "author": "PSG Shady",
           "likes": [
             "Szemes",
@@ -91,7 +91,8 @@
           "author": "Szemes",
           "likes": [
             "Szemes",
-            "Quanttum"
+            "Quanttum",
+            "PSG Shady"
           ],
           "comments": [],
           "date": "12/26/2022",

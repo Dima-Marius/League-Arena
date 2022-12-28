@@ -43,12 +43,28 @@
     grid-area: main;
     display: grid;
     grid-template-columns: 20px 1fr 1fr 1fr 20px;
-    grid-template-rows: 100px 400px 500px auto;
+    grid-template-rows: 100px 40px 400px 500px auto;
     grid-template-areas:
       "header header header header header"
+      ". logo info description-title ."
       ". logo info description ."
       "players players players players players"
       ". posts posts posts .";
+}
+
+.description-title {
+    grid-area: description-title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--profile-color);
+    font-size: 30px;
+    padding-left: 25px;
+    height: 50px;
+    background-color: rgb(52, 73, 94);
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 
 .main {
@@ -75,8 +91,6 @@
     color: cyan;
     font-size: 35px;
 }
-
-
   
 .logo {
     grid-area: logo;
@@ -122,15 +136,18 @@
     flex-direction: column;
     gap: 2px;
     background-color: rgba(52, 73, 94, 0.2);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
 }
 
 .info > h3 {
     color: var(--profile-color);
     font-size: 30px;
     padding-left: 25px;
-    position: relative;
-    top:10px
-
+    height: 80px;
+    background-color: rgb(52, 73, 94);
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 
 .info .record-wrapper {
@@ -150,6 +167,7 @@
     flex-direction: column;
     height: 100%;
     padding: 25px;
+    gap: 9px;
 }
 
 .description::-webkit-scrollbar-track {
@@ -231,9 +249,7 @@
     display: flex;
     height: calc(100% - 65px);
     gap:8px;
-    border-left: solid 10px rgba(44, 62, 80,0.6);
-    border-right: solid 10px rgba(44, 62, 80,0.6);
-    border-bottom: solid 30px rgba(44, 62, 80,0.6);
+    margin: 0 20px;
 }
 
 .players > div {
@@ -242,6 +258,11 @@
 
 .logo, .info, .description {
     border-radius: 18px;
+}
+
+.description {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
  
 .posts h3 {
