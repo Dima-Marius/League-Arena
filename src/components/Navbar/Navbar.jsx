@@ -28,7 +28,7 @@ const Navbar = () => {
           <NavLink className={addActiveClass} to='/home'><li><i className="fa-solid fa-house"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/search'><li><i className="fa-solid fa-magnifying-glass"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/leaderboard'><li><i className="fa-solid fa-earth-americas"></i></li></NavLink>
-          <NavLink className={addActiveClass} to='/teamProfile'><li><GiSwordsEmblem size={43}/></li></NavLink>
+          <NavLink className={addActiveClass} to='/teamProfile'><li><i className="fa-solid fa-shield"></i>{/* <GiSwordsEmblem size={43}/> */}</li></NavLink>
           <NavLink className={addActiveClass} to={`/userProfile/${user.ign}`}><li><i className="fa-solid fa-user"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/settings'><li><i className="fa-solid fa-gear"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/about'><li><i className="fa-solid fa-envelope"></i></li></NavLink>

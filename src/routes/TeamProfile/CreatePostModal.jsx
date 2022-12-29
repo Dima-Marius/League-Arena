@@ -51,7 +51,7 @@ const CreatePostModal = ({ handleModalClose, teamData }) => {
         <h2>CREATE A NEW POST</h2>
         <form onSubmit={submitPost} className={style.form}>
             <input type="text" value={title} onChange={handleTitleChange} placeholder="Title" />
-            <textarea onChange={handleContentChange} rows='6' cols='75' placeholder="Content" />
+            <textarea onChange={handleContentChange} rows='6' cols='75' placeholder="" />
             <button className={style.submit} type='submit'>Submit</button>
         </form>
     </div>

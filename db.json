@@ -64,13 +64,39 @@
       "discussions": [
         {
           "title": "What’s coming next",
-          "content": "Today, a lot of players use external websites and third-party apps that provide all sorts of information about their teammates. With this information, players are drawing conclusions that aren’t necessarily correct and pressuring their teammates into things that they might not want to do, like picking the exact same champion every game because it’s their highest winrate or most played. We think the best version of League is not one where you metagame based on the players in your lobby, weigh who’s on a win or loss streak or playing a different champion, and dodge or pressure others to dodge when your setup doesn’t meet perfect conditions. ",
+          "content": "Today, a lot of players use external websites and third-party apps that provide all sorts of information about their teammates. With this information, players are drawing conclusions that aren’t necessarily correct and pressuring their teammates into things that they might not want to do, like picking the exact same champion every game because it’s their highest winrate or most played. We think the best version of League is not one where you metagame based on the players in your lobby, weigh who’s on a win or loss streak or playing a different champion, and dodge or pressure others to dodge when your setup doesn’t meet perfect conditions.",
           "author": "PSG Shady",
           "likes": [
             "Szemes",
             "PSG Shady"
           ],
-          "comments": [],
+          "comments": [
+            {
+              "commentAuthor": "Szemes",
+              "commentContent": "I agree with you",
+              "id": 1
+            },
+            {
+              "commentAuthor": "Nightmare",
+              "commentContent": "Yes this is a good idea, but I think we should also add a feature where you can see the winrate of the champion you are playing against, dummy text.",
+              "id": 2
+            },
+            {
+              "commentAuthor": "Quanttum",
+              "commentContent": "I found a simpler (cleaner?) method. The inner button (::after) is inset by the border width to create the main border. This throws out the corners though as the edge size is now proportionally too large. So a new locally scoped custom-property is set for inner-edge-size. To do this we simply subtract half the border width. This allows the polygon to be defined identically to the outer one, removing the complicated calcs.",
+              "id": 3
+            },
+            {
+              "commentAuthor": "PSG Shady",
+              "commentContent": "asdsad",
+              "id": 4
+            },
+            {
+              "commentAuthor": "PSG Shady",
+              "commentContent": "zzzzzzzzzz",
+              "id": 4
+            }
+          ],
           "date": "12/25/2022",
           "time": "2:27:23 AM",
           "id": 0
@@ -80,7 +106,13 @@
           "content": "Hi everyone this is a test post",
           "author": "Szemes",
           "likes": [],
-          "comments": [],
+          "comments": [
+            {
+              "commentAuthor": "PSG Shady",
+              "commentContent": "The Botanical Cactus Garden also include a Living Machine, their name for a demonstration waste water treatment facility. Using bacteria, algae, protozoa, snails and fish, the facility recycles 100 percent of the chocolate factory's waste water without the use of any chemicals. The water is recycled for use in providing water for the garden. The ponds from the waste water facility attract many of the birds that inhabit the garden.",
+              "id": 0
+            }
+          ],
           "date": "12/26/2022",
           "time": "11:47:21 PM",
           "id": 1
@@ -175,6 +207,40 @@
       "id": 6
     },
     {
+      "teamName": "Team Envy",
+      "owner": "Eziq",
+      "logo": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/e51208125121929.Y3JvcCwxMDA3LDc4OCwxOTcsMA.png",
+      "region": "NA",
+      "wins": 0,
+      "losses": 0,
+      "members": [
+        "Ragnarøkk",
+        "Rivengè",
+        "Le Puuma",
+        "l α s h",
+        "Eziq"
+      ],
+      "availableRoles": [
+        "TOP",
+        "MID"
+      ],
+      "rank": "Master",
+      "description": "Hello we are looking for new players, join us.",
+      "discussions": [
+        {
+          "title": "Test post",
+          "content": "Content should appear here.",
+          "author": "Eziq",
+          "likes": [],
+          "comments": [],
+          "date": "12/29/2022",
+          "time": "4:22:21 PM",
+          "id": 0
+        }
+      ],
+      "id": 7
+    },
+    {
       "teamName": "Gromp's Group",
       "logo": "https://static.vecteezy.com/system/resources/previews/006/988/729/original/specialist-hacker-mascot-illustration-for-sports-and-esports-logo-vector.jpg",
       "region": "KOREA",
@@ -261,6 +327,71 @@
       "rank": "DIAMOND",
       "team": "Team Liquid",
       "id": 5
+    },
+    {
+      "email": "shady10kx@gmail.com",
+      "password": "$2a$10$xmkCxyDON4XBdO.Dr3s9r.Stt0wCUGVmn7b9l/9vwJuk3GKM8IbHi",
+      "confirmPassword": "lamind15",
+      "firstName": "Nathan",
+      "lastName": "Smith",
+      "ign": "Eziq",
+      "region": "EUW",
+      "role": "TOP",
+      "rank": "GRANDMASTER",
+      "team": "Team Envy",
+      "id": 6
+    },
+    {
+      "email": "shady11kx@gmail.com",
+      "password": "$2a$10$xmkCxyDON4XBdO.Dr3s9r.Stt0wCUGVmn7b9l/9vwJuk3GKM8IbHi",
+      "confirmPassword": "lamind15",
+      "firstName": "asd",
+      "lastName": "dsa",
+      "ign": "l α s h",
+      "region": "EUW",
+      "role": "BOTTOM",
+      "rank": "DIAMOND",
+      "id": 7,
+      "team": "Team Envy"
+    },
+    {
+      "email": "shady12kx@gmail.com",
+      "password": "$2a$10$.jVTD7VtpDBQlxV88Wp7ae4cx.l9Ky6mwd5Jhh3jRKvdYIUsskNsm",
+      "confirmPassword": "lamind15",
+      "firstName": "John",
+      "lastName": "Smith",
+      "ign": "Le Puuma",
+      "region": "EUW",
+      "role": "MID",
+      "rank": "DIAMOND",
+      "id": 8,
+      "team": "Team Envy"
+    },
+    {
+      "email": "shady13kx@mail.com",
+      "password": "$2a$10$fkrS41CLTMxexjZdzNXUdeFQQlcNSVDQmt4mZs4ZkE.AfW0/1dEa.",
+      "confirmPassword": "qweqwe",
+      "firstName": "Szemes",
+      "lastName": "dummy",
+      "ign": "Ragnarøkk",
+      "region": "EUNE",
+      "role": "JUNGLE",
+      "rank": "MASTER",
+      "id": 9,
+      "team": "Team Envy"
+    },
+    {
+      "email": "shady14kx@gmail.com",
+      "password": "$2a$10$FnAD3m3bqtPyAFF1iXcA4eRWKfj0718/pYhuyI0fZtp1mUTkxWjam",
+      "confirmPassword": "lamind15",
+      "firstName": "Nathan",
+      "lastName": "Smith",
+      "ign": "Rivengè",
+      "region": "EUW",
+      "role": "JUNGLE",
+      "rank": "Master",
+      "team": "Team Envy",
+      "id": 10
     }
   ]
 }

@@ -11,11 +11,13 @@ import TeamMemberCard from "./TeamMemberCard";
 import TeamPostCard from "./TeamPostCard";
 import Modal from "../../components/Modal/Modal";
 import LikeContext from "../../context/LikeContext";
+import useGetUserInfo from "../../hooks/useGetUserInfo";
 
 const TeamProfile = () => {
   /* Get team name from URL params */
   const params = useParams();
   const teamName = Object.values(params)[0];
+  const user = useGetUserInfo();
 
   /* Fetch team data from server */
   const [teamData, setTeamData] = useState({});
@@ -129,12 +131,12 @@ const TeamProfile = () => {
         <div className={style.logo}>
           <img
             className={style["team-logo"]}
-            src={teamData.logo}
+            src={teamData?.logo}
             height="270px"
             width="270px"
             alt=""
           />
-          <h3>{teamData.teamName}</h3>
+          <h3>{teamData?.teamName}</h3>
         </div>
         <div className={style.info}>
           <h3>Stats</h3>
@@ -166,10 +168,10 @@ const TeamProfile = () => {
           <div>
             <div className={style["record-wrapper"]}>
               <p>
-                Wins: <span className={style.wins}>{teamData.wins}</span>
+                Wins: <span className={style.wins}>{teamData?.wins}</span>
               </p>
               <p>
-                Losses: <span className={style.losses}>{teamData.losses}</span>
+                Losses: <span className={style.losses}>{teamData?.losses}</span>
               </p>
             </div>
             <p>
@@ -181,7 +183,7 @@ const TeamProfile = () => {
           <h3>Description</h3>
         </div>
         <div className={style.description}>
-          <p>{teamData.description}</p>
+          <p>{teamData?.description}</p>
         </div>
         <div className={style.players}>
           <div>
@@ -197,7 +199,7 @@ const TeamProfile = () => {
             {teamData?.members?.map((item) => (
               <TeamMemberCard
                 isEditingMembers={isEditingMembers}
-                owner={teamData.owner}
+                owner={teamData?.owner}
                 key={item}
                 memberName={item}
                 teamData={teamData}
@@ -211,7 +213,7 @@ const TeamProfile = () => {
             <h3>Posts</h3>
           </div>
           <div className={style.output}>
-            {teamData?.discussions?.map(
+            {teamData?.members?.includes(user.ign) ? teamData?.discussions?.map(
               (
                 item /* wrong, just pass ...teamData, short on time to fix */
               ) => (
@@ -229,15 +231,21 @@ const TeamProfile = () => {
                   id={item.id}
                 />
               )
+            ) : (
+              <p className={style["no-posts"]}>
+                You are not a member of this team. Join to see posts.
+              </p>
             )}
           </div>
           <div className={style["btn-container"]}>
-            <button
+            {teamData?.members?.includes(user.ign) && (
+              <button
               onClick={createPostHandler}
               className={style["create-post"]}
             >
               Create New Post
             </button>
+            )}
           </div>
         </div>
       </div>

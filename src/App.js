@@ -17,6 +17,7 @@ import Settings from './routes/Settings/Settings';
 import TeamProfileRoutes from './routes/TeamProfile/TeamProfile';
 import TeamProfileRedirect from './routes/TeamProfile/TeamProfileRedirect';
 import { LikeContextProvider } from './context/LikeContext';
+import TeamPostPage from './routes/TeamPostPage/TeamPostPage';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path='/teamProfile'>
               <Route index element={<TeamProfileRedirect/>}/>
               <Route path='*' element={<TeamProfileRoutes/>}/>
+              <Route path='/teamProfile/:teamName/posts/:id' element={<TeamPostPage/>}/>
             </Route>
             <Route path='/settings' element={<Settings/>} />
             <Route path='/about' element={<About/>} />
