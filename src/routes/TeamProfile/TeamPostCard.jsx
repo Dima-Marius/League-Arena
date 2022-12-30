@@ -10,6 +10,7 @@ import useGetUserInfo from "../../hooks/useGetUserInfo";
 import ConfirmationModal from "./ConfirmationModal";
 import EditPostModal from "./EditPostModal/EditPostModal";
 import { Link } from "react-router-dom";
+import CommentModal from "../TeamPostPage/TeamPost/CommentModal";
 
 const TeamPostCard = (props) => {
   const {
@@ -32,11 +33,11 @@ const TeamPostCard = (props) => {
 
   /* Likes comments */
   const [like, setLike] = useState(likes.includes(user.ign));
-  const [commentCount, setCommentCount] = useState(comments?.length ?? 0);
 
   /* User Actions */
   const [isDeleting, setIsDeleting] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  const [isCommenting, setIsCommenting] = useState(false);
 
   /* user info */
   const userProfileUrl = `https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${author}?api_key=${API_KEY_CTX.apiKey}`;
@@ -166,8 +167,10 @@ const TeamPostCard = (props) => {
         }
       </div>
       <div className={style.data}>
-        <p className={style.title}><Link to={`/teamProfile/${teamData.teamName}/posts/${id}`}>{title}</Link></p>
+      <Link to={`/teamProfile/${teamData.teamName}/posts/${id}`}>
+        <p className={style.title}>{title}</p>
         <p className={style.description}>{content}</p>
+      </Link>
       </div>
       <div className={style["post-footer"]}>
         <ul className={style.likes}>
@@ -188,13 +191,13 @@ const TeamPostCard = (props) => {
             <span>Like</span>
           </button>
         </li>
-        <li>
-          <button onClick={() => console.log(title)}className={style["comment-btn"]}>
+        <li className={style['comment-btn-bg']}>
+          <button onClick={() => setIsCommenting(!isCommenting)} className={style["comment-btn"]}>
             <i className="fa-regular fa-comment"></i>
             <span>Comment</span>
           </button>
         </li>
-        <span className={style.comments}>{commentCount} comments</span>
+        <span className={style.comments}>{teamData?.discussions?.find(post => post.id === id).comments.length} comments</span>
       </ul>
       <div>
         {isDeleting && (
@@ -213,8 +216,16 @@ const TeamPostCard = (props) => {
             id={id}
             teamData={teamData}
             setTeamData={setTeamData}
-          />
-        )}
+          />)}
+          {isCommenting && (
+            <CommentModal
+              isCommenting={isCommenting}
+              setIsCommenting={setIsCommenting}
+              id={id}
+              teamData={teamData}
+              setTeamData={setTeamData}
+            />
+          )}
       </div>
     </div>
   );

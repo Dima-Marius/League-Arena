@@ -90,7 +90,7 @@ const TeamPostPage = () => {
                   likes={post.likes}
                   comments={post.comments}
                   teamData={teamData}
-                  setTeamData
+                  setTeamData={setTeamData}
                 />
               )
           )}

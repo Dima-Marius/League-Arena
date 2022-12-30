@@ -45,6 +45,7 @@
   padding: 6px;
   text-align: center;
   background-color: rgba(46, 48, 71, 1);
+  text-decoration: underline;
 }
 
 .data {
@@ -180,4 +181,11 @@
 .comments {
   font-weight: 100;
   font-size: 20px;
+}
+
+
+.comment-btn-bg:active {
+  background-color: #f7f7f750;
+  border-color: #000000;
+  transform: scale(0.96);
 }

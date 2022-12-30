@@ -9,9 +9,10 @@ import style from "./teamPost.module.css";
 import useGetUserInfo from "../../../hooks/useGetUserInfo";
 import ConfirmationModal from "../../TeamProfile/ConfirmationModal";
 import EditPostModal from "../../TeamProfile/EditPostModal/EditPostModal";
-import { Link } from "react-router-dom";
 import CommentCard from "./CommentCard";
 import CommentModal from "./CommentModal";
+import { useNavigate } from "react-router-dom";
+import CommentDeleteModal from "./CommentDeleteModal";
 
 const TeamPost = (props) => {
   const {
@@ -26,17 +27,17 @@ const TeamPost = (props) => {
     teamData,
     setTeamData,
   } = props;
+
   const user = useGetUserInfo();
   const API_KEY_CTX = useContext(ApiKeyContext);
   const [authorIcon, setAuthorIcon] = useState(
     JSON.parse(localStorage.getItem(author)) ?? 7
   );
 
-  console.log(teamData.discussions.map(post => post.id === parseInt(id) && post.comments.map(comment => console.log(comment))))
+  const navigate = useNavigate();
 
   /* Likes comments */
   const [like, setLike] = useState(likes.includes(user.ign));
-  const [commentCount, setCommentCount] = useState(comments?.length ?? 0);
 
   /* User Actions */
   const [isDeleting, setIsDeleting] = useState(false);
@@ -76,12 +77,7 @@ const TeamPost = (props) => {
       body: JSON.stringify({
         discussions: teamData.discussions.filter((item) => item.id !== id),
       }),
-    }).finally(() => {
-      fetch(`http://localhost:3500/createdTeams?teamName=${teamData.teamName}`)
-        .then((res) => res.json())
-        .then((data) => setTeamData(data[0]))
-        .then(setIsDeleting(false));
-    });
+    }).finally(() => navigate(`/teamProfile/${user.team}`));
   };
 
   /* like and unlike functionality */
@@ -173,22 +169,20 @@ const TeamPost = (props) => {
         }
       </div>
       <div className={style.data}>
-        <p className={style.title}>
-          <Link to={`/teamProfile/${teamData.teamName}/posts/${id}`}>
-            {title}
-          </Link>
-        </p>
+        <p className={style.title}>{title}</p>
         <p className={style.description}>{content}</p>
       </div>
       <div className={style["post-footer"]}>
         <ul className={style.likes}>
           {likes?.length !== 0 && <p>Liked by</p>}
           {likes?.length !== 0
-            ? likes.map((item) => (
-                <li className={style.liked} key={item}>
-                  {item} <span>,</span>
-                </li>
-              ))
+            ? teamData?.discussions
+                ?.find((post) => post.id === id)
+                .likes?.map((item) => (
+                  <li className={style.liked} key={item}>
+                    {item} <span>,</span>
+                  </li>
+                ))
             : "No likes yet"}
         </ul>
       </div>
@@ -210,16 +204,22 @@ const TeamPost = (props) => {
         </li>
       </ul>
       <ul>
-        {teamData?.discussions?.map(
-          (post) =>
-            post.id === parseInt(id) &&
-            post.comments.map((comment) => (
-              <CommentCard
-                key={post.id}
-                author={comment.commentAuthor}
-                content={comment.commentContent}/>
-            ))
-        )}
+        {teamData?.discussions
+          ?.find((post) => post.id === parseInt(id))
+          .comments?.map((post, idx) => (
+            <CommentCard
+              key={post.id}
+              id={post.id}
+              author={post.commentAuthor}
+              date={post.date}
+              time={post.time}
+              isDeleting={isDeleting}
+              setIsDeleting={setIsDeleting}
+              content={post.commentContent}
+              teamData={teamData}
+              setTeamData={setTeamData}
+            />
+          ))}
       </ul>
       <div>
         {isDeleting && (
@@ -249,6 +249,7 @@ const TeamPost = (props) => {
             setTeamData={setTeamData}
           />
         )}
+        
       </div>
     </div>
   );

@@ -63,87 +63,83 @@
       "description": "Hello we are looking for new players, join us. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, comes from a line in section 1.10.32.",
       "discussions": [
         {
-          "title": "What’s coming next",
-          "content": "Today, a lot of players use external websites and third-party apps that provide all sorts of information about their teammates. With this information, players are drawing conclusions that aren’t necessarily correct and pressuring their teammates into things that they might not want to do, like picking the exact same champion every game because it’s their highest winrate or most played. We think the best version of League is not one where you metagame based on the players in your lobby, weigh who’s on a win or loss streak or playing a different champion, and dodge or pressure others to dodge when your setup doesn’t meet perfect conditions.",
+          "title": "We have a new post by  @RiotPhlox  discussing early reads and thoughts on the preseason jungle updates, check it out here! :s",
+          "content": "The recent ARAM updates were our priority for live modes work and we have plans for other areas both old and new. We will have a more detailed update on what caused the incident, as well as the future of modes for League early next year. Since we made the original promise in 2021 to bring back NB, the League team lost some key people that would’ve been involved in this. Rehiring for roles and onboarding new members takes time that impacts respective projects. :D",
           "author": "PSG Shady",
           "likes": [
-            "Szemes",
             "PSG Shady"
           ],
           "comments": [
             {
-              "commentAuthor": "Szemes",
-              "commentContent": "I agree with you",
-              "id": 1
-            },
-            {
-              "commentAuthor": "Nightmare",
-              "commentContent": "Yes this is a good idea, but I think we should also add a feature where you can see the winrate of the champion you are playing against, dummy text.",
+              "commentAuthor": "PSG Shady",
+              "date": "12/30/2022",
+              "time": "7:14:17 PM",
+              "commentContent": "test",
               "id": 2
             },
             {
-              "commentAuthor": "Quanttum",
-              "commentContent": "I found a simpler (cleaner?) method. The inner button (::after) is inset by the border width to create the main border. This throws out the corners though as the edge size is now proportionally too large. So a new locally scoped custom-property is set for inner-edge-size. To do this we simply subtract half the border width. This allows the polygon to be defined identically to the outer one, removing the complicated calcs.",
-              "id": 3
-            },
-            {
               "commentAuthor": "PSG Shady",
-              "commentContent": "asdsad",
-              "id": 4
-            },
-            {
-              "commentAuthor": "PSG Shady",
-              "commentContent": "zzzzzzzzzz",
-              "id": 4
+              "date": "12/30/2022",
+              "time": "7:19:08 PM",
+              "commentContent": "exemplu de comentariu exemplu de comentariu exemplu de comentariu exemplu de comentariu exemplu de comentariu exemplu de comentariu ",
+              "id": 2
             }
           ],
-          "date": "12/25/2022",
-          "time": "2:27:23 AM",
+          "date": "12/30/2022",
+          "time": "7:12:25 PM",
           "id": 0
         },
         {
-          "title": "This is a sample title",
-          "content": "Hi everyone this is a test post",
-          "author": "Szemes",
+          "title": "Hello everyone, we need to work on team play",
+          "content": "Following up on what I mentioned about high MMR moderation trials in NA: we're starting reviews this week. For these, reports matter, including champ select reports! Please use them, we need to know there's a problem to address it and we're not watching every stream or game.",
+          "author": "PSG Shady",
           "likes": [],
           "comments": [
             {
               "commentAuthor": "PSG Shady",
-              "commentContent": "The Botanical Cactus Garden also include a Living Machine, their name for a demonstration waste water treatment facility. Using bacteria, algae, protozoa, snails and fish, the facility recycles 100 percent of the chocolate factory's waste water without the use of any chemicals. The water is recycled for use in providing water for the garden. The ponds from the waste water facility attract many of the birds that inhabit the garden.",
-              "id": 0
+              "date": "12/30/2022",
+              "time": "7:13:30 PM",
+              "commentContent": "hey",
+              "id": 1
+            },
+            {
+              "commentAuthor": "PSG Shady",
+              "date": "12/30/2022",
+              "time": "7:13:34 PM",
+              "commentContent": "this is a comment",
+              "id": 2
+            },
+            {
+              "commentAuthor": "PSG Shady",
+              "date": "12/30/2022",
+              "time": "7:13:38 PM",
+              "commentContent": "this is also a comment",
+              "id": 3
             }
           ],
-          "date": "12/26/2022",
-          "time": "11:47:21 PM",
+          "date": "12/30/2022",
+          "time": "7:12:57 PM",
           "id": 1
         },
         {
-          "title": "We need to work on team play",
-          "content": "The first area we want to discuss is counter jungling, as it’s been a hot topic ever since the changes were announced earlier this year. And while we do think it’s a core part of the role, and adds depth and skill expression in the forms of pathing, ganking, and general decision making, we also don’t think the way it was in the game before Preseason was the healthiest version of it.",
-          "author": "Szemes",
+          "title": "This is a test post",
+          "content": "content should appear here",
+          "author": "PSG Shady",
           "likes": [
-            "Szemes",
-            "Quanttum",
-            "T1 Faker",
-            "Yogurt",
             "PSG Shady"
           ],
-          "comments": [],
-          "date": "12/26/2022",
-          "time": "11:56:17 PM",
+          "comments": [
+            {
+              "commentAuthor": "PSG Shady",
+              "date": "12/30/2022",
+              "time": "7:22:50 PM",
+              "commentContent": "this post should work",
+              "id": 1
+            }
+          ],
+          "date": "12/30/2022",
+          "time": "7:13:09 PM",
           "id": 2
-        },
-        {
-          "title": "How much should we prioritize a player’s learned skills and experience over things like role accessibility, champion diversity, and so on?",
-          "content": "The answer to that is... complicated. Optimizations are good for the role, with two major exceptions: Jungle viability being defined by clear speeds, and unintuitive optimizations like camp dot dragging.\n\nWe still want clear optimizations to exist. We think that they’re a healthy aspect of jungling skill expression, but we want that to be taken out of champion select and into the game by putting AoE and single-target junglers on a more even playing field and removing the particularly unintuitive optimization of letting a camp die to the jungle DoT while you walk to your next camp (this still sort of exists though, as your companion will damage camps when you start to walk away).",
-          "author": "Quanttum",
-          "likes": [
-            "PSG Shady"
-          ],
-          "comments": [],
-          "date": "12/27/2022",
-          "time": "12:20:48 AM",
-          "id": 3
         }
       ],
       "id": 3

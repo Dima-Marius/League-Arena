@@ -9,15 +9,35 @@
     background-color: rgba(255, 255, 255, 0.1);
     margin-top: 40px;
     margin-bottom: 10px;
+    position:relative;
+}
+
+.author {
+    position: relative;
+}
+
+.date {
+    width: 100%;
+    font-size: 18px;
+    font-style: italic;
     
 }
 
-.li > div {
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px
+
+}
+
+.author {
     display:flex;
     align-items: center;
     gap:8px;
+    padding: 10px;
     margin: 5px 0px 0px 19px;
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color: rgba(61, 94, 109, 0.3);
+    border-radius: 18px;
     width: fit-content;
     justify-content: center;
 }
@@ -26,9 +46,45 @@
     font-size: 20px;
     font-weight: 500;
     color: azure;
-    
 }
 
 .content {
-    padding: 0px 20px 20px 20px;
+    padding: 0px 20px 6px 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0px 10px;
+    border-radius: 18px;
+}
+
+.delete {
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 40px;
+    height: 40px;
+    color: rgba(0, 255, 255, 0.685);
+    border-radius: 38px;
+    border: none;
+    margin-left: 10px;
+}
+
+.delete i {
+    position: relative;
+    bottom:4px
+}
+
+.delete-container {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right:30px;
+}
+
+
+.delete:active {
+    background-color: #f7f7f750;
+    border-color: #000000;
+    transform: scale(0.96);
+}
+
+.delete:focus-visible { 
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow 0.2s;
 }
