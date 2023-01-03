@@ -32,7 +32,6 @@ const UserGameForm = (props) => {
           ))
         }
 
-
             const formik = useFormik({
               initialValues: {
                 email: userData.email,
