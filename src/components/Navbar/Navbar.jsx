@@ -20,6 +20,7 @@ const Navbar = () => {
   }
 
   const addActiveClass = ({ isActive }) => isActive ? `${style.active}` : {};
+  const userHasTeam = user.team !== '' ? '/teamProfile' : '/teamProfile/createTeam';
 
   return (
     <nav className={style['nav-container']}>   
@@ -29,9 +30,9 @@ const Navbar = () => {
           <NavLink className={addActiveClass} to='/search'><li><i className="fa-solid fa-magnifying-glass"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/leaderboard'><li><i className="fa-solid fa-earth-americas"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/teamProfile'><li><i className="fa-solid fa-shield"></i>{/* <GiSwordsEmblem size={43}/> */}</li></NavLink>
-          <NavLink className={addActiveClass} to={`/userProfile/${user.ign}`}><li><i className="fa-solid fa-user"></i></li></NavLink>
+          <NavLink className={addActiveClass} to='/userProfile'><li><i className="fa-solid fa-user"></i></li></NavLink>
           <NavLink className={addActiveClass} to='/settings'><li><i className="fa-solid fa-gear"></i></li></NavLink>
-          <NavLink className={addActiveClass} to='/about'><li><i className="fa-solid fa-envelope"></i></li></NavLink>
+          <NavLink className={addActiveClass} to='/notifications'><li><i className="fa-solid fa-envelope"></i></li></NavLink>
           <div className={style.logout}>
           <button onClick={logoutHandler}> {/* putting only pathname with no / threats it as a sub-route */}
             <i className="fa-solid fa-arrow-right-from-bracket"></i>

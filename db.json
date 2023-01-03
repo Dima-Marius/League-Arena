@@ -49,11 +49,11 @@
       "wins": 27,
       "losses": 5,
       "members": [
-        "T1 Faker",
-        "PSG Shady",
+        "Quanttum",
         "Szemes",
+        "T1 Faker",
         "Nightmare",
-        "Quanttum"
+        "PSG Shady"
       ],
       "availableRoles": [
         "TOP",
@@ -63,36 +63,9 @@
       "description": "Hello we are looking for new players, join us. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, comes from a line in section 1.10.32.",
       "discussions": [
         {
-          "title": "We have a new post by  @RiotPhlox  discussing early reads and thoughts on the preseason jungle updates, check it out here! :s",
-          "content": "The recent ARAM updates were our priority for live modes work and we have plans for other areas both old and new. We will have a more detailed update on what caused the incident, as well as the future of modes for League early next year. Since we made the original promise in 2021 to bring back NB, the League team lost some key people that would’ve been involved in this. Rehiring for roles and onboarding new members takes time that impacts respective projects. :D",
-          "author": "PSG Shady",
-          "likes": [
-            "PSG Shady"
-          ],
-          "comments": [
-            {
-              "commentAuthor": "PSG Shady",
-              "date": "12/30/2022",
-              "time": "7:14:17 PM",
-              "commentContent": "test",
-              "id": 2
-            },
-            {
-              "commentAuthor": "PSG Shady",
-              "date": "12/30/2022",
-              "time": "7:19:08 PM",
-              "commentContent": "exemplu de comentariu exemplu de comentariu exemplu de comentariu exemplu de comentariu exemplu de comentariu exemplu de comentariu ",
-              "id": 2
-            }
-          ],
-          "date": "12/30/2022",
-          "time": "7:12:25 PM",
-          "id": 0
-        },
-        {
           "title": "Hello everyone, we need to work on team play",
           "content": "Following up on what I mentioned about high MMR moderation trials in NA: we're starting reviews this week. For these, reports matter, including champ select reports! Please use them, we need to know there's a problem to address it and we're not watching every stream or game.",
-          "author": "PSG Shady",
+          "author": "Nightmare",
           "likes": [],
           "comments": [
             {
@@ -122,23 +95,15 @@
           "id": 1
         },
         {
-          "title": "This is a test post",
-          "content": "content should appear here",
+          "title": "You can also create new posts",
+          "content": "content goes here",
           "author": "PSG Shady",
           "likes": [
             "PSG Shady"
           ],
-          "comments": [
-            {
-              "commentAuthor": "PSG Shady",
-              "date": "12/30/2022",
-              "time": "7:22:50 PM",
-              "commentContent": "this post should work",
-              "id": 1
-            }
-          ],
-          "date": "12/30/2022",
-          "time": "7:13:09 PM",
+          "comments": [],
+          "date": "12/31/2022",
+          "time": "4:03:45 PM",
           "id": 2
         }
       ],
@@ -255,20 +220,36 @@
       ],
       "rank": "Gold",
       "description": "Hello we are a team playing on the EUNE region, our rank is MASTER, and we are currently looking for ambitious individuals willing to play together. Hello we are a team playing on the EUNE region, our rankis Diamond, and we are currently looking for ambitious individuals willing to play together.",
-      "id": 7
+      "id": 8
+    },
+    {
+      "teamName": "Hotdogs",
+      "owner": "qwe",
+      "region": "EUNE",
+      "rank": "challenger",
+      "description": "this team should exist now adssadadasdsa",
+      "logo": "https://i.pinimg.com/originals/f3/ae/65/f3ae65f670ef9c745e2f78fb5f130ff9.png",
+      "wins": 0,
+      "losses": 0,
+      "members": [
+        "qwe"
+      ],
+      "availableRoles": [],
+      "discussions": [],
+      "id": 9
     }
   ],
   "users": [
     {
       "email": "shady1kx@gmail.com",
-      "password": "$2a$10$xmkCxyDON4XBdO.Dr3s9r.Stt0wCUGVmn7b9l/9vwJuk3GKM8IbHi",
+      "password": "$2a$10$.jVTD7VtpDBQlxV88Wp7ae4cx.l9Ky6mwd5Jhh3jRKvdYIUsskNsm",
       "confirmPassword": "lamind15",
-      "firstName": "asd",
-      "lastName": "dsa",
+      "firstName": "othername",
+      "lastName": "asd",
       "ign": "PSG Shady",
       "region": "EUW",
       "role": "JUNGLE",
-      "rank": "DIAMOND",
+      "rank": "GRANDMASTER",
       "id": 1,
       "team": "Team Liquid"
     },
@@ -388,6 +369,55 @@
       "rank": "Master",
       "team": "Team Envy",
       "id": 10
+    },
+    {
+      "email": "shady1kxz@gmail.com",
+      "password": "$2a$10$AnrLpg38k23F//RM9De/DuRGlN2/9f3/SXXBnL0qvElbZA3SFtnHq",
+      "confirmPassword": "asdasd",
+      "firstName": "qwe",
+      "lastName": "ewq",
+      "ign": "qweasd",
+      "region": "EUNE",
+      "role": "SUPPORT",
+      "rank": "CHALLENGER",
+      "id": 11
+    },
+    {
+      "email": "shady1kxzxc@gmail.com",
+      "password": "$2a$10$BX2FI87Scb43JmZNkVTNleD5qFt0G4DtIdh/YE1OzFCpJxW4uZp.a",
+      "confirmPassword": "qweqwe",
+      "firstName": "john",
+      "lastName": "smith",
+      "ign": "user123",
+      "region": "EUNE",
+      "role": "MID",
+      "rank": "GRANDMASTER",
+      "id": 12
+    },
+    {
+      "email": "shady1kxzxcc@gmail.com",
+      "password": "$2a$10$RhTRT9aBbd8LYZiU8tSazub2X6s2U7G..f1vtKQGmYywRSimOWEEC",
+      "confirmPassword": "asdasd",
+      "firstName": "john",
+      "lastName": "smith",
+      "ign": "samplename",
+      "region": "EUNE",
+      "role": "SUPPORT",
+      "rank": "GRANDMASTER",
+      "id": 13
+    },
+    {
+      "email": "testacc55@gmail.com",
+      "password": "$2a$10$uEDNQ0MpMotJV.6az9MxRe2oHy5.X9Emw.FS9.3DVV11usF/zLfsS",
+      "confirmPassword": "123123",
+      "firstName": "qwe",
+      "lastName": "qwe",
+      "ign": "qwe",
+      "region": "EUNE",
+      "role": "TOP",
+      "team": "Hotdogs",
+      "rank": "GOLD",
+      "id": 14
     }
   ]
 }

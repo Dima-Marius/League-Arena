@@ -18,6 +18,8 @@ import TeamProfileRoutes from './routes/TeamProfile/TeamProfile';
 import TeamProfileRedirect from './routes/TeamProfile/TeamProfileRedirect';
 import { LikeContextProvider } from './context/LikeContext';
 import TeamPostPage from './routes/TeamPostPage/TeamPostPage';
+import CreateTeam from './routes/CreateTeam/CreateTeam';
+import Notifications from './routes/Notifications/Notifications';
 
 function App() {
   return (
@@ -43,8 +45,10 @@ function App() {
               <Route path='*' element={<TeamProfileRoutes/>}/>
               <Route path='/teamProfile/:teamName/posts/:id' element={<TeamPostPage/>}/>
             </Route>
+            <Route path='/createTeam' element={<CreateTeam/>}/>
+            <Route path='teamProfile/createTeam' element={<CreateTeam/>}/>
             <Route path='/settings' element={<Settings/>} />
-            <Route path='/about' element={<About/>} />
+            <Route path='/notifications' element={<Notifications/>} />
             <Route path='*' element={<NotFound/>} />
           </Route>
         </Routes>

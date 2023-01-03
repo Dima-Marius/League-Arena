@@ -7,7 +7,7 @@ const TeamProfileRedirect = () => {
     const userInfo = useGetUserInfo();
 
      useEffect(() => {
-        redirect(`/teamProfile/${userInfo.team}`)
+        userInfo.team !== "" ? redirect(`/teamProfile/${userInfo.team}`) : redirect(`/teamProfile/createTeam`);
     },[redirect,userInfo.team])
 }
 

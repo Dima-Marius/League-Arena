@@ -23,6 +23,10 @@ const TeamProfile = () => {
   const [teamData, setTeamData] = useState({});
   /*  const [like, setLike] = useState(false); */
 
+  /* check if user has team or not, if not then display team creation */
+
+  const [isUserInTeam, setIsUserInTeam] = useState(true);
+
   /* set this state to team winrate after fetch */
   const [winrate, setWinrate] = useState(0);
 
@@ -47,11 +51,15 @@ const TeamProfile = () => {
 
   /* Fetch team data from server */
   useEffect(() => {
+    if (user.team !== "") {
     fetch(`http://localhost:3500/createdTeams?teamName=${teamName}`)
       .then((res) => res.json())
       .then((data) => setTeamData(data[0]))
       .finally(() => setWinrate(calculateWinrate + "%"));
-  }, [teamName, calculateWinrate, showCreatePostModal, likeUpdate.like]);
+    } else {
+      setIsUserInTeam(false);
+    }
+  },[teamName, calculateWinrate, showCreatePostModal, likeUpdate.like, user.team]);
 
   /* Create post button handler */
 

@@ -75,7 +75,7 @@ const registerUrl = 'http://localhost:3500/register';
 } */
 
 const checkExistingEmail = async (email) => {
-  let users_list = users; // just in case, 'cause not sure if users is a const or not
+  let users_list = users;
   if (users_list.length === 0) {
     // returning the promise
     const response = await fetch('http://localhost:3500/users')

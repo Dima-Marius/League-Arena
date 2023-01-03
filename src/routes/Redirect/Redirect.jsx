@@ -1,8 +1,5 @@
-import React from 'react'
 import { useEffect } from 'react';
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
-import AuthContext from '../../context/AuthContext';
 import useGetUserInfo from '../../hooks/useGetUserInfo';
 
 const Redirect = () => {

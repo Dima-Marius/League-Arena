@@ -56,7 +56,9 @@ const UserProfile = () => {
 
   const calculateWinrate = useMemo(() => {
     const winrate = (
-      (userTeam?.wins / (userTeam?.wins + userTeam?.losses)) * 100).toFixed(2);
+      (userTeam?.wins / (userTeam?.wins + userTeam?.losses)) *
+      100
+    ).toFixed(2);
     if (winrate > 0) {
       return winrate;
     } else {

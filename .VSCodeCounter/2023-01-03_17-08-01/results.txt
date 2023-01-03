@@ -1,0 +1,202 @@
+Date : 2023-01-03 17:08:01
+Directory : c:\Users\shady\Desktop\League Arena\league-arena\src
+Total : 126 files,  13021 codes, 207 comments, 1352 blanks, all 14580 lines
+
+Languages
++------------------+------------+------------+------------+------------+------------+
+| language         | files      | code       | comment    | blank      | total      |
++------------------+------------+------------+------------+------------+------------+
+| CSS              |         52 |      8,455 |        148 |        924 |      9,527 |
+| JavaScript React |         64 |      4,040 |         55 |        412 |      4,507 |
+| XML              |          6 |        397 |          4 |          9 |        410 |
+| JavaScript       |          4 |        129 |          0 |          7 |        136 |
++------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                  | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                     |        126 |     13,021 |        207 |      1,352 |     14,580 |
+| assets                                                                                                                |          5 |        396 |          4 |          9 |        409 |
+| assets\svg                                                                                                            |          5 |        396 |          4 |          9 |        409 |
+| components                                                                                                            |         34 |      2,552 |         49 |        369 |      2,970 |
+| components\Footer                                                                                                     |          2 |        245 |          0 |         38 |        283 |
+| components\LeaderboardComponent                                                                                       |          2 |        103 |          0 |         14 |        117 |
+| components\LeaderboardDisplay                                                                                         |          2 |        297 |          5 |         31 |        333 |
+| components\LegalNavbar                                                                                                |          2 |         34 |          0 |          4 |         38 |
+| components\Login                                                                                                      |          2 |        272 |          2 |         43 |        317 |
+| components\Modal                                                                                                      |          2 |         47 |          0 |          5 |         52 |
+| components\Navbar                                                                                                     |          2 |         87 |          7 |         24 |        118 |
+| components\Player                                                                                                     |          2 |         81 |          1 |         14 |         96 |
+| components\PlayerItem                                                                                                 |          2 |         46 |          0 |          9 |         55 |
+| components\Register                                                                                                   |          8 |        881 |         28 |        124 |      1,033 |
+| components\Register\MultiStepForm                                                                                     |          6 |        504 |          0 |         64 |        568 |
+| components\Register\MultiStepForm\StepOne                                                                             |          2 |        143 |          0 |         19 |        162 |
+| components\Register\MultiStepForm\StepThree                                                                           |          2 |        206 |          0 |         26 |        232 |
+| components\Register\MultiStepForm\StepTwo                                                                             |          2 |        155 |          0 |         19 |        174 |
+| components\RoleItem                                                                                                   |          2 |         22 |          0 |          3 |         25 |
+| components\Search                                                                                                     |          2 |         71 |          0 |         11 |         82 |
+| components\TeamCard                                                                                                   |          2 |        334 |          6 |         43 |        383 |
+| components\TeamOutput                                                                                                 |          2 |         32 |          0 |          6 |         38 |
+| context                                                                                                               |          3 |         45 |          0 |         15 |         60 |
+| hooks                                                                                                                 |          1 |          8 |          0 |          2 |         10 |
+| routes                                                                                                                |         67 |      9,678 |        152 |        910 |     10,740 |
+| routes\About                                                                                                          |          2 |         43 |          0 |          9 |         52 |
+| routes\CreateTeam                                                                                                     |          3 |        592 |          2 |         16 |        610 |
+| routes\Home                                                                                                           |          2 |        587 |         45 |        115 |        747 |
+| routes\Leaderboard                                                                                                    |          2 |         55 |          0 |          7 |         62 |
+| routes\LoadingPage                                                                                                    |          2 |        236 |          2 |         17 |        255 |
+| routes\Login                                                                                                          |          2 |         70 |          0 |          9 |         79 |
+| routes\NotFound                                                                                                       |          2 |        145 |          0 |         22 |        167 |
+| routes\Notifications                                                                                                  |          2 |        604 |          2 |         14 |        620 |
+| routes\PrivateRoutes                                                                                                  |          1 |          9 |          0 |          3 |         12 |
+| routes\Redirect                                                                                                       |          1 |         12 |          0 |          3 |         15 |
+| routes\Register                                                                                                       |          2 |         59 |          0 |          6 |         65 |
+| routes\Settings                                                                                                       |          9 |      1,381 |         48 |        126 |      1,555 |
+| routes\Settings\Navigation                                                                                            |          1 |         32 |          0 |          7 |         39 |
+| routes\Settings\UserDataForm                                                                                          |          2 |        236 |          2 |         30 |        268 |
+| routes\Settings\UserGameForm                                                                                          |          2 |        218 |          2 |         23 |        243 |
+| routes\Settings\UserSecurityForm                                                                                      |          2 |        194 |          2 |         28 |        224 |
+| routes\TeamPostPage                                                                                                   |         10 |      1,643 |         10 |        128 |      1,781 |
+| routes\TeamPostPage\TeamPost                                                                                          |          8 |        982 |          8 |        105 |      1,095 |
+| routes\TeamProfile                                                                                                    |         16 |      2,345 |         22 |        243 |      2,610 |
+| routes\TeamProfile\EditPostModal                                                                                      |          2 |        243 |          0 |         29 |        272 |
+| routes\Teams                                                                                                          |          2 |        505 |          2 |         72 |        579 |
+| routes\UserProfile                                                                                                    |          9 |      1,392 |         19 |        120 |      1,531 |
+| schemas                                                                                                               |          7 |         55 |          1 |         14 |         70 |
+| utils                                                                                                                 |          3 |        136 |          0 |          9 |        145 |
+| utils\rankedTextGradients                                                                                             |          1 |         80 |          0 |          7 |         87 |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| filename                                                                                                              | language         | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| c:\Users\shady\Desktop\League Arena\league-arena\src\App.css                                                          | CSS              |         38 |          1 |          5 |         44 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\App.js                                                           | JavaScript       |         60 |          0 |          3 |         63 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\assets\svg\attribute__ambition.svg                               | XML              |        114 |          1 |          2 |        117 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\assets\svg\attribute__availability.svg                           | XML              |         93 |          1 |          4 |         98 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\assets\svg\attribute__languagelocation.svg                       | XML              |        142 |          1 |          1 |        144 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\assets\svg\attribute__skill.svg                                  | XML              |         46 |          1 |          2 |         49 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\assets\svg\footer-wide.svg                                       | XML              |          1 |          0 |          0 |          1 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Footer\Footer.jsx                                     | JavaScript React |         62 |          0 |         10 |         72 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Footer\footer.module.css                              | CSS              |        183 |          0 |         28 |        211 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\LeaderboardComponent\LeaderboardComponent.jsx         | JavaScript React |         31 |          0 |          6 |         37 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\LeaderboardComponent\leaderboardcomponent.module.css  | CSS              |         72 |          0 |          8 |         80 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\LeaderboardDisplay\LeaderboardDisplay.jsx             | JavaScript React |         71 |          3 |          8 |         82 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\LeaderboardDisplay\leaderboardDisplay.module.css      | CSS              |        226 |          2 |         23 |        251 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\LegalNavbar\LegalNavbar.jsx                           | JavaScript React |         14 |          0 |          2 |         16 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\LegalNavbar\legalnavbar.module.css                    | CSS              |         20 |          0 |          2 |         22 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Login\LoginForm.jsx                                   | JavaScript React |         98 |          0 |         14 |        112 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Login\loginform.module.css                            | CSS              |        174 |          2 |         29 |        205 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Modal\Modal.jsx                                       | JavaScript React |         25 |          0 |          4 |         29 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Modal\modal.module.css                                | CSS              |         22 |          0 |          1 |         23 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Navbar\Navbar.jsx                                     | JavaScript React |         39 |          0 |         11 |         50 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Navbar\navbar.module.css                              | CSS              |         48 |          7 |         13 |         68 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\PlayerItem\PlayerItem.jsx                             | JavaScript React |         31 |          0 |          6 |         37 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\PlayerItem\playeritem.module.css                      | CSS              |         15 |          0 |          3 |         18 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Player\Player.jsx                                     | JavaScript React |         48 |          1 |          6 |         55 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Player\player.module.css                              | CSS              |         33 |          0 |          8 |         41 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Register\MultiStepForm\StepOne\StepOne.jsx            | JavaScript React |         67 |          0 |          9 |         76 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Register\MultiStepForm\StepOne\stepOne.module.css     | CSS              |         76 |          0 |         10 |         86 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Register\MultiStepForm\StepThree\StepThree.jsx        | JavaScript React |         97 |          0 |          8 |        105 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Register\MultiStepForm\StepThree\stepThree.module.css | CSS              |        109 |          0 |         18 |        127 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Register\MultiStepForm\StepTwo\StepTwo.jsx            | JavaScript React |         72 |          0 |          8 |         80 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Register\MultiStepForm\StepTwo\stepTwo.module.css     | CSS              |         83 |          0 |         11 |         94 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Register\RegisterForm.jsx                             | JavaScript React |        113 |         23 |         20 |        156 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Register\registerForm.module.css                      | CSS              |        264 |          5 |         40 |        309 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\RoleItem\RoleItem.jsx                                 | JavaScript React |         14 |          0 |          3 |         17 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\RoleItem\roleItem.module.css                          | CSS              |          8 |          0 |          0 |          8 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Search\Search.jsx                                     | JavaScript React |         40 |          0 |          6 |         46 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\Search\search.module.css                              | CSS              |         31 |          0 |          5 |         36 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\TeamCard\TeamCard.jsx                                 | JavaScript React |        115 |          0 |          5 |        120 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\TeamCard\teamCard.module.css                          | CSS              |        219 |          6 |         38 |        263 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\TeamOutput\TeamOutput.jsx                             | JavaScript React |         25 |          0 |          6 |         31 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\components\TeamOutput\teamOutput.module.css                      | CSS              |          7 |          0 |          0 |          7 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\context\ApiKeyContext.jsx                                        | JavaScript React |         14 |          0 |          5 |         19 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\context\AuthContext.jsx                                          | JavaScript React |         17 |          0 |          5 |         22 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\context\LikeContext.jsx                                          | JavaScript React |         14 |          0 |          5 |         19 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\hooks\useGetUserInfo.jsx                                         | JavaScript React |          8 |          0 |          2 |         10 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\index.css                                                        | CSS              |          0 |          0 |          1 |          1 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\index.js                                                         | JavaScript       |         13 |          0 |          2 |         15 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\logo.svg                                                         | XML              |          1 |          0 |          0 |          1 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\reset.css                                                        | CSS              |         39 |          0 |         13 |         52 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\About\About.jsx                                           | JavaScript React |         19 |          0 |          3 |         22 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\About\about.module.css                                    | CSS              |         24 |          0 |          6 |         30 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\CreateTeam\CreateTeam.jsx                                 | JavaScript React |         73 |          0 |          4 |         77 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\CreateTeam\TeamForm.jsx                                   | JavaScript React |          0 |          0 |          1 |          1 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\CreateTeam\createTeam.module.css                          | CSS              |        519 |          2 |         11 |        532 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Home\Home.jsx                                             | JavaScript React |        131 |          0 |          7 |        138 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Home\home.module.css                                      | CSS              |        456 |         45 |        108 |        609 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Leaderboard\Leaderboard.jsx                               | JavaScript React |         23 |          0 |          3 |         26 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Leaderboard\leaderboard.module.css                        | CSS              |         32 |          0 |          4 |         36 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\LoadingPage\LoadingPage.jsx                               | JavaScript React |         25 |          0 |          2 |         27 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\LoadingPage\loadingPage.module.css                        | CSS              |        211 |          2 |         15 |        228 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Login\Login.jsx                                           | JavaScript React |         32 |          0 |          5 |         37 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Login\login.module.css                                    | CSS              |         38 |          0 |          4 |         42 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\NotFound\NotFound.jsx                                     | JavaScript React |         45 |          0 |          6 |         51 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\NotFound\notfound.module.css                              | CSS              |        100 |          0 |         16 |        116 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Notifications\Notifications.jsx                           | JavaScript React |         72 |          0 |          3 |         75 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Notifications\notifications.module.css                    | CSS              |        532 |          2 |         11 |        545 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\PrivateRoutes\PrivateRoutes.jsx                           | JavaScript React |          9 |          0 |          3 |         12 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Redirect\Redirect.jsx                                     | JavaScript React |         12 |          0 |          3 |         15 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Register\Register.jsx                                     | JavaScript React |         21 |          0 |          2 |         23 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Register\register.module.css                              | CSS              |         38 |          0 |          4 |         42 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\Navigation\navigation.module.css                 | CSS              |         32 |          0 |          7 |         39 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\Settings.jsx                                     | JavaScript React |        120 |          3 |         12 |        135 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\UserDataForm\UserDataForm.jsx                    | JavaScript React |        147 |          0 |         15 |        162 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\UserDataForm\userDataForm.module.css             | CSS              |         89 |          2 |         15 |        106 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\UserGameForm\UserGameForm.jsx                    | JavaScript React |        106 |          0 |          7 |        113 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\UserGameForm\userGameForm.module.css             | CSS              |        112 |          2 |         16 |        130 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\UserSecurityForm\UserSecurityForm.jsx            | JavaScript React |         80 |          0 |          8 |         88 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\UserSecurityForm\userSecurityForm.module.css     | CSS              |        114 |          2 |         20 |        136 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Settings\settings.module.css                              | CSS              |        581 |         39 |         26 |        646 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPostPage.jsx                             | JavaScript React |        107 |          0 |          5 |        112 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPost\CommentCard.jsx                     | JavaScript React |         43 |          0 |          3 |         46 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPost\CommentDeleteModal.jsx              | JavaScript React |         96 |          0 |          7 |        103 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPost\CommentModal.jsx                    | JavaScript React |        126 |          0 |          9 |        135 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPost\TeamPost.jsx                        | JavaScript React |        236 |          7 |         16 |        259 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPost\commentCard.module.css              | CSS              |         76 |          0 |         14 |         90 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPost\commentDeleteModal.module.css       | CSS              |        132 |          0 |         13 |        145 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPost\commentModal.module.css             | CSS              |        123 |          0 |         15 |        138 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\TeamPost\teamPost.module.css                 | CSS              |        150 |          1 |         28 |        179 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamPostPage\teamPostPage.module.css                      | CSS              |        554 |          2 |         18 |        574 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\ConfirmationModal.jsx                         | JavaScript React |         48 |          0 |          5 |         53 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\CreatePostModal.jsx                           | JavaScript React |         50 |          0 |         11 |         61 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\EditPostModal\EditPostModal.jsx               | JavaScript React |         89 |          0 |         10 |         99 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\EditPostModal\editPostModal.module.css        | CSS              |        154 |          0 |         19 |        173 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\RemoveUserModal.jsx                           | JavaScript React |         39 |          0 |          5 |         44 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\TeamMemberCard.jsx                            | JavaScript React |        109 |          0 |         12 |        121 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\TeamPostCard.jsx                              | JavaScript React |        213 |          7 |         15 |        235 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\TeamProfile.jsx                               | JavaScript React |        247 |          9 |         17 |        273 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\TeamProfileRedirect.jsx                       | JavaScript React |         11 |          0 |          3 |         14 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\TeamProfileRoutes.jsx                         | JavaScript React |         16 |          1 |          3 |         20 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\confirmationModal.module.css                  | CSS              |        105 |          0 |         12 |        117 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\createPostModal.module.css                    | CSS              |         83 |          0 |         10 |         93 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\removeUserModal.module.css                    | CSS              |        105 |          0 |         12 |        117 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\teamMemberCard.module.css                     | CSS              |         94 |          1 |         16 |        111 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\teamPostCard.module.css                       | CSS              |        160 |          1 |         30 |        191 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\TeamProfile\teamProfile.module.css                        | CSS              |        822 |          3 |         63 |        888 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Teams\Teams.jsx                                           | JavaScript React |        144 |          0 |          8 |        152 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\Teams\teams.module.css                                    | CSS              |        361 |          2 |         64 |        427 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\ItemPurchase.jsx                              | JavaScript React |         34 |          0 |          5 |         39 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\MatchItem.jsx                                 | JavaScript React |         75 |          0 |          6 |         81 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\TeamMember.jsx                                | JavaScript React |         28 |          0 |         11 |         39 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\UserProfile.jsx                               | JavaScript React |        331 |          0 |         12 |        343 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\UserProfileRoutes.jsx                         | JavaScript React |         13 |          0 |          2 |         15 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\itemPurchase.css                              | CSS              |          3 |          0 |          0 |          3 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\matchItem.module.css                          | CSS              |         36 |          0 |          8 |         44 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\teamMember.module.css                         | CSS              |         10 |          0 |          2 |         12 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\routes\UserProfile\userProfile.module.css                        | CSS              |        862 |         19 |         74 |        955 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\schemas\DetailsSchema.jsx                                        | JavaScript React |          8 |          0 |          2 |         10 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\schemas\GamingSchema.jsx                                         | JavaScript React |          6 |          0 |          1 |          7 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\schemas\PasswordSchema.jsx                                       | JavaScript React |          5 |          0 |          2 |          7 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\schemas\StepOneSchema.jsx                                        | JavaScript React |          6 |          0 |          1 |          7 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\schemas\StepThreeSchema.jsx                                      | JavaScript React |          6 |          0 |          1 |          7 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\schemas\StepTwoSchema.jsx                                        | JavaScript React |          7 |          0 |          2 |          9 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\schemas\schemas.jsx                                              | JavaScript React |         17 |          1 |          5 |         23 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\utils\getRankIcon.js                                             | JavaScript       |         34 |          0 |          1 |         35 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\utils\getRoleIcon.js                                             | JavaScript       |         22 |          0 |          1 |         23 |
+| c:\Users\shady\Desktop\League Arena\league-arena\src\utils\rankedTextGradients\rankedTextGradients.css                | CSS              |         80 |          0 |          7 |         87 |
+| Total                                                                                                                 |                  |     13,021 |        207 |      1,352 |     14,580 |
++-----------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+

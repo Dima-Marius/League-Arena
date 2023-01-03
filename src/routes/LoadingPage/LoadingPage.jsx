@@ -2,7 +2,6 @@ import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
 import style from './loadingPage.module.css'
 
-
 const LoadingPage = () => {
   return (
  <div className={style.container}>
