@@ -7,6 +7,7 @@ import AuthContext from '../../context/AuthContext';
 import useGetUserInfo from '../../hooks/useGetUserInfo';
 import { GiSwordsEmblem } from 'react-icons/gi';
 
+
 const Navbar = () => {
 
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Navbar = () => {
   }
 
   const addActiveClass = ({ isActive }) => isActive ? `${style.active}` : {};
-  const userHasTeam = user.team !== '' ? '/teamProfile' : '/teamProfile/createTeam';
+  const userHasTeam = user?.team !== '' ? '/teamProfile' : '/teamProfile/createTeam';
 
   return (
     <nav className={style['nav-container']}>   
