@@ -60,7 +60,7 @@
         "MID"
       ],
       "rank": "Master",
-      "description": "Hello we are looking for new players, join us. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, comes from a line in section 1.10.32.",
+      "description": "Hello we are looking for new players, join us. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, comes from a line in section 1.10.32. h",
       "discussions": [
         {
           "title": "Hello everyone, we need to work on team play",
@@ -223,11 +223,11 @@
       "id": 8
     },
     {
-      "teamName": "Hotdogs",
+      "teamName": "Siit-29",
       "owner": "qwe",
       "region": "EUNE",
       "rank": "challenger",
-      "description": "this team should exist now adssadadasdsa",
+      "description": "this is a random description etc",
       "logo": "https://i.pinimg.com/originals/f3/ae/65/f3ae65f670ef9c745e2f78fb5f130ff9.png",
       "wins": 0,
       "losses": 0,
@@ -237,6 +237,22 @@
       "availableRoles": [],
       "discussions": [],
       "id": 9
+    },
+    {
+      "teamName": "yeah team",
+      "owner": "ewq",
+      "region": "EUNE",
+      "rank": "platinum",
+      "description": "asdddddddddd",
+      "logo": "https://i.pinimg.com/originals/f3/ae/65/f3ae65f670ef9c745e2f78fb5f130ff9.png",
+      "wins": 0,
+      "losses": 0,
+      "members": [
+        "ewq"
+      ],
+      "availableRoles": [],
+      "discussions": [],
+      "id": 10
     }
   ],
   "users": [
@@ -415,9 +431,73 @@
       "ign": "qwe",
       "region": "EUNE",
       "role": "TOP",
-      "team": "Hotdogs",
+      "team": "Siit-29",
       "rank": "GOLD",
       "id": 14
+    },
+    {
+      "email": "testacc1@gmail.com",
+      "password": "$2a$10$zQqxta/P7kNihZMceHJpbuLTPqF1vSsqrDeC9Wh0X4cyaEz.k1dCG",
+      "confirmPassword": "qweqwe",
+      "firstName": "john",
+      "lastName": "smith",
+      "ign": "Kayn",
+      "region": "EUNE",
+      "role": "JUNGLE",
+      "rank": "GRANDMASTER",
+      "id": 15
+    },
+    {
+      "email": "testacc2@gmail.com",
+      "password": "$2a$10$Sr.UDnVWOMYpmnKBUrMixuo/d5jV7innDJuyDkS6zzFoqZBXm7t4i",
+      "confirmPassword": "qweqwe",
+      "firstName": "asd",
+      "lastName": "sad",
+      "ign": "Nashor",
+      "region": "EUNE",
+      "role": "SUPPORT",
+      "rank": "GRANDMASTER",
+      "team": "",
+      "id": 16
+    },
+    {
+      "email": "testacc3@gmail.com",
+      "password": "$2a$10$soKpDAeeXO4Ay.TM.JCgSeQZL6gQ.CY6V6fxgRioe41nGqVadpd4e",
+      "confirmPassword": "qweqwe",
+      "firstName": "sad",
+      "lastName": "ads",
+      "ign": "dude",
+      "region": "EUNE",
+      "role": "ADC",
+      "rank": "PLATINUM",
+      "team": "",
+      "id": 17
+    },
+    {
+      "email": "testacc5@gmail.com",
+      "password": "$2a$10$fgQPJ4Rc0OH7/Syg9CJSeO1Ieep0XrHYH2QteL1hNb5BNSNpCO05O",
+      "confirmPassword": "qweqwe",
+      "firstName": "qwe",
+      "lastName": "qwe",
+      "ign": "Johnny",
+      "region": "EUNE",
+      "role": "TOP",
+      "rank": "BRONZE",
+      "team": "yeah team",
+      "id": 18
+    },
+    {
+      "email": "testacc7@gmail.com",
+      "password": "$2a$10$XIxKLPB6W5CyLBVpiSh5hu6zu8R126KBcn.g2WiS4kLWokf4e2Ubm",
+      "confirmPassword": "qweqwe",
+      "firstName": "qwe",
+      "lastName": "qwe",
+      "ign": "sam",
+      "region": "EUNE",
+      "role": "TOP",
+      "rank": "SILVER",
+      "team": "null",
+      "id": 19
     }
   ]
 }

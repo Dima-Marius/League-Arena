@@ -11,7 +11,6 @@ const TeamProfileRoutes = () => {
      <Routes>
         <Route path='/teamProfile/:teamName' element={<TeamProfile/>} />
         <Route path='/teamProfile/:teamName/:postId' element={<Navbar/>} />
-        {/* <Link to={`/teamProfile/${teamData.teamName}/posts/${id}`}>{ */}
      </Routes>
     </React.Fragment>
   )

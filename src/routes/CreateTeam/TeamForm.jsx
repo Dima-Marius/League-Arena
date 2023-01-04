@@ -39,7 +39,7 @@ const TeamForm = (props) => {
           }),
         })
       )
-      .finally(() => navigate("/teamProfile"));
+      .finally(() => navigate(`/teamProfile/${values.teamName}`));
   };
 
   const formik = useFormik({

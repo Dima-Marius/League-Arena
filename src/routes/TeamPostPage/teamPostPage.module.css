@@ -1,9 +1,10 @@
 .container {
     display: grid;
+    min-height: 1000px;
     grid-template-columns: 1fr 700px 700px 1fr;
     grid-template-rows:
     240px [empty]
-    auto [main]
+    600px [main]
     auto [posts]
     240px [empty]
     var(--footer-size) [footer];

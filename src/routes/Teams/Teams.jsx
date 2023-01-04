@@ -146,6 +146,7 @@ const Teams = () => {
         <Footer/>
       </div>
     </div>
+    
   )
 }
 

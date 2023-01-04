@@ -4,12 +4,11 @@ import useGetUserInfo from '../../hooks/useGetUserInfo';
 
 const Redirect = () => {
     const redirect = useNavigate();
-    const { ign } = useGetUserInfo();
+    const userInfo = useGetUserInfo();
 
     useEffect(() => {
-        redirect(`/userProfile/${ign}`)
-        console.log(ign)
-    },[redirect,ign])
+        redirect(`/userProfile/${userInfo?.ign}`)
+    },[redirect,userInfo?.ign])
 }
 
 export default Redirect

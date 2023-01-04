@@ -1,0 +1,238 @@
+.backdrop {
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 570px;
+    background-color: white;
+    z-index: 3;
+    background-color: transparent;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(102, 135, 184, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+}
+
+.container h2 {
+    margin-bottom: 40px;
+    font-size: 35px;
+    font-weight: 100;
+    color: rgb(199, 169, 37);
+    background-color: rgba(146, 163, 83, 0.3);
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    gap: 10px;
+}
+
+.container h2 span {
+  font-size: 30px;
+}
+
+.delete {
+  position: absolute;
+  right:20px;
+  bottom:20px;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: 1px solid red;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: red;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 6px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+  margin-left: auto;
+}
+
+.delete-btn:active {
+  background-color: #f7f7f750;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.form h4 {
+  margin-right: auto;
+  margin-left: 60px;
+  position: relative;
+  top: 30px;
+  font-size: 25px;
+  font-weight: 100;
+  color: rgb(5, 226, 255);
+}
+
+.container h2 span i { 
+  position: relative;
+  bottom:3px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.form input {
+    width:500px;
+    text-align: center;
+    border: none;
+    border-bottom: solid 1px slateblue;
+    font-size: 26px;
+    outline: none;
+    background-color: transparent;
+    color: whitesmoke;
+}
+
+.form textarea {
+    resize: none;
+    border: solid 1px rgb(255, 255, 255);
+    font-size:25px;
+    outline: none;
+    background-color: rgb(141, 143, 165);
+}
+
+.form textarea::placeholder {
+  color: rgb(0, 183, 255)
+}
+
+
+.submit {
+    background-color: transparent;
+    border: 1px solid aqua;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color:aqua;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 6px 23px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+  }
+  
+  .submit {
+    padding: 6px 16px;
+  }
+  
+  .submit:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+  .submit:active {
+    background-color: #f7f7f750;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+
+  .cancel {
+    background-color: transparent;
+    border: 1px solid seashell;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: seashell;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 6px 23px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+  }
+  
+  .cancel {
+    padding: 6px 16px;
+  }
+  
+  .cancel:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+  .cancel:active {
+    background-color: #f7f7f750;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }

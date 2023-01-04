@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import LoadingPage from "../LoadingPage/LoadingPage";
 import TeamPostCard from "../TeamProfile/TeamPostCard";
 import TeamPost from "./TeamPost/TeamPost";
 import style from "./teamPostPage.module.css";
@@ -10,13 +11,16 @@ import style from "./teamPostPage.module.css";
 const TeamPostPage = () => {
   const { teamName, id } = useParams();
   const [teamData, setTeamData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch(`http://localhost:3500/createdTeams?teamName=${teamName}`)
       .then((res) => res.json())
-      .then((data) => setTeamData(data[0]));
+      .then((data) => setTeamData(data[0]))
+      .finally(() => setIsLoading(false));
   }, [teamName]);
 
+  if (isLoading === false) {
   return (
     <div className={style.container}>
       <div className={style.navbar}>
@@ -106,6 +110,12 @@ const TeamPostPage = () => {
       </div>
     </div>
   );
+ }
+ if (isLoading === true) {
+  return (
+    <LoadingPage/>
+  )
+ }
 };
 
 export default TeamPostPage;

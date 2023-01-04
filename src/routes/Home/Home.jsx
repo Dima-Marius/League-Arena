@@ -22,11 +22,7 @@ const Home = () => {
   const items = ["fa-playstation", "fa-discord", "fa-instagram", "fa-facebook"];
 
   const { scrollY } = useScroll();
-
-  console.log(scrollY.current)
-  console.log(scrollY.current)
-  console.log(scrollY.current)
-
+  
   const leftSentence = {
     hidden: { opacity: 1 },
     visible: {

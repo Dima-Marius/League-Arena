@@ -12,6 +12,9 @@ import TeamPostCard from "./TeamPostCard";
 import Modal from "../../components/Modal/Modal";
 import LikeContext from "../../context/LikeContext";
 import useGetUserInfo from "../../hooks/useGetUserInfo";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import EditTeamModal from "./EditTeamModal/EditTeamModal";
+import { m } from "framer-motion";
 
 const TeamProfile = () => {
   /* Get team name from URL params */
@@ -21,6 +24,8 @@ const TeamProfile = () => {
 
   /* Fetch team data from server */
   const [teamData, setTeamData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [isEditingTeam, setIsEditingTeam] = useState(false);
   /*  const [like, setLike] = useState(false); */
 
 /*   function sendNotification() {
@@ -65,15 +70,18 @@ const TeamProfile = () => {
 
   /* Fetch team data from server */
   useEffect(() => {
-    if (user.team !== "") {
+    if (user?.team !== "") {
     fetch(`http://localhost:3500/createdTeams?teamName=${teamName}`)
       .then((res) => res.json())
       .then((data) => setTeamData(data[0]))
-      .finally(() => setWinrate(calculateWinrate + "%"));
+      .finally(() => {
+        setWinrate(calculateWinrate + "%");
+        setIsLoading(false);
+      });
     } else {
       setIsUserInTeam(false);
     }
-  },[teamName, calculateWinrate, showCreatePostModal, likeUpdate.like, user.team]);
+  },[teamName, calculateWinrate, showCreatePostModal, likeUpdate.like, user?.team]);
 
   /* Create post button handler */
 
@@ -89,6 +97,7 @@ const TeamProfile = () => {
   const winrateColor =
     calculateWinrate >= 50 ? `${style.good}` : `${style.bad}`;
 
+    if (isLoading === false) {
   return (
     <div className={style.container}>
       <div className={style.navbar}>
@@ -149,6 +158,9 @@ const TeamProfile = () => {
       <div className={style.main}>
         <div className={style.header}>
           <h2>Team Profile</h2>
+          <button onClick={() => setIsEditingTeam(!isEditingTeam)} className={style['options-btn']}>
+          <i className="fa-solid fa-ellipsis"></i>
+          </button>
         </div>
         <div className={style.logo}>
           <img
@@ -159,6 +171,17 @@ const TeamProfile = () => {
             alt=""
           />
           <h3>{teamData?.teamName}</h3>
+          <ul className={style.social}>
+              <li>
+                <i className="fa-brands fa-discord"></i>
+              </li>
+              <li>
+                <i className="fa-solid fa-envelope"></i>
+              </li>
+              <li>
+                <i className="fa-solid fa-user-plus"></i>
+              </li>
+            </ul>
         </div>
         <div className={style.info}>
           <h3>Stats</h3>
@@ -168,6 +191,9 @@ const TeamProfile = () => {
             </p>
             <p>
               Leader: <span>{teamData?.owner}</span>
+            </p>
+            <p>
+              Region: <span>{teamData?.region}</span>
             </p>
             <p className={style["rank-info"]}>
               Entry Rank:
@@ -183,9 +209,6 @@ const TeamProfile = () => {
                 />
               </span>
             </p>
-            <p>
-              Region: <span>{teamData?.region}</span>
-            </p>
           </div>
           <div>
             <div className={style["record-wrapper"]}>
@@ -197,7 +220,7 @@ const TeamProfile = () => {
               </p>
             </div>
             <p>
-              Winrate: <span className={winrateColor}>{winrate}</span>
+              Winrate: <span className={winrateColor}>{parseInt(winrate.toString().replace('%','')) > 0 ? winrate : <span>No matches played.</span>}</span>
             </p>
           </div>
         </div>
@@ -210,12 +233,13 @@ const TeamProfile = () => {
         <div className={style.players}>
           <div>
             <h3>Members</h3>
-            <button
+            {teamData?.owner === user?.ign && ( <button
               onClick={() => setIsEditingMembers(!isEditingMembers)}
               className={`${style["edit-members-btn"]} ${isEditingMembers && `${style.active}` }`}
             >
               <i className="fa-solid fa-user-pen"></i>
-            </button>
+            </button>)}
+           
           </div>
           <ul className={style["members-list"]}>
             {teamData?.members?.map((item) => (
@@ -235,7 +259,7 @@ const TeamProfile = () => {
             <h3>Posts</h3>
           </div>
           <div className={style.output}>
-            {teamData?.members?.includes(user.ign) ? teamData?.discussions?.map(
+            {teamData?.members?.includes(user?.ign) ? teamData?.discussions?.map(
               (
                 item /* wrong, just pass ...teamData, short on time to fix */
               ) => (
@@ -260,7 +284,7 @@ const TeamProfile = () => {
             )}
           </div>
           <div className={style["btn-container"]}>
-            {teamData?.members?.includes(user.ign) && (
+            {teamData?.members?.includes(user?.ign) && (
               <button
               onClick={createPostHandler}
               className={style["create-post"]}
@@ -278,9 +302,22 @@ const TeamProfile = () => {
         {showCreatePostModal && (
           <Modal teamData={teamData} handleModalClose={handleModalClose} />
         )}
+        {isEditingTeam && (
+          <EditTeamModal
+            isEditingTeam={isEditingTeam}
+            setIsEditingTeam={setIsEditingTeam}
+            teamData={teamData}
+            setTeamData={setTeamData}
+          />
+        )}
       </div>
     </div>
-  );
+    );
+  };
+
+  if (isLoading) {
+    return <LoadingPage />;
+  }
 };
 
 export default TeamProfile;

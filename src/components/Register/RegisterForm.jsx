@@ -45,6 +45,7 @@ const registerUrl = 'http://localhost:3500/register';
     region: '',
     role: '',
     rank: '',
+    team:'null'
 })
 
   const prevStepHandler = (currentData) => {
