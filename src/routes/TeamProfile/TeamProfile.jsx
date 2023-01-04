@@ -23,6 +23,20 @@ const TeamProfile = () => {
   const [teamData, setTeamData] = useState({});
   /*  const [like, setLike] = useState(false); */
 
+/*   function sendNotification() {
+    if (window.Notification && Notification.permission !== "granted") {
+      Notification.requestPermission().then(function (status) {
+        if (Notification.permission !== status) {
+          Notification.permission = status;
+        }
+      });
+    }
+  
+    if (window.Notification && Notification.permission === "granted") {
+      new Notification("This is a notification!");
+    }
+  }
+ */
   /* check if user has team or not, if not then display team creation */
 
   const [isUserInTeam, setIsUserInTeam] = useState(true);
